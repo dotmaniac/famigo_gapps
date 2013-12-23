@@ -151,12 +151,12 @@ set_progress(0.23);
 	ui_print("	Google+");
 		if file_getprop("/tmp/aroma/gapps.prop", "item.1.1") == "1" then
 			ui_print("		Google+");
-			package_extract_dir("gapps/Plus/Plus", "/system/app");
+			package_extract_dir("gapps/Plus/Plus", "/system");
 		endif;
 	
 		if file_getprop("/tmp/aroma/gapps.prop", "item.1.2") == "1" then
 			ui_print("		Hangouts");
-			package_extract_dir("gapps/Plus/Hangouts", "/system/app");
+			package_extract_dir("gapps/Plus/Hangouts", "/system");
 		endif;
 	
 	# Google Drive
@@ -164,12 +164,12 @@ set_progress(0.23);
 	ui_print("	Google Drive");
 		if file_getprop("/tmp/aroma/gapps.prop", "item.2.1") == "1" then
 			ui_print("		Drive");
-			package_extract_dir("gapps/Drive/Drive", "/system/app");
+			package_extract_dir("gapps/Drive/Drive", "/system");
 		endif;
 	
 		if file_getprop("/tmp/aroma/gapps.prop", "item.2.2") == "1" then
 			ui_print("		Keep");
-			package_extract_dir("gapps/Drive/Keep", "/system/app");
+			package_extract_dir("gapps/Drive/Keep", "/system");
 		endif;
 	
 	# Google Play
@@ -177,27 +177,27 @@ set_progress(0.23);
 	ui_print("	Google Play");
 		if file_getprop("/tmp/aroma/gapps.prop", "item.3.1") == "1" then
 			ui_print("		Books");
-			package_extract_dir("gapps/Play/Books", "/system/app");
+			package_extract_dir("gapps/Play/Books", "/system");
 		endif;
 	
 		if file_getprop("/tmp/aroma/gapps.prop", "item.3.2") == "1" then
 			ui_print("		Games");
-			package_extract_dir("gapps/Play/Games", "/system/app");
+			package_extract_dir("gapps/Play/Games", "/system");
 		endif;
 	
 		if file_getprop("/tmp/aroma/gapps.prop", "item.3.3") == "1" then
 			ui_print("		Movies & TV");
-			package_extract_dir("gapps/Play/Videos", "/system/app");
+			package_extract_dir("gapps/Play/Videos", "/system");
 		endif;
 	
 		if file_getprop("/tmp/aroma/gapps.prop", "item.3.4") == "1" then
 			ui_print("		Music");
-			package_extract_dir("gapps/Play/Music", "/system/app");
+			package_extract_dir("gapps/Play/Music", "/system");
 		endif;
 	
 		if file_getprop("/tmp/aroma/gapps.prop", "item.3.5") == "1" then
 			ui_print("		Newsstand");
-			package_extract_dir("gapps/Play/News", "/system/app");
+			package_extract_dir("gapps/Play/News", "/system");
 		endif;
 	
 	# Google Search
@@ -205,33 +205,35 @@ set_progress(0.23);
 	ui_print("	Google Search");
 		if file_getprop("/tmp/aroma/gapps.prop", "item.4.1") == "1" then
 			ui_print("		Chrome");
-			package_extract_dir("gapps/Search/Chrome", "/system/app");
+			package_extract_dir("gapps/Search/Chrome", "/system");
 		endif;
 	
 		if file_getprop("/tmp/aroma/gapps.prop", "item.4.2") == "1" then
 			ui_print("		Home");
-			package_extract_dir("gapps/Search/GEL", "/system/app");
+			package_extract_dir("gapps/Search/GEL", "/system");
+			package_extract_dir("gapps/Search/Now/lib", "/system/lib");
 				if file_getprop("/tmp/aroma/version.prop", "selected") == "1" then
-					package_extract_dir("gapps/Search/Now", "/system/app");
+					package_extract_dir("gapps/Search/Now/app", "/system/app");
 				endif;
 				if file_getprop("/tmp/aroma/version.prop", "selected") == "2" then
-					package_extract_dir("gapps/Search/Now", "/system/priv-app");
+					package_extract_dir("gapps/Search/Now/app", "/system/priv-app");
 				endif;
 		endif;
 	
 		if file_getprop("/tmp/aroma/gapps.prop", "item.4.3") == "1" then
 			ui_print("		Maps");
-			package_extract_dir("gapps/Search/Maps", "/system/app");
+			package_extract_dir("gapps/Search/Maps", "/system");
 		endif;
 	
 		if file_getprop("/tmp/aroma/gapps.prop", "item.4.4") == "1" then
 			ui_print("		Now");
-			if file_getprop("/tmp/aroma/version.prop", "selected") == "1" then
-				package_extract_dir("gapps/Search/Now", "/system/app");
-			endif;
-			if file_getprop("/tmp/aroma/version.prop", "selected") == "2" then
-				package_extract_dir("gapps/Search/Now", "/system/priv-app");
-			endif;
+			package_extract_dir("gapps/Search/Now/lib", "/system/lib");
+				if file_getprop("/tmp/aroma/version.prop", "selected") == "1" then
+					package_extract_dir("gapps/Search/Now/app", "/system/app");
+				endif;
+				if file_getprop("/tmp/aroma/version.prop", "selected") == "2" then
+					package_extract_dir("gapps/Search/Now/app", "/system/priv-app");
+				endif;
 		endif;
 	
 	# Other GApps
@@ -239,7 +241,7 @@ set_progress(0.23);
 	ui_print("	Other");
 		if file_getprop("/tmp/aroma/gapps.prop", "item.5.1") == "1" then
 			ui_print("		Calendar");
-			package_extract_dir("gapps/Other/Calendar", "/system/app");
+			package_extract_dir("gapps/Other/Calendar", "/system");
 		endif;
 
 		if file_getprop("/tmp/aroma/gapps.prop", "item.5.2") == "1" then
@@ -254,7 +256,7 @@ set_progress(0.23);
 				endif;
 			package_extract_dir("gapps/Other/Camera/common", "/system");
 			package_extract_dir("gapps/Other/Camera/other", "/tmp/photosphere");
-			package_extract_dir("gapps/Plus/Plus", "/system/app");
+			package_extract_dir("gapps/Plus/Plus", "/system");
 			set_perm(0, 0, 0777, "/tmp/photosphere/install-camera.sh");
 			run_program("/tmp/photosphere/install-camera.sh", "");
 			set_perm(0, 0, 0755, "/system/addon.d/74-googlecamera.sh");
@@ -262,27 +264,27 @@ set_progress(0.23);
 
 		if file_getprop("/tmp/aroma/gapps.prop", "item.5.3") == "1" then
 			ui_print("		Gmail");
-			package_extract_dir("gapps/Other/Gmail", "/system/app");
+			package_extract_dir("gapps/Other/Gmail", "/system");
 		endif;
 	
 		if file_getprop("/tmp/aroma/gapps.prop", "item.5.4") == "1" then
 			ui_print("		Keyboard");
-			package_extract_dir("gapps/Other/Keyboard", "/system/app");
+			package_extract_dir("gapps/Other/Keyboard", "/system");
 		endif;
 	
 		if file_getprop("/tmp/aroma/gapps.prop", "item.5.5") == "1" then
 			ui_print("		Wallet");
 			if file_getprop("/tmp/aroma/version.prop", "selected") == "1" then
-				package_extract_dir("gapps/Other/Wallet", "/system/app");
+				package_extract_dir("gapps/Other/Wallet/app", "/system/app");
 			endif;
 			if file_getprop("/tmp/aroma/version.prop", "selected") == "1" then
-				package_extract_dir("gapps/Other/Wallet", "/system/priv-app");
+				package_extract_dir("gapps/Other/Wallet/app", "/system/priv-app");
 			endif;
 		endif;
 	
 		if file_getprop("/tmp/aroma/gapps.prop", "item.5.6") == "1" then
 			ui_print("		YouTube");
-			package_extract_dir("gapps/Other/YouTube", "/system/app");
+			package_extract_dir("gapps/Other/YouTube", "/system");
 		endif;
 
 # Remove System Apps
