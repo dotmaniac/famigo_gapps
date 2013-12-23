@@ -1,11 +1,12 @@
 # App Remover
 if prop("home.prop","selected") == "5" then
 	checkbox(
-		"System Apps Remover",
-		"Select the apps to remove",
+		"App Remover",
+		"Select your apps below:",
 		"@remove",
 		"remover.prop",
 		"AOSP",				"",		"2",
+			"Calendar",			"",		"1",
 			"Email",			"",		"1",
 			"Gallery",			"",		"0",
 			"Music",			"",		"1",
@@ -13,12 +14,13 @@ if prop("home.prop","selected") == "5" then
 			"VideoEditor",			"",		"1",
 			"VoiceDialer",			"",		"1",
 		"AOSPA",			"",		"2",
-			"HALO)))",			"",		"0",
+			"HALO)))",			"",		"1",
 		"CyanogenMod",			"",		"2",
 			"Apollo",			"",		"1",
 			"DSP Manager",			"",		"0",
 			"File Manager",			"",		"0",
 			"LockClock",			"",		"1",
+			"Trebuchet",			"",		"0",
 			"VoicePlus",			"",		"0",
 			"Wallpapers",			"",		"1",
 		"Daydreams",			"",		"2",
@@ -40,7 +42,6 @@ if prop("home.prop","selected") == "5" then
 			"SunBeam",			"",		"1",
 			"Visualizations",		"",		"1",
 		"PAC-man",			"",		"2",
-			"Console",			"",		"0",
 			"Game",				"",		"1",
 			"Wallpapers",			"",		"1",
 		"SlimRoms",			"",		"2",
@@ -52,6 +53,5 @@ if prop("home.prop","selected") == "5" then
 			"Terminal",			"",		"1"
 	);
 	
-	alert("Selection Finished!","Press OK to go back...");
 	back("2");
 endif;

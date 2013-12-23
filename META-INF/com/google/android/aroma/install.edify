@@ -21,20 +21,6 @@ if prop("home.prop","selected")=="6" then
 		endif;
 	endif;
 
-	if prop("gapps.prop", "item.3.5") == "1" then
-		if
-			confirm(
-				"News",
-				"Do you want Newsstand to replace Currents?"
-			)=="yes"
-		then
-			run_program("/sbin/busybox", "rm", "-f", "/system/app/Currents.apk");
-			run_program("/sbin/busybox", "rm", "-f", "/system/priv-app/Currents.apk");
-		else
-			alert("Not Deleted","");
-		endif;
-	endif;
-
 	if prop("gapps.prop", "item.4.1") == "1" then
 		if
 			confirm(
@@ -60,12 +46,8 @@ if prop("home.prop","selected")=="6" then
 		then
 			run_program("/sbin/busybox", "rm", "-f", "/system/app/Launcher3.apk");
 			run_program("/sbin/busybox", "rm", "-f", "/system/app/Launcher2.apk");
-			run_program("/sbin/busybox", "rm", "-f", "/system/app/Trebuchet.apk");
-			run_program("/sbin/busybox", "rm", "-f", "/system/app/NovaLauncher.apk");
 			run_program("/sbin/busybox", "rm", "-f", "/system/priv-app/Launcher3.apk");
 			run_program("/sbin/busybox", "rm", "-f", "/system/priv-app/Launcher2.apk");
-			run_program("/sbin/busybox", "rm", "-f", "/system/priv-app/Trebuchet.apk");
-			run_program("/sbin/busybox", "rm", "-f", "/system/priv-app/NovaLauncher.apk");
 		else
 			alert("Not Deleted","");
 		endif;

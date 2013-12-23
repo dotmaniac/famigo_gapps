@@ -23,8 +23,8 @@
 		"What Version of Android are you running?",
 		"@menu",
 		"version.prop",
-		"4.3.x",		"Jelly Bean",		"@jellybean",
-		"4.4.x",		"KitKat",		"@kitkat"
+		"4.3.x",	"Jelly Bean",	"@jellybean",
+		"4.4.x",	"KitKat",	"@kitkat"
 	);
 
 # Menu
@@ -33,12 +33,12 @@
 		"What would you like to do?",
 		"@menu",
 		"home.prop",
-		"Info",			"",				"@info",
-		"Backup",		"Backup your choices",		"@save",
-		"Restore",		"Restore your choices",		"@save",
-		"App Selection",	"Choose your Google Apps",	"@apps",
-		"App Remover",		"Remove Extra Bloat",		"@remove",
-		"Install",		"",				"@install"
+		"Info",			"",	"@info",
+		"Backup",		"",	"@save",
+		"Restore",		"",	"@save",
+		"App Selection",	"",	"@apps",
+		"App Remover",		"",	"@remove",
+		"Install",		"",	"@install"
 	);
 
 	# Info
