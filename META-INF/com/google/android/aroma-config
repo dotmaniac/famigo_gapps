@@ -1,0 +1,66 @@
+# Mount System
+	run_program("/sbin/busybox", "mount", "/system");
+
+# Theme and Size
+	# Set Roboto Condensed as Font
+		fontresload( "0", "ttf/RobotoCondensed-Regular.ttf", "15" );
+		fontresload( "1", "ttf/RobotoCondensed-Regular.ttf", "17" );
+	# Use ICS Theme
+		theme("ics");
+	# Set DPI
+		ini_set("dp","5");
+	# Load English
+		loadlang("langs/en.lang");
+
+# Initializing Info
+	ini_set("rom_name",			"Famigo AROMA GApps");
+	ini_set("rom_author",		"Team Famigo");
+	ini_set("rom_device",		"Any ROM & Any Device");
+	ini_set("rom_date",			"Dec 21, 2013");
+
+# Version Selector
+	menubox(
+		"Android Version",
+		"What Version of Android are you running?",
+		"@menu",
+		"version.prop",
+		"4.3.x",							"Jelly Bean",											"@jellybean",
+		"4.4.x",							"KitKat",													"@kitkat"
+	);
+
+	if prop("version.prop","selected") == "1" then
+		ini_set("rom_version",	"4.3.x Jelly Bean");
+	endif;
+	
+	if prop("version.prop","selected") == "2" then
+		ini_set("rom_version",	"4.4.x KitKat");
+	endif;
+
+# Menu
+	menubox(
+		"<~welcome.title>",
+		"What would you like to do?",
+		"@menu",
+		"home.prop",
+		"View Info",					"See who made this possible",			"@info",
+		"Backup",							"Backup your choices",						"@save",
+		"Restore",						"Restore your choices",						"@save",
+		"GApps Install",			"Install your Google Apps",				"@apps",
+		"App Remover",				"Remove Extra Bloat",							"@remove",
+		"Start Install",			"Click when finished",						"@install"
+	);
+
+	# View Info
+		include("info.edify");
+	
+	# Backup and Restore
+		include("backup.edify");
+	
+	# GApps Install
+		include("gapps.edify");
+	
+	# App Remover
+		include("remover.edify");
+	
+	# Start Install
+		include("install.edify");
