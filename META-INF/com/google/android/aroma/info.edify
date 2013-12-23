@@ -21,6 +21,5 @@ if prop("home.prop","selected") == "1" then
 			"\t \t Link: <#selectbg_g> http://goo.gl/cLyyHm </#>",
 		"@info"
 	);
-
 	back("2");
 endif;

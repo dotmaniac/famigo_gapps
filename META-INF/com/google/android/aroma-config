@@ -13,18 +13,18 @@
 		loadlang("langs/en.lang");
 
 # Initializing Info
-	ini_set("rom_name",	"Famigo AROMA GApps");
+	ini_set("rom_name",		"Famigo AROMA GApps");
 	ini_set("rom_author",	"Team Famigo");
 	ini_set("rom_device",	"Any ROM & Any Device");
 
 # Version Selector
 	menubox(
 		"Android Version",
-		"What Version of Android are you running?",
+		"What are you running?",
 		"@menu",
 		"version.prop",
 		"4.3.x",	"Jelly Bean",	"@jellybean",
-		"4.4.x",	"KitKat",	"@kitkat"
+		"4.4.x",	"KitKat",			"@kitkat"
 	);
 
 # Menu
@@ -33,12 +33,12 @@
 		"What would you like to do?",
 		"@menu",
 		"home.prop",
-		"Info",			"",	"@info",
-		"Backup",		"",	"@save",
-		"Restore",		"",	"@save",
-		"App Selection",	"",	"@apps",
-		"App Remover",		"",	"@remove",
-		"Install",		"",	"@install"
+		"Info",						"",	"@info",
+		"Backup",				"",	"@save",
+		"Restore",				"",	"@save",
+		"App Selection",		"",	"@apps",
+		"App Remover",	"",	"@remove",
+		"Install",					"",	"@install"
 	);
 
 	# Info

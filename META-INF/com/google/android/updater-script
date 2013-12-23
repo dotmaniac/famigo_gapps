@@ -1,36 +1,36 @@
 # Checking to make certain user has the correct Android Version installed
 if file_getprop("/tmp/aroma/version.prop", "selected") == "1" then
-	set_progress(0.05);
-		if
-			is_substring("4.3", file_getprop("/system/build.prop","ro.build.version.release")),
-		then
-			ui_print("Android 4.3.x ROM detected");
-		else
-			ui_print("Incompatible Android ROM detected");
-			ui_print("This GApps package is for Android 4.3.x ONLY");
-			ui_print("GApps Installation failed");
-			ui_print("Unmounting system...");
-			run_program("/sbin/busybox", "umount", "/system");
-			sleep(7);
-			abort("Aborting...");
-		endif;
+set_progress(0.05);
+	if
+		is_substring("4.3", file_getprop("/system/build.prop","ro.build.version.release")),
+	then
+		ui_print("Android 4.3.x ROM detected");
+	else
+		ui_print("Incompatible Android ROM detected");
+		ui_print("This GApps package is for Android 4.3.x ONLY");
+		ui_print("GApps Installation failed");
+		ui_print("Unmounting system...");
+		run_program("/sbin/busybox", "umount", "/system");
+		sleep(7);
+		abort("Aborting...");
+	endif;
 endif;
 
 if file_getprop("/tmp/aroma/version.prop", "selected") == "2" then
-	set_progress(0.05);
-		if
-			is_substring("4.4", file_getprop("/system/build.prop","ro.build.version.release")),
-		then
-			ui_print("Android 4.4.x ROM detected");
-		else
-			ui_print("Incompatible Android ROM detected");
-			ui_print("This GApps package is for Android 4.4.x ONLY");
-			ui_print("GApps Installation failed");
-			ui_print("Unmounting system...");
-			run_program("/sbin/busybox", "umount", "/system");
-			sleep(7);
-			abort("Aborting...");
-		endif;
+set_progress(0.05);
+	if
+		is_substring("4.4", file_getprop("/system/build.prop","ro.build.version.release")),
+	then
+		ui_print("Android 4.4.x ROM detected");
+	else
+		ui_print("Incompatible Android ROM detected");
+		ui_print("This GApps package is for Android 4.4.x ONLY");
+		ui_print("GApps Installation failed");
+		ui_print("Unmounting system...");
+		run_program("/sbin/busybox", "umount", "/system");
+		sleep(7);
+		abort("Aborting...");
+	endif;
 endif;
 
 # Doing Some Extra Work
@@ -118,16 +118,16 @@ endif;
 
 # Install Core Apps
 set_progress(0.23);
-	ui_print("Installing Core Apps [Required]");
+ui_print("Installing Core Apps");
 	package_extract_dir("gapps/Core/Shared", "/system");
-		if file_getprop("/tmp/aroma/version.prop", "selected") == "1" then
-			package_extract_dir("gapps/Core/4.3.x", "/system");
-			package_extract_dir("gapps/Core/priv-app", "/system/app");
-		endif;
-		if file_getprop("/tmp/aroma/version.prop", "selected") == "2" then
-			package_extract_dir("gapps/Core/4.4.x", "/system");
-			package_extract_dir("gapps/Core/priv-app", "/system/priv-app");
-		endif;
+	if file_getprop("/tmp/aroma/version.prop", "selected") == "1" then
+		package_extract_dir("gapps/Core/4.3.x", "/system");
+		package_extract_dir("gapps/Core/priv-app", "/system/app");
+	endif;
+	if file_getprop("/tmp/aroma/version.prop", "selected") == "2" then
+		package_extract_dir("gapps/Core/4.4.x", "/system");
+		package_extract_dir("gapps/Core/priv-app", "/system/priv-app");
+	endif;
 
 # Face Lock
 	if file_getprop("/tmp/aroma/version.prop", "selected") == "1" then
@@ -194,7 +194,8 @@ ui_print("	Google Play");
 	if file_getprop("/tmp/aroma/gapps.prop", "item.3.5") == "1" then
 		ui_print("		Newsstand");
 		package_extract_dir("gapps/Play/News", "/system");
-			delete("/system/app/Currents.apk","/system/priv-app/Currents.apk");
+		# Deleting Google Currents
+		delete("/system/app/Currents.apk","/system/priv-app/Currents.apk");
 	endif;
 
 # Google Search
@@ -208,13 +209,14 @@ ui_print("	Google Search");
 	if file_getprop("/tmp/aroma/gapps.prop", "item.4.2") == "1" then
 		ui_print("		Home");
 		package_extract_dir("gapps/Search/GEL", "/system");
+		# Installing Google Now
 		package_extract_dir("gapps/Search/Now/lib", "/system/lib");
-			if file_getprop("/tmp/aroma/version.prop", "selected") == "1" then
-				package_extract_dir("gapps/Search/Now/app", "/system/app");
-			endif;
-			if file_getprop("/tmp/aroma/version.prop", "selected") == "2" then
-				package_extract_dir("gapps/Search/Now/app", "/system/priv-app");
-			endif;
+		if file_getprop("/tmp/aroma/version.prop", "selected") == "1" then
+			package_extract_dir("gapps/Search/Now/app", "/system/app");
+		endif;
+		if file_getprop("/tmp/aroma/version.prop", "selected") == "2" then
+			package_extract_dir("gapps/Search/Now/app", "/system/priv-app");
+		endif;
 	endif;
 
 	if file_getprop("/tmp/aroma/gapps.prop", "item.4.3") == "1" then
@@ -225,12 +227,12 @@ ui_print("	Google Search");
 	if file_getprop("/tmp/aroma/gapps.prop", "item.4.4") == "1" then
 		ui_print("		Now");
 		package_extract_dir("gapps/Search/Now/lib", "/system/lib");
-			if file_getprop("/tmp/aroma/version.prop", "selected") == "1" then
-				package_extract_dir("gapps/Search/Now/app", "/system/app");
-			endif;
-			if file_getprop("/tmp/aroma/version.prop", "selected") == "2" then
-				package_extract_dir("gapps/Search/Now/app", "/system/priv-app");
-			endif;
+		if file_getprop("/tmp/aroma/version.prop", "selected") == "1" then
+			package_extract_dir("gapps/Search/Now/app", "/system/app");
+		endif;
+		if file_getprop("/tmp/aroma/version.prop", "selected") == "2" then
+			package_extract_dir("gapps/Search/Now/app", "/system/priv-app");
+		endif;
 	endif;
 
 # Other GApps
@@ -243,6 +245,7 @@ ui_print("	Other");
 
 	if file_getprop("/tmp/aroma/gapps.prop", "item.5.2") == "1" then
 		ui_print("		Camera");
+		#Deleting AOSP Gallery and Camera
 			if file_getprop("/tmp/aroma/version.prop", "selected") == "1" then
 				delete("/system/app/Gallery.apk", "/system/app/Gallery2.apk", "/system/app/GalleryGoogle.odex");
 			endif;
@@ -250,13 +253,15 @@ ui_print("	Other");
 				delete("/system/app/Gallery.apk", "/system/app/Gallery2.apk", "/system/app/Camera2.apk");
 				delete("/system/priv-app/Gallery.apk", "/system/priv-app/Gallery2.apk", "/system/priv-app/Camera2.apk");
 				delete("/system/app/GalleryGoogle.odex", "/system/app/GoogleCamera.odex", "/system/framework/com.google.android.camera2.odex");
-			endif;
-		package_extract_dir("gapps/Other/Camera/common", "/system");
-		package_extract_dir("gapps/Other/Camera/other", "/tmp/photosphere");
-		package_extract_dir("gapps/Plus/Plus", "/system");
-		set_perm(0, 0, 0777, "/tmp/photosphere/install-camera.sh");
-		run_program("/tmp/photosphere/install-camera.sh", "");
-		set_perm(0, 0, 0755, "/system/addon.d/74-googlecamera.sh");
+		endif;
+		# Installing Camera
+			package_extract_dir("gapps/Other/Camera/common", "/system");
+			package_extract_dir("gapps/Other/Camera/other", "/tmp/photosphere");
+			set_perm(0, 0, 0777, "/tmp/photosphere/install-camera.sh");
+			run_program("/tmp/photosphere/install-camera.sh", "");
+			set_perm(0, 0, 0755, "/system/addon.d/74-googlecamera.sh");
+		#Installing Google+
+			package_extract_dir("gapps/Plus/Plus", "/system");
 	endif;
 
 	if file_getprop("/tmp/aroma/gapps.prop", "item.5.3") == "1" then
@@ -294,32 +299,32 @@ ui_print("Removing System Apps");
 			delete("/system/app/Calendar.apk","/system/priv-app/Calendar.apk");
 		endif;
 
-		if file_getprop("/tmp/aroma/remover.prop", "item.1.1") == "1" then
+		if file_getprop("/tmp/aroma/remover.prop", "item.1.2") == "1" then
 			ui_print("		Email");
 			delete("/system/app/Email.apk","/system/priv-app/Email.apk","/system/app/EmailGoogle.apk","/system/priv-app/EmailGoogle.apk","/system/app/Exchange2.apk","/system/priv-app/Exchange2.apk","/system/app/Exchange2Google.apk","/system/priv-app/Exchange2Google.apk");
 		endif;
 	
-		if file_getprop("/tmp/aroma/remover.prop", "item.1.2") == "1" then
+		if file_getprop("/tmp/aroma/remover.prop", "item.1.3") == "1" then
 			ui_print("		Gallery");
 			delete("/system/app/Gallery.apk","/system/priv-app/Gallery.apk","/system/app/Gallery2.apk","/system/priv-app/Gallery2.apk","/system/app/GalleryGoogle.apk","/system/priv-app/GalleryGoogle.apk");
 		endif;
 	
-		if file_getprop("/tmp/aroma/remover.prop", "item.1.3") == "1" then
+		if file_getprop("/tmp/aroma/remover.prop", "item.1.4") == "1" then
 			ui_print("		Music");
 			delete("/system/app/Music.apk","/system/priv-app/Music.apk");
 		endif;
 	
-		if file_getprop("/tmp/aroma/remover.prop", "item.1.4") == "1" then
+		if file_getprop("/tmp/aroma/remover.prop", "item.1.5") == "1" then
 			ui_print("		SoundRecorder");
 			delete("/system/app/SoundRecorder.apk","/system/priv-app/SoundRecorder.apk");
 		endif;
 	
-		if file_getprop("/tmp/aroma/remover.prop", "item.1.5") == "1" then
+		if file_getprop("/tmp/aroma/remover.prop", "item.1.6") == "1" then
 			ui_print("		VideoEditor");
 			delete("/system/app/VideoEditor.apk","/system/priv-app/VideoEditor.apk");
 		endif;
 	
-		if file_getprop("/tmp/aroma/remover.prop", "item.1.6") == "1" then
+		if file_getprop("/tmp/aroma/remover.prop", "item.1.7") == "1" then
 			ui_print("		VoiceDialer");
 			delete("/system/app/VoiceDialer.apk","/system/priv-app/VoiceDialer.apk");
 		endif;
