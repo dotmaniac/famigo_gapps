@@ -172,11 +172,6 @@ set_progress(0.23);
 			package_extract_dir("gapps/Drive/Keep", "/system/app");
 		endif;
 	
-		if file_getprop("/tmp/aroma/gapps.prop", "item.2.3") == "1" then
-			ui_print("		Quickoffice");
-			package_extract_dir("gapps/Drive/Office", "/system/app");
-		endif;
-	
 	# Google Play
 	set_progress(0.35);
 	ui_print("	Google Play");
@@ -275,19 +270,15 @@ set_progress(0.23);
 			package_extract_dir("gapps/Other/Keyboard", "/system/app");
 		endif;
 	
-	if file_getprop("/tmp/aroma/version.prop", "selected") == "1" then
 		if file_getprop("/tmp/aroma/gapps.prop", "item.5.5") == "1" then
 			ui_print("		Wallet");
-			package_extract_dir("gapps/Other/Wallet", "/system/app");
+			if file_getprop("/tmp/aroma/version.prop", "selected") == "1" then
+				package_extract_dir("gapps/Other/Wallet", "/system/app");
+			endif;
+			if file_getprop("/tmp/aroma/version.prop", "selected") == "1" then
+				package_extract_dir("gapps/Other/Wallet", "/system/priv-app");
+			endif;
 		endif;
-	endif;
-
-	if file_getprop("/tmp/aroma/version.prop", "selected") == "2" then
-		if file_getprop("/tmp/aroma/gapps.prop", "item.5.5") == "1" then
-			ui_print("		Wallet");
-			package_extract_dir("gapps/Other/Wallet", "/system/priv-app");
-		endif;
-	endif;
 	
 		if file_getprop("/tmp/aroma/gapps.prop", "item.5.6") == "1" then
 			ui_print("		YouTube");
@@ -325,16 +316,11 @@ set_progress(0.23);
 		endif;
 	
 		if file_getprop("/tmp/aroma/remover.prop", "item.1.5") == "1" then
-			ui_print("		Tags");
-			delete("/system/app/Tags.apk","/system/priv-app/Tags.apk");
-		endif;
-	
-		if file_getprop("/tmp/aroma/remover.prop", "item.1.6") == "1" then
 			ui_print("		VideoEditor");
 			delete("/system/app/VideoEditor.apk","/system/priv-app/VideoEditor.apk");
 		endif;
 	
-		if file_getprop("/tmp/aroma/remover.prop", "item.1.7") == "1" then
+		if file_getprop("/tmp/aroma/remover.prop", "item.1.6") == "1" then
 			ui_print("		VoiceDialer");
 			delete("/system/app/VoiceDialer.apk","/system/priv-app/VoiceDialer.apk");
 		endif;
@@ -370,17 +356,12 @@ set_progress(0.23);
 			delete("/system/app/LockClock.apk","/system/priv-app/LockClock.apk");
 		endif;
 	
-		if file_getprop("/tmp/aroma/remover.prop", "item.3.5") == "1" then
-			ui_print("		Updater");
-			delete("/system/app/CMUpdater.apk","/system/priv-app/CMUpdater.apk");
-		endif;
-	
-		if file_getprop("/tmp/aroma/remover.prop", "item.3.6")=="1" then
+		if file_getprop("/tmp/aroma/remover.prop", "item.3.5")=="1" then
 			ui_print("		VoicePlus");
 			delete("/system/app/VoicePlus.apk","/system/priv-app/VoicePlus.apk");
 		endif;
 	
-		if file_getprop("/tmp/aroma/remover.prop", "item.3.7") == "1" then
+		if file_getprop("/tmp/aroma/remover.prop", "item.3.6") == "1" then
 			ui_print("		Wallpapers");
 			delete("/system/app/CMWallpapers.apk","/system/priv-app/CMWallpapers.apk");
 		endif;
@@ -432,10 +413,10 @@ set_progress(0.23);
 	set_progress(0.87);
 	ui_print("	Live Wallpapers");
 		if file_getprop("/tmp/aroma/remover.prop", "item.6.1") == "1" then
-			ui_print("		Picker");
-			delete("/system/app/LiveWallpapersPicker.apk","/system/priv-app/LiveWallpapersPicker.apk");
+			ui_print("		Basic");
+			delete("/system/app/LiveWallpapers.apk","/system/priv-app/LiveWallpapers.apk");
 		endif;
-	
+
 		if file_getprop("/tmp/aroma/remover.prop", "item.6.2") == "1" then
 			ui_print("		Galaxy4");
 			delete("/system/app/Galaxy4.apk","/system/priv-app/Galaxy4.apk");
@@ -456,22 +437,17 @@ set_progress(0.23);
 			delete("/system/app/NoiseField.apk","/system/priv-app/NoiseField.apk");
 		endif;
 	
-		if file_getprop("/tmp/aroma/remover.prop", "item.6.6") == "1" then
-			ui_print("		Other");
-			delete("/system/app/LiveWallpapers.apk","/system/priv-app/LiveWallpapers.apk");
-		endif;
-	
-		if file_getprop("/tmp/aroma/remover.prop", "item.6.7") == "1" then 
+		if file_getprop("/tmp/aroma/remover.prop", "item.6.6") == "1" then 
 			ui_print("		PhaseBeam");
 			delete("/system/app/PhaseBeam.apk","/system/priv-app/PhaseBeam.apk");
 		endif;
 	
-		if file_getprop("/tmp/aroma/remover.prop", "item.6.8") == "1" then 
+		if file_getprop("/tmp/aroma/remover.prop", "item.6.7") == "1" then 
 			ui_print("		SunBeam");
 			delete("/system/app/SunBeam.apk","/system/priv-app/SunBeam.apk");
 		endif;
 	
-		if file_getprop("/tmp/aroma/remover.prop", "item.6.9") == "1" then 
+		if file_getprop("/tmp/aroma/remover.prop", "item.6.8") == "1" then 
 			ui_print("		Visualization");
 			delete("/system/app/VisualizationWallpapers.apk","/system/priv-app/VisualizationWallpapers.apk");
 		endif;
@@ -485,7 +461,7 @@ set_progress(0.23);
 		endif;
 	
 		if file_getprop("/tmp/aroma/remover.prop", "item.7.2")=="1" then
-			ui_print("		GooglePacman");
+			ui_print("		Game");
 			delete("/system/app/GooglePacman.apk","/system/priv-app/GooglePacman.apk");
 		endif;
 	
