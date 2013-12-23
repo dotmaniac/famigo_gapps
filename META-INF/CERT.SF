@@ -1,0 +1,556 @@
+Signature-Version: 1.0
+Created-By: 1.0 (Android SignApk)
+SHA1-Digest-Manifest: zRNndippjEx+MPZfy/cjpb5X5n8=
+
+Name: data/CoreApps[Required]/app/NetworkLocation.apk
+SHA1-Digest: oaaE0Ug8noQ5sJEzBfbWNMEg2Hs=
+
+Name: data/CoreApps[Required]/usr/srec/en-US/dictation.config
+SHA1-Digest: FdKlt1T/MYhSEMQkwdTnzv1WFWE=
+
+Name: data/CoreApps[Required]/usr/srec/en-US/google_hotword.config
+SHA1-Digest: 001hh1d8Big2p7s0IQK4MWV4a8A=
+
+Name: META-INF/com/google/android/aroma/themes/ics/cb_on_press.png
+SHA1-Digest: t4fWHawX2gCdex89o0mdC15Ssrs=
+
+Name: data/CoreApps[Required]/tts/lang_pico/fr-FR_nk0_sg.bin
+SHA1-Digest: YKEXjMhHW48aXZiHvO7GkHyFEZs=
+
+Name: META-INF/com/google/android/aroma/langs/es.lang
+SHA1-Digest: +iJ75FuvKuzBLU3BdVmN2FLEYE4=
+
+Name: data/CoreApps[Required]/usr/srec/en-US/metadata
+SHA1-Digest: SW4e1hqXbgOCeZ6pv9t14C+S6NM=
+
+Name: data/CoreApps[Required]/tts/lang_pico/it-IT_cm0_sg.bin
+SHA1-Digest: aSN4EWdAmLjfSbIJ0Pdy65HIfzY=
+
+Name: data/FaceLock/vendor/pittpatt/models/detection/multi_pose_face_l
+ andmark_detectors.7/left_eye-y0-yi45-p0-pi45-r0-ri20.lg_32.bin
+SHA1-Digest: 2F4iicc5rF/NHkb20S4tMy161A4=
+
+Name: data/CoreApps[Required]/app/GoogleCalendarSyncAdapter.apk
+SHA1-Digest: 4xZKgKGio1XRs+aZmDjt+6vkMAU=
+
+Name: data/CoreApps[Required]/app/MediaUploader.apk
+SHA1-Digest: 6h6AHgExY5OWqmhmVuPQzldej9c=
+
+Name: META-INF/com/google/android/updater-script
+SHA1-Digest: symVuNcbuBfrBwxnAj5y50n2IFs=
+
+Name: data/VoiceDialer/VoiceSearchStub.apk
+SHA1-Digest: op5lqv5Td7YhtDbPH1QBjLMV0n4=
+
+Name: data/CoreApps[Required]/usr/srec/config/en.us/g2p/en-US-ttp.data
+SHA1-Digest: V3k6Og3Xgqb4q9bI0Peuhtmc+Bk=
+
+Name: data/CoreApps[Required]/usr/srec/en-US/endpointer_voicesearch.co
+ nfig
+SHA1-Digest: /vFC6w5uEBMy6kw2Uu1kN3fazuo=
+
+Name: data/VoiceDialer/VoiceDialer.apk
+SHA1-Digest: BvFRMaEJSuc96G7DRGZGcE4Ig0g=
+
+Name: data/NormalCalendar/Calendar.apk
+SHA1-Digest: wj56jQxRifNH0QRWwAqj5ni2Tyc=
+
+Name: data/CoreApps[Required]/usr/srec/en-US/normalizer
+SHA1-Digest: HxPH/50dJIG7prT4R6vffip++ME=
+
+Name: META-INF/com/google/android/aroma/ttf/Roboto-Regular.ttf
+SHA1-Digest: nC3xcRHVS6YNs4HEquTNXYJb9Dg=
+
+Name: data/Themes/Trans-X.apk
+SHA1-Digest: +nlhPQ9BhhKjFUVvyyGMwzRrcGM=
+
+Name: META-INF/com/google/android/aroma/themes/ics/radio.png
+SHA1-Digest: L5WWO96UCuKmNVQRAfatnycyGGU=
+
+Name: META-INF/com/google/android/aroma/langs/en.lang
+SHA1-Digest: dsF2TAzzCEJGUoTLkHZkyTAXcks=
+
+Name: META-INF/com/google/android/aroma/themes/ics/icon.alert.png
+SHA1-Digest: RSeRbJZ4Vh6IaShDH+D8CnqeSFY=
+
+Name: data/GenieWidget/GenieWidget.apk
+SHA1-Digest: CgiDoieYzSwaCLroq8D15ZGvpgw=
+
+Name: data/CoreApps[Required]/etc/permissions/com.google.android.media
+ .effects.xml
+SHA1-Digest: IIeWZuZwgsi7fpOAi66gfEYWbH0=
+
+Name: data/CoreApps[Required]/usr/srec/config/en.us/baseline8k.par
+SHA1-Digest: zMnovuV+ykq2WBuztrFd+fqTcbI=
+
+Name: META-INF/com/google/android/update-binary-installer
+SHA1-Digest: 4CM7KPKlLYA7EksB7xLN4cAXpjE=
+
+Name: data/CoreApps[Required]/etc/permissions/com.google.widevine.soft
+ ware.drm.xml
+SHA1-Digest: bnbtTR8qs73fSZxNjit+lVFZMp8=
+
+Name: data/CoreApps[Required]/app/LatinImeDictionaryPack.apk
+SHA1-Digest: 6X2y1gMvJk63Fn8JqnkRoc+2otM=
+
+Name: data/Viper4Android/app/ViPER4Android_4.x_2313.apk
+SHA1-Digest: yiLZc2tGT8m7ULcp603awGK1fnQ=
+
+Name: META-INF/com/google/android/aroma/themes/ics/icon.info.png
+SHA1-Digest: oFz4xZRTKbVpUoyceqMr+2uoxXE=
+
+Name: data/CoreApps[Required]/tts/lang_pico/es-ES_zl0_sg.bin
+SHA1-Digest: dLL2rxm6MpzMcNdzdt952Gsf0xQ=
+
+Name: data/CoreApps[Required]/app/SetupWizard.apk
+SHA1-Digest: UkQOOPH2zVpIzeTB9A4aff+SFLM=
+
+Name: data/CoreApps[Required]/usr/srec/config/en.us/models/generic8.ld
+ a
+SHA1-Digest: 5irVOz0WKpODevvWPL4EgN4yyZk=
+
+Name: META-INF/com/google/android/aroma/themes/ics/radio_focus.png
+SHA1-Digest: mc6Y5AaUFWfR/Gd/ylfQLSiy6+w=
+
+Name: data/NormalYouTube/YouTube.apk
+SHA1-Digest: HsJ9FNQIGlRydaWmbcGriVSFEY8=
+
+Name: data/TalkBack/TalkBack.apk
+SHA1-Digest: 8m8+xBUtaMik7hxIf2Z1Ry8mBa4=
+
+Name: data/Xposed/XposedInstaller.apk
+SHA1-Digest: Xd4tQaz0/CF923K43I0sWfYXWII=
+
+Name: data/CoreApps[Required]/app/ConfigUpdater.apk
+SHA1-Digest: DAqv6Kdo8BfxMbQciWww51T8XD0=
+
+Name: data/GoogleTexttoSpeech/GoogleTTS.apk
+SHA1-Digest: 4wn8qdzEsGGQj+26dlwX4bTEsJM=
+
+Name: data/InvertedPlayStore/Phonesky.apk
+SHA1-Digest: n0yg8rt9RzlE32HSseq0eYs0CVU=
+
+Name: META-INF/com/google/android/aroma/themes/ics/font.roboto.small.p
+ ng
+SHA1-Digest: jjgJgDNYWqhvl+7MSMSxXDTxNzk=
+
+Name: META-INF/com/google/android/aroma/themes/ics/icon.apps.png
+SHA1-Digest: se2UdiTYmEMLqv6MDk1DSUOgy9M=
+
+Name: data/CoreApps[Required]/etc/g.prop
+SHA1-Digest: ATv6qcn9aMfN/icPaFSAvB0nW5s=
+
+Name: data/CoreApps[Required]/usr/srec/en-US/classifier
+SHA1-Digest: pjmjCsjo7Kt4qvpUHj17DC+2Dtk=
+
+Name: data/CoreApps[Required]/lib/libspeexwrapper.so
+SHA1-Digest: NldgbCIK1yoe9G2WDZiXiEedxFI=
+
+Name: META-INF/com/google/android/aroma/themes/ics/radio_press.png
+SHA1-Digest: /qR7oa4teD78xLZ7nRG8UgRe8xI=
+
+Name: data/CoreApps[Required]/tts/lang_pico/it-IT_ta.bin
+SHA1-Digest: volYGLRUqMIUFWy2mB671GscJfo=
+
+Name: data/NormalGmail/Gmail.apk
+SHA1-Digest: a+BwaftCdv61nlw5ATUVVJuGaoc=
+
+Name: data/InvertedCalendar/Calendar.apk
+SHA1-Digest: o1kuJSRhOvR8B7OfdJ1lgutDae4=
+
+Name: data/CoreApps[Required]/usr/srec/en-US/hotword_word_symbols
+SHA1-Digest: ecobh6hfHh/Q+moyy+2SOjBokS4=
+
+Name: data/CoreApps[Required]/usr/srec/en-US/contacts.abnf
+SHA1-Digest: JTdw/IDGkdIzMqiXk0HgJph3FTo=
+
+Name: META-INF/com/google/android/aroma/splash.png
+SHA1-Digest: 8Mwr9eihrazonHfOtlkpn1Jsa0A=
+
+Name: data/CoreApps[Required]/tts/lang_pico/fr-FR_ta.bin
+SHA1-Digest: sOTq5QZkzzkbFKPz3QXZZhRXTPU=
+
+Name: data/CoreApps[Required]/usr/srec/en-US/norm_fst
+SHA1-Digest: /vRgqZkEmQPejny4HPbFxvmYgGY=
+
+Name: data/Apex/Apex.apk
+SHA1-Digest: FhSPmiA0ryeuVolfkNoKHU4Vbac=
+
+Name: data/CoreApps[Required]/addon.d/70-gapps.sh
+SHA1-Digest: oqSx3C7RDDyX1PB113c2yOfpFds=
+
+Name: data/CoreApps[Required]/usr/srec/config/en.us/grammars/phone_typ
+ e_choice.g2g
+SHA1-Digest: xfyBeFOvJgBVkQJImqKgWjSMQrE=
+
+Name: data/CoreApps[Required]/usr/srec/config/en.us/models/generic11_m
+ .swimdl
+SHA1-Digest: zMKLVCRUyR640USSj6CdEY2aGLw=
+
+Name: data/NormalPlayStore/Phonesky.apk
+SHA1-Digest: K63hqjuOHgfAqY6xWw5K7KHWVdU=
+
+Name: data/Themes/KitKat.apk
+SHA1-Digest: GlA4iRSWJEmdbcA8QRLogj+4o+Y=
+
+Name: data/Viper4Android/lib/soundfx/libv4a_fx_ics.so
+SHA1-Digest: sJtM+jRhh7k7ODLKvUTTQx6jixk=
+
+Name: META-INF/com/google/android/aroma/themes/ics/icon.confirm.png
+SHA1-Digest: NeOdwqcZiKS6We4tBijdbgT2IZM=
+
+Name: data/CoreApps[Required]/app/GooglePartnerSetup.apk
+SHA1-Digest: hwAN8ACWg59Vj6WsmEc/eu6GnJ4=
+
+Name: data/CoreApps[Required]/usr/srec/en-US/grammar.config
+SHA1-Digest: IoI3MwKUnlBN9PaRQZ4/Kq3AmEs=
+
+Name: META-INF/com/google/android/aroma/themes/ics/radio_on_focus.png
+SHA1-Digest: gcBtbCN9TutMb6PCdunnOLX4CCg=
+
+Name: data/Viper4Android/etc/audio_effects.conf
+SHA1-Digest: fc7/dL4EQi47WnogiM9tSXijkQ8=
+
+Name: data/Nova/Nova.apk
+SHA1-Digest: vB4cdha3H6OSmXJcyujqDttfPd0=
+
+Name: META-INF/com/google/android/aroma/themes/ics/titlebar.9.png
+SHA1-Digest: IEBBUZsIyrmQMyVaMvO/Tlba22M=
+
+Name: data/InvertedEmail/Email.apk
+SHA1-Digest: q7iItbuEu/LbRHpzfQ9TAsASpzk=
+
+Name: data/CoreApps[Required]/tts/lang_pico/de-DE_ta.bin
+SHA1-Digest: v5+3jZn5t+y1VYCWwNXN2a8mZ8A=
+
+Name: data/CoreApps[Required]/etc/permissions/com.google.android.maps.
+ xml
+SHA1-Digest: MVJebP6R9kGoTiWmp2F31+yoHww=
+
+Name: META-INF/com/google/android/aroma/themes/ics/Thumbs.db
+SHA1-Digest: GcNjgi4zWsgKSigHqLgYkJpN5Hk=
+
+Name: data/CoreApps[Required]/tts/lang_pico/de-DE_gl0_sg.bin
+SHA1-Digest: Bb4XkeaKhFWy6Q/cNsNsK6BM6ig=
+
+Name: data/CoreApps[Required]/app/GoogleLoginService.apk
+SHA1-Digest: fKJErLlvMttLAloSNqGPTzvT678=
+
+Name: data/CoreApps[Required]/usr/srec/en-US/endpointer_dictation.conf
+ ig
+SHA1-Digest: 63bQeiHKP3Vkcb2XElVHq95sgzw=
+
+Name: data/InvertedGmail/Gmail.apk
+SHA1-Digest: o7GbVF6vI2DODdxqw5qMykMNz0s=
+
+Name: META-INF/com/google/android/aroma/themes/ics/cb_press.png
+SHA1-Digest: sUWlfvL5aXLZOUqy5GKbPf6RHwc=
+
+Name: data/FaceLock/vendor/pittpatt/models/detection/yaw_roll_face_det
+ ectors.6/head-y0-yi45-p0-pi45-rn30-ri30.5-v24.bin
+SHA1-Digest: XcZ47fU9ZSf/H00uexMiZOadzYU=
+
+Name: data/CoreApps[Required]/app/GoogleContactsSyncAdapter.apk
+SHA1-Digest: FrGY+X0urTukI8d/ewqQaLVHRP8=
+
+Name: META-INF/com/google/android/aroma/themes/ics/list.9.png
+SHA1-Digest: B+R2hwgfuzgqX6PzGYL38+Cfuc4=
+
+Name: META-INF/com/google/android/aroma/themes/ics/icon.agreement.png
+SHA1-Digest: bNFHCFfeZHgljY65fbfvjZoV5J8=
+
+Name: META-INF/com/google/android/aroma/langs/fr.lang
+SHA1-Digest: 16Q502RBPhXksqKMLgoEe1OcimQ=
+
+Name: data/CoreApps[Required]/app/ChromeBookmarksSyncAdapter.apk
+SHA1-Digest: acYRMJZ4zLsA44KvJrX9/x7BCd4=
+
+Name: data/CoreApps[Required]/usr/srec/config/en.us/grammars/boolean.g
+ 2g
+SHA1-Digest: 7D8gTNuunm8XcThAbASZSXBvno4=
+
+Name: data/CoreApps[Required]/usr/srec/en-US/hmmlist
+SHA1-Digest: sn34BdNvhmzvFH9IMXSvfKW2FF4=
+
+Name: data/CoreApps[Required]/app/GmsCore.apk
+SHA1-Digest: pL1rWynf8njNzwaV1eDwINetks4=
+
+Name: data/CoreApps[Required]/etc/preferred-apps/google.xml
+SHA1-Digest: ARqOTlRcvAlwkiN2SNJIicvI3Sg=
+
+Name: data/CoreApps[Required]/usr/srec/config/en.us/models/generic.swi
+ arb
+SHA1-Digest: u/uEBfXGtvBYoPIpqoimmHWtgrE=
+
+Name: data/FaceLock/addon.d/71-gapps-faceunlock.sh
+SHA1-Digest: QebECk1wVV8t1UUrFB5ipQtVlsk=
+
+Name: data/CoreApps[Required]/lib/libpatts_engine_jni_api.so
+SHA1-Digest: H5qvf6jChxDqUsmMJCrJNoyxcqo=
+
+Name: META-INF/com/google/android/aroma/themes/ics/button_focus.9.png
+SHA1-Digest: w5n7UVUlvwFoFJb8SOA9xXk/EGY=
+
+Name: data/GoogleEars[AudioSearch]/app/GoogleEars.apk
+SHA1-Digest: FUlLxyIpsjXiwDHz62cwQ3e1KQg=
+
+Name: data/CoreApps[Required]/usr/srec/config/en.us/dictionary/enroll.
+ ok
+SHA1-Digest: 3wxT/7I5wZl/c3TPZnb5lttJ0Xc=
+
+Name: data/CoreApps[Required]/usr/srec/config/en.us/models/generic11_f
+ .swimdl
+SHA1-Digest: q5VlmHYpalbcsE4ubxtBTqBkMTk=
+
+Name: data/CoreApps[Required]/framework/com.google.widevine.software.d
+ rm.jar
+SHA1-Digest: E8WTyiWkEp5caSwbJnyi16iET1Q=
+
+Name: data/CoreApps[Required]/usr/srec/en-US/offensive_word_normalizer
+SHA1-Digest: +8QDvGI8hPuNdMLdEOSucvqO/04=
+
+Name: data/FaceLock/vendor/pittpatt/models/detection/yaw_roll_face_det
+ ectors.6/head-y0-yi45-p0-pi45-rp30-ri30.5-v24.bin
+SHA1-Digest: zTqwzmlvp1bI7xDb4arPnoXSOzY=
+
+Name: data/NormalEmail/Email.apk
+SHA1-Digest: v+4UOPPu0LOP3ZuOor0YEkPJKlE=
+
+Name: data/CoreApps[Required]/usr/srec/en-US/hmm_symbols
+SHA1-Digest: Cmh/WLiGg9aLjQpMcFEbLitYB7k=
+
+Name: data/CoreApps[Required]/usr/srec/en-US/compile_grammar.config
+SHA1-Digest: X3Li7Bx2e0ij+/Tr1tTll55XRHs=
+
+Name: utils/mount
+SHA1-Digest: BB8oaUQ2MmH0AK+zxWJcUl/Kh4k=
+
+Name: META-INF/com/google/android/aroma/themes/ics/icon.install.png
+SHA1-Digest: iE651I7dDl9bfmqrnntf5TNE6/s=
+
+Name: data/FaceLock/vendor/pittpatt/models/detection/yaw_roll_face_det
+ ectors.6/head-y0-yi45-p0-pi45-r0-ri30.4a-v24.bin
+SHA1-Digest: N6xB9+Xo1uAMfebZ9578w8esnWw=
+
+Name: data/MiFileExplorer/MiFileExplorer.apk
+SHA1-Digest: loVHg5s/597SAKRXveJMzg8kopg=
+
+Name: META-INF/com/google/android/aroma/themes/ics/dialog.9.png
+SHA1-Digest: zLeGdhrI4h9s9Ahq/Dkv2dzmQWw=
+
+Name: data/Exchange2/Exchange2.apk
+SHA1-Digest: 0NaGkth+lcD7u/5eYzCfANR61/U=
+
+Name: data/CoreApps[Required]/usr/srec/config/en.us/models/generic8_f.
+ swimdl
+SHA1-Digest: oBjvXMea2tHtCwmIOZwaGeSGmx8=
+
+Name: data/CoreApps[Required]/framework/com.google.android.maps.jar
+SHA1-Digest: Vle50FgD9U5AgGYYpeZ16AnAdnQ=
+
+Name: data/NormalGooglePlus/GooglePlus.apk
+SHA1-Digest: vqmZFt/UZatBmvRdYCY0fHENXDU=
+
+Name: META-INF/com/google/android/aroma/themes/ics/icon.personalize.pn
+ g
+SHA1-Digest: a/s7x/VxmvpD4O3JXaZYc4O7Zlk=
+
+Name: data/NormalGoogleNow/QuickSearchBox.apk
+SHA1-Digest: aygJRHEFsLyCcpmbi+nr1wdZpsA=
+
+Name: data/CoreApps[Required]/usr/srec/en-US/g2p_fst
+SHA1-Digest: WMmBoglnyDXtj4EVPvGvdHv33fU=
+
+Name: META-INF/com/google/android/aroma/themes/ics/theme.prop
+SHA1-Digest: r+U/hn4koWmAI8zRnDBhCZKVRwU=
+
+Name: data/CoreApps[Required]/app/GoogleServicesFramework.apk
+SHA1-Digest: LygwZByLvPJSjzZ4yyj5BvxkLrM=
+
+Name: META-INF/com/google/android/aroma/themes/ics/radio_on_press.png
+SHA1-Digest: 7RpN2LQRw8TWlxyiukM/7A2PdOg=
+
+Name: data/CoreApps[Required]/usr/srec/en-US/c_fst
+SHA1-Digest: dIBpKLCqQFsqDBUWVQrDJhauG1M=
+
+Name: data/CoreApps[Required]/usr/srec/config/en.us/dictionary/basic.o
+ k
+SHA1-Digest: rZ4p+tbwUhWqBH+cNpTboWoRJJc=
+
+Name: META-INF/com/google/android/aroma/themes/ics/button_press.9.png
+SHA1-Digest: qG+VHUE+wQNxhkh5DfROrde6Nrs=
+
+Name: data/CoreApps[Required]/usr/srec/en-US/dnn
+SHA1-Digest: MIoyOqGwDbw1ZAYFKLM0uT0ZBGg=
+
+Name: data/CoreApps[Required]/lib/libgames_rtmp_jni.so
+SHA1-Digest: GaWXbzTx8Zf8eRLHLOfpZh5bDmA=
+
+Name: META-INF/com/google/android/aroma/themes/ics/icon.update.png
+SHA1-Digest: PL+WFvtXH1mmxTnK56A6LmJSu8I=
+
+Name: META-INF/com/google/android/aroma/themes/ics/font.roboto.big.png
+SHA1-Digest: WU8vBmuSaW7LJG3swzSo630ZwFY=
+
+Name: data/CoreApps[Required]/etc/permissions/features.xml
+SHA1-Digest: uuB4bG+M6uaIDNN8GSra5bHtMaQ=
+
+Name: data/CoreApps[Required]/usr/srec/en-US/ep_acoustic_model
+SHA1-Digest: 00cI3E3LmpHeQ2jpicJFGwH0NdI=
+
+Name: META-INF/com/google/android/aroma/themes/ics/icon.customize.png
+SHA1-Digest: URmDGP67AGNJDnfpFw2Iqgi4NrA=
+
+Name: data/CoreApps[Required]/usr/srec/en-US/dict
+SHA1-Digest: P18mkmnXIs3fVG+kNAERStiAILY=
+
+Name: data/CoreApps[Required]/tts/lang_pico/es-ES_ta.bin
+SHA1-Digest: pHBX/lYgU0UQSp6GmaFkykEOt1I=
+
+Name: META-INF/com/google/android/aroma/themes/ics/button.9.png
+SHA1-Digest: inlNngzGeTHhr3k9oEngOZZ7tAY=
+
+Name: data/FaceLock/vendor/pittpatt/models/detection/multi_pose_face_l
+ andmark_detectors.7/nose_base-y0-yi45-p0-pi45-r0-ri20.lg_32.bin
+SHA1-Digest: 3fHvOjReO1tZmSOJ3R02LJOuGIk=
+
+Name: data/CoreApps[Required]/lib/libAppDataSearch.so
+SHA1-Digest: /ippoHvpLMIqre1kqsm/C9PFM2I=
+
+Name: META-INF/com/google/android/aroma/themes/ics/bg.png
+SHA1-Digest: oYd9jQZt2QMWh26+CVWEMuo4dQE=
+
+Name: utils/sql
+SHA1-Digest: xbNE8GilwoaUPLA0WhPWf6lQB/8=
+
+Name: data/Gravity/Gravitybox.apk
+SHA1-Digest: XCdYLrwr3reKToecRLMNgaTgwTE=
+
+Name: data/CoreApps[Required]/usr/srec/en-US/wordlist
+SHA1-Digest: FVpfxyjdgPG065Ya5PYpX4/NjYk=
+
+Name: META-INF/com/google/android/aroma/themes/ics/cb_on.png
+SHA1-Digest: 3+/NDW42LnvT0UUXUxl/sMDm4S8=
+
+Name: data/CoreApps[Required]/usr/srec/en-US/rescoring_lm
+SHA1-Digest: kbCbvhuwt4IOl+mJhR9Z5tx74O8=
+
+Name: data/CoreApps[Required]/app/GoogleBackupTransport.apk
+SHA1-Digest: tkNGVbJ8ox6+W5e5vxaEEV0hdqI=
+
+Name: data/CoreApps[Required]/framework/com.google.android.media.effec
+ ts.jar
+SHA1-Digest: LdTigyM4IiwIH/q/UjR5Rll2Mnw=
+
+Name: META-INF/com/google/android/aroma/themes/ics/radio_on.png
+SHA1-Digest: ldaxQ6iz+58gaKxwQX6g/TiDP/I=
+
+Name: META-INF/com/google/android/aroma/themes/ics/cb.png
+SHA1-Digest: TsdIj4ocg4g01G9sNWf9yauJ91w=
+
+Name: data/CoreApps[Required]/usr/srec/config/en.us/baseline11k.par
+SHA1-Digest: 1sUbHu50bnZag9OnISOr8Gq95nI=
+
+Name: META-INF/com/google/android/aroma/langs/de.lang
+SHA1-Digest: Hqhvcfp75OQULTbOo+YiRzQ5Lis=
+
+Name: data/TB/TitaniumBackup.apk
+SHA1-Digest: 1oQSPMrGcwPAlGiwKiVfrNZrJYM=
+
+Name: META-INF/com/google/android/aroma/themes/ics/icon.license.png
+SHA1-Digest: Ql4JmT3oOqp8k15r0gqe2LevW1E=
+
+Name: data/FaceLock/lib/libfacelock_jni.so
+SHA1-Digest: kzW7MWMaLzmQAxRpugbPZ+WJ2s0=
+
+Name: data/InvertedYouTube/YouTube.apk
+SHA1-Digest: jdUZ9N0pdWkbCeXcsLsXQTGvW1M=
+
+Name: data/CoreApps[Required]/usr/srec/en-US/phone_state_map
+SHA1-Digest: qO65ZFiJls7BXJTluZaunczeJng=
+
+Name: data/CoreApps[Required]/usr/srec/en-US/hotword_normalizer
+SHA1-Digest: dl9q48GAS25G4CCvvY6DXKr0Y8g=
+
+Name: data/Viper4Android/lib/soundfx/libv4a_fx_jb.so
+SHA1-Digest: qOIjw1OfP5S9U69b4gD+rpdXBe8=
+
+Name: data/FaceLock/vendor/pittpatt/models/recognition/face.face.y0-y0
+ -22-b-N.bin
+SHA1-Digest: sjvhGF2xmrHnXt611CsWQBkQzyE=
+
+Name: data/Greenify/Greenify.apk
+SHA1-Digest: fk83yoFp0SNRn3bhtEbZQv6aDnU=
+
+Name: META-INF/com/google/android/aroma/themes/ics/icon.welcome.png
+SHA1-Digest: 9tKyYlrCcW3I5McUbHR7K3LAxkg=
+
+Name: META-INF/com/google/android/aroma/themes/ics/icon.default.png
+SHA1-Digest: 2otaWdgDDpwzQXynf7buJUM1coc=
+
+Name: data/CoreApps[Required]/usr/srec/en-US/hclg_shotword
+SHA1-Digest: 50jmo4Zu54QQr4auL+VTYYt3IYc=
+
+Name: data/FaceLock/vendor/pittpatt/models/detection/multi_pose_face_l
+ andmark_detectors.7/right_eye-y0-yi45-p0-pi45-r0-ri20.lg_32-2.bin
+SHA1-Digest: G0DaRfozdaOZFhu1kYXEwtnr0kU=
+
+Name: data/GoogleEars[AudioSearch]/lib/libvorbisencoder.so
+SHA1-Digest: PhAlVIL57Qe8Ev3HK/YZxkNILyA=
+
+Name: data/CoreApps[Required]/usr/srec/en-US/phonelist
+SHA1-Digest: 5RbJY4bV3Wr+KiBuL81ujmPkWUw=
+
+Name: data/CoreApps[Required]/usr/srec/config/en.us/baseline.par
+SHA1-Digest: KYGEdJZBwduRQtbvUy5YAohv3sA=
+
+Name: META-INF/com/google/android/aroma/themes/ics/dialog_titlebar.9.p
+ ng
+SHA1-Digest: OdC1uKlxZ4hq/SY4Do3CDVRtpYo=
+
+Name: data/CoreApps[Required]/usr/srec/config/en.us/dictionary/cmu6plu
+ s.ok.zip
+SHA1-Digest: tegTp7afUrW2n/yEd4TWn4wfV/o=
+
+Name: META-INF/com/google/android/update-binary
+SHA1-Digest: +Hc5mmK0diiOVs20WtZ2N6S2LqI=
+
+Name: data/CoreApps[Required]/app/GoogleFeedback.apk
+SHA1-Digest: SuJpRwMzUwIvxaOtgLZXA2i7OV4=
+
+Name: data/NormalTalk/Hangouts.apk
+SHA1-Digest: 1+8gqYl0iSWUf6laA6ugozLuYUI=
+
+Name: META-INF/com/google/android/aroma/themes/ics/cb_focus.png
+SHA1-Digest: 2eKh7Kk2GwWQJ32mZlEkqfD5oTA=
+
+Name: META-INF/com/google/android/aroma-config
+SHA1-Digest: icbaxkEnS9uUx4K3MZKObej/sh4=
+
+Name: META-INF/com/google/android/aroma/langs/it.lang
+SHA1-Digest: tMiCxOd7EJhwPbD23IjapjPfhuU=
+
+Name: META-INF/com/google/android/aroma/themes/ics/navbar.9.png
+SHA1-Digest: dI2wsZnQtjYgoq6Uso8hWb9oKJM=
+
+Name: data/CoreApps[Required]/usr/srec/config/en.us/models/generic8_m.
+ swimdl
+SHA1-Digest: 3DzOlxKT2pHD3gzdb7KF9HoGe1Q=
+
+Name: data/CoreApps[Required]/usr/srec/config/en.us/grammars/VoiceDial
+ er.g2g
+SHA1-Digest: 3+mSzJAGkvg3nEIbgB8dp7wPiOE=
+
+Name: META-INF/com/google/android/aroma/themes/ics/cb_on_focus.png
+SHA1-Digest: VrMjtDhrQTLvfJqZZ+PQjS0EM9s=
+
+Name: data/CoreApps[Required]/usr/srec/en-US/clg
+SHA1-Digest: IO4zI4Jdrh2m0K/cxp3B7YNOkO0=
+
+Name: data/FaceLock/app/FaceLock.apk
+SHA1-Digest: ASGFaaQKB4QYJ/abk7e4tueEPGE=
+
+Name: data/CoreApps[Required]/usr/srec/config/en.us/models/generic11.l
+ da
+SHA1-Digest: nWkhBk7B/wJIzOTkZyRkxvbrOLc=
+
