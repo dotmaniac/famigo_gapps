@@ -2,25 +2,23 @@
 	if prop("home.prop","selected") == "1" then
 		viewbox(
 			"<~welcome.title>",
-			"<~welcome.updated> <b><#selectbg_g>" + ini_get("rom_date") +	"</#></b>\n" +
-				"\n"+
-				"Visit our XDA Thread \n"+
-					"\t Link: <#selectbg_g> http://goo.gl/VAHh7C </#> \n"+
-				"\n"+
-				"Follow me on Google+ \n"+
-					"\t Link: <#selectbg_g> http://google.com/+BrandonGiesing </#> \n"+
-				"\n"+
-				"Special thanks to contributor <#selectbg_g> 3DSammy </#> for help in writting the Backup and Restore code and reporting the Photosphere Bug! \n"+
-				"\n"+
-				"Based on: \n"+
-					"\t amarullz's AROMA Installer \n"+
-					"\t \t Link: <#selectbg_g> http://goo.gl/acCYty </#> \n"+
-				"\n"+
-					"\t AOSPA's 0-day GApps \n"+
-					"\t \t Link: <#selectbg_g> http://goo.gl/9D7YLj </#> \n"+
-				"\n"+
-					"\t Google for the Apps and the Icons used in the Installer \n"+
-					"\t \t Link: <#selectbg_g> http://goo.gl/cLyyHm </#>",
+			"Visit our XDA Thread \n"+
+				"\t Link: <#selectbg_g> http://goo.gl/VAHh7C </#> \n"+
+			"\n"+
+			"Follow me on Google+ \n"+
+				"\t Link: <#selectbg_g> http://google.com/+BrandonGiesing </#> \n"+
+			"\n"+
+			"Special thanks to contributor <#selectbg_g> 3DSammy </#> for help in writting the Backup and Restore code and reporting the Photosphere Bug! \n"+
+			"\n"+
+			"Based on: \n"+
+				"\t amarullz's AROMA Installer \n"+
+				"\t \t Link: <#selectbg_g> http://goo.gl/acCYty </#> \n"+
+			"\n"+
+				"\t AOSPA's 0-day GApps \n"+
+				"\t \t Link: <#selectbg_g> http://goo.gl/9D7YLj </#> \n"+
+			"\n"+
+				"\t Google for the Apps and the Icons used in the Installer \n"+
+				"\t \t Link: <#selectbg_g> http://goo.gl/cLyyHm </#>",
 			"@info"
 		);
 	back("2");
