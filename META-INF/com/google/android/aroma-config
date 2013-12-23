@@ -13,10 +13,10 @@
 		loadlang("langs/en.lang");
 
 # Initializing Info
-	ini_set("rom_name",			"Famigo AROMA GApps");
-	ini_set("rom_author",		"Team Famigo");
-	ini_set("rom_device",		"Any ROM & Any Device");
-	ini_set("rom_date",			"Dec 21, 2013");
+	ini_set("rom_name",	"Famigo AROMA GApps");
+	ini_set("rom_author",	"Team Famigo");
+	ini_set("rom_device",	"Any ROM & Any Device");
+	ini_set("rom_date",	"Dec 21, 2013");
 
 # Version Selector
 	menubox(
@@ -24,8 +24,8 @@
 		"What Version of Android are you running?",
 		"@menu",
 		"version.prop",
-		"4.3.x",							"Jelly Bean",											"@jellybean",
-		"4.4.x",							"KitKat",													"@kitkat"
+		"4.3.x",		"Jelly Bean",		"@jellybean",
+		"4.4.x",		"KitKat",		"@kitkat"
 	);
 
 	if prop("version.prop","selected") == "1" then
@@ -42,21 +42,21 @@
 		"What would you like to do?",
 		"@menu",
 		"home.prop",
-		"View Info",					"See who made this possible",			"@info",
-		"Backup",							"Backup your choices",						"@save",
-		"Restore",						"Restore your choices",						"@save",
-		"GApps Install",			"Install your Google Apps",				"@apps",
-		"App Remover",				"Remove Extra Bloat",							"@remove",
-		"Start Install",			"Click when finished",						"@install"
+		"Info",			"",				"@info",
+		"Backup",		"Backup your choices",		"@save",
+		"Restore",		"Restore your choices",		"@save",
+		"App Selection",	"Choose your Google Apps",	"@apps",
+		"App Remover",		"Remove Extra Bloat",		"@remove",
+		"Install",		"",				"@install"
 	);
 
-	# View Info
+	# Info
 		include("info.edify");
 	
 	# Backup and Restore
 		include("backup.edify");
 	
-	# GApps Install
+	# App Selection
 		include("gapps.edify");
 	
 	# App Remover

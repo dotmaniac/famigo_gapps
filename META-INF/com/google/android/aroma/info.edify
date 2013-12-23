@@ -2,7 +2,6 @@
 	if prop("home.prop","selected") == "1" then
 		viewbox(
 			"<~welcome.title>",
-			"<~welcome.version> <b><#selectbg_g>" + ini_get("rom_version") +	"</#></b>\n" +
 			"<~welcome.updated> <b><#selectbg_g>" + ini_get("rom_date") +	"</#></b>\n" +
 				"\n"+
 				"Visit our XDA Thread \n"+
