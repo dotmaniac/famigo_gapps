@@ -1,36 +1,40 @@
 # Checking to make certain user has the correct Android Version installed
 if file_getprop("/tmp/aroma/version.prop", "selected") == "1" then
 set_progress(0.05);
-	if
+	ifelse(
 		is_substring("4.3", file_getprop("/system/build.prop","ro.build.version.release")),
-	then
-		ui_print("Android 4.3.x ROM detected");
-	else
-		ui_print("Incompatible Android ROM detected");
-		ui_print("This GApps package is for Android 4.3.x ONLY");
-		ui_print("GApps Installation failed");
-		ui_print("Unmounting system...");
-		run_program("/sbin/busybox", "umount", "/system");
-		sleep(7);
-		abort("Aborting...");
-	endif;
+		(
+			ui_print("Android 4.3.x ROM detected");
+		),
+		(
+			ui_print("Incompatible Android ROM detected");
+			ui_print("This GApps package is for Android 4.3.x ONLY");
+			ui_print("GApps Installation failed");
+			ui_print("Unmounting system...");
+			run_program("/sbin/busybox", "umount", "/system");
+			sleep(7);
+			abort("Aborting...");
+		)
+	);
 endif;
 
 if file_getprop("/tmp/aroma/version.prop", "selected") == "2" then
 set_progress(0.05);
-	if
+	ifelse(
 		is_substring("4.4", file_getprop("/system/build.prop","ro.build.version.release")),
-	then
-		ui_print("Android 4.4.x ROM detected");
-	else
-		ui_print("Incompatible Android ROM detected");
-		ui_print("This GApps package is for Android 4.4.x ONLY");
-		ui_print("GApps Installation failed");
-		ui_print("Unmounting system...");
-		run_program("/sbin/busybox", "umount", "/system");
-		sleep(7);
-		abort("Aborting...");
-	endif;
+		(
+			ui_print("Android 4.4.x ROM detected");
+		),
+		(
+			ui_print("Incompatible Android ROM detected");
+			ui_print("This GApps package is for Android 4.4.x ONLY");
+			ui_print("GApps Installation failed");
+			ui_print("Unmounting system...");
+			run_program("/sbin/busybox", "umount", "/system");
+			sleep(7);
+			abort("Aborting...");
+		)
+	);
 endif;
 
 # Doing Some Extra Work
