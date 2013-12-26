@@ -23,7 +23,6 @@ In this package you will find the Core Apps¹, Face Unlock², and the following 
 |||||YouTube|
 
 ¹ Core Apps includes the core system base apps as well as Google Play services, Google Play Store, TalkBack, Google TTS, and Cloud Print (on 4.4 Only).
-
 ² Face Unlock is installed on devices with a front camera.
 
 App Remover
