@@ -93,7 +93,7 @@ set_progress(0.17);
 		"/system/lib/libfacetracker.so",
 		"/system/lib/libfrsdk.so"
 	);
-	
+
 if file_getprop("/tmp/aroma/version.prop", "selected") == "2" then
 # Remove apps from 'app' that need to be installed in 'priv-app'
 	delete(
@@ -250,14 +250,17 @@ endif;
 if file_getprop("/tmp/aroma/gapps.prop", "item.5.2") == "1" then
 	ui_print("		Camera");
 	#Deleting AOSP Gallery and Camera
-		if file_getprop("/tmp/aroma/version.prop", "selected") == "1" then
-			delete("/system/app/Gallery.apk", "/system/app/Gallery2.apk", "/system/app/GalleryGoogle.odex");
-		endif;
-		if file_getprop("/tmp/aroma/version.prop", "selected") == "2" then
-			delete("/system/app/Gallery.apk", "/system/app/Gallery2.apk", "/system/app/Camera2.apk");
-			delete("/system/priv-app/Gallery.apk", "/system/priv-app/Gallery2.apk", "/system/priv-app/Camera2.apk");
-			delete("/system/app/GalleryGoogle.odex", "/system/app/GoogleCamera.odex", "/system/framework/com.google.android.camera2.odex");
-	endif;
+		delete(
+			"/system/app/Gallery.apk",
+			"/system/app/Gallery2.apk",
+			"/system/app/Camera2.apk",
+			"/system/app/GalleryGoogle.odex",
+			"/system/app/GoogleCamera.odex",
+			"/system/framework/com.google.android.camera2.odex",
+			"/system/priv-app/Gallery.apk",
+			"/system/priv-app/Gallery2.apk",
+			"/system/priv-app/Camera2.apk"
+		);
 	# Installing Camera
 		package_extract_dir("gapps/Other/Camera/common", "/system");
 		package_extract_dir("gapps/Other/Camera/other", "/tmp/photosphere");
@@ -302,7 +305,7 @@ ui_print("	AOSP");
 		ui_print("		Calendar");
 		delete("/system/app/Calendar.apk","/system/priv-app/Calendar.apk");
 	endif;
-	
+
 	if file_getprop("/tmp/aroma/remover.prop", "item.1.2")=="1" then
 		ui_print("		Development");
 		delete("/system/app/Development.apk","/system/priv-app/Development.apk");
@@ -365,7 +368,7 @@ ui_print("	PA");
 # CM
 set_progress(0.69);
 ui_print("	CM");
-	if file_getprop("/tmp/aroma/remover.prop", "item.3.1")=="1" then 
+	if file_getprop("/tmp/aroma/remover.prop", "item.3.1")=="1" then
 		ui_print("		Apollo");
 		delete("/system/app/Apollo.apk","/system/priv-app/Apollo.apk");
 	endif;
@@ -376,12 +379,12 @@ ui_print("	CM");
 	endif;
 
 
-	if file_getprop("/tmp/aroma/remover.prop", "item.3.3")=="1" then 
+	if file_getprop("/tmp/aroma/remover.prop", "item.3.3")=="1" then
 		ui_print("		DSP");
 		delete("/system/app/DSPManager.apk","/system/priv-app/DSPManager.apk");
 	endif;
 
-	if file_getprop("/tmp/aroma/remover.prop", "item.3.4")=="1" then 
+	if file_getprop("/tmp/aroma/remover.prop", "item.3.4")=="1" then
 		ui_print("		Files");
 		delete("/system/app/CMFileManager.apk","/system/priv-app/CMFileManager.apk");
 	endif;
@@ -400,7 +403,7 @@ ui_print("	CM");
 		ui_print("		Wallpapers");
 		delete("/system/app/CMWallpapers.apk","/system/priv-app/CMWallpapers.apk");
 	endif;
-	
+
 	if file_getprop("/tmp/aroma/remover.prop", "item.3.8")=="1" then
 		ui_print("		WhisperPush");
 		delete("/system/app/WhisperPush.apk","/system/priv-app/WhisperPush.apk");
@@ -409,12 +412,12 @@ ui_print("	CM");
 # Daydreams
 set_progress(0.77);
 ui_print("	Daydreams");
-	if file_getprop("/tmp/aroma/remover.prop", "item.4.1") =="1" then 
+	if file_getprop("/tmp/aroma/remover.prop", "item.4.1") =="1" then
 		ui_print("		Basic");
 		delete("/system/app/BasicDreams.apk","/system/priv-app/BasicDreams.apk");
 	endif;
 
-	if file_getprop("/tmp/aroma/remover.prop", "item.4.2") =="1" then 
+	if file_getprop("/tmp/aroma/remover.prop", "item.4.2") =="1" then
 		ui_print("		Photo");
 		delete("/system/app/PhotoTable.apk","/system/priv-app/PhotoTable.apk");
 	endif;
@@ -422,7 +425,7 @@ ui_print("	Daydreams");
 # Keyboards
 set_progress(0.83);
 ui_print("	Keyboards");
-	if file_getprop("/tmp/aroma/remover.prop", "item.5.1") =="1" then 
+	if file_getprop("/tmp/aroma/remover.prop", "item.5.1") =="1" then
 		ui_print("		iWnn");
 		delete(
 		    "/system/app/iWnnIME.apk",
@@ -432,7 +435,7 @@ ui_print("	Keyboards");
 	    );
 	endif;
 
-	if file_getprop("/tmp/aroma/remover.prop", "item.5.2") =="1" then 
+	if file_getprop("/tmp/aroma/remover.prop", "item.5.2") =="1" then
 		ui_print("		Korean");
 		delete("/system/app/KoreanIME.apk","/system/priv-app/KoreanIME.apk");
 	endif;
@@ -442,7 +445,7 @@ ui_print("	Keyboards");
 		delete("/system/app/OpenWnn.apk","/system/priv-app/OpenWnn.apk");
 	endif;
 
-	if file_getprop("/tmp/aroma/remover.prop", "item.5.4") =="1" then 
+	if file_getprop("/tmp/aroma/remover.prop", "item.5.4") =="1" then
 		ui_print("		Pinyin");
 		delete(
 		    "/system/app/PinyinIME.apk",
@@ -452,7 +455,7 @@ ui_print("	Keyboards");
 	    );
 	endif;
 
-	if file_getprop("/tmp/aroma/remover.prop", "item.5.5") =="1" then 
+	if file_getprop("/tmp/aroma/remover.prop", "item.5.5") =="1" then
 		ui_print("		XT9");
 		delete("/system/app/XT9IME.apk","/system/priv-app/XT9IME.apk");
 	endif;
@@ -480,22 +483,22 @@ ui_print("	Wallpapers");
 		delete("/system/app/MagicSmokeWallpapers.apk","/system/priv-app/MagicSmokeWallpapers.apk");
 	endif;
 
-	if file_getprop("/tmp/aroma/remover.prop", "item.6.5") =="1" then 
+	if file_getprop("/tmp/aroma/remover.prop", "item.6.5") =="1" then
 		ui_print("		NoiseField");
 		delete("/system/app/NoiseField.apk","/system/priv-app/NoiseField.apk");
 	endif;
 
-	if file_getprop("/tmp/aroma/remover.prop", "item.6.6") =="1" then 
+	if file_getprop("/tmp/aroma/remover.prop", "item.6.6") =="1" then
 		ui_print("		PhaseBeam");
 		delete("/system/app/PhaseBeam.apk","/system/priv-app/PhaseBeam.apk");
 	endif;
 
-	if file_getprop("/tmp/aroma/remover.prop", "item.6.7") =="1" then 
+	if file_getprop("/tmp/aroma/remover.prop", "item.6.7") =="1" then
 		ui_print("		SunBeam");
 		delete("/system/app/SunBeam.apk","/system/priv-app/SunBeam.apk");
 	endif;
 
-	if file_getprop("/tmp/aroma/remover.prop", "item.6.8") =="1" then 
+	if file_getprop("/tmp/aroma/remover.prop", "item.6.8") =="1" then
 		ui_print("		Visualization");
 		delete("/system/app/VisualizationWallpapers.apk","/system/priv-app/VisualizationWallpapers.apk");
 	endif;
