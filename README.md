@@ -23,7 +23,6 @@ In this package you will find the Core Apps¹, Face Unlock², and the following 
 |||||YouTube|
 
 ¹ Core Apps includes the core system base apps as well as Google Play services, Google Play Store, TalkBack, Google TTS, and Cloud Print (on 4.4 Only).
-
 ² Face Unlock is installed on devices with a front camera.
 
 App Remover
@@ -32,20 +31,20 @@ With our GApps, you can also remove some pre-installed apps that you may not use
 
 |AOSP| PA | CM |Daydreams|Keyboards|Wallpapers|PAC|Slim|Other|
 |----|----|----|---------|---------|----------|---|----|-----|
-|Calendar|HALO)))|Apollo|Basic|iWnn|Basic|Game|Files|Development|
-|Email||DSP|Photo|Korean|Galaxy4|Wallpapers|IRC|SpareParts|
-|Gallery||Files||OpenWnn|HoloSpiral|||Terminal|
-|Music||LockClock||Pinyin|MagicSmoke||||
-|SoundRecorder||Trebuchet||XT9|NoiseField||||
-|VideoEditor||VoicePlus|||Phase/SunBeam||||
-|VoiceDialer||Wallpapers|||Visualizations||||
+|Calendar|HALO)))|Apollo|Basic|iWnn|Basic|Game|Files|SpareParts|
+|Development||cLock|Photo|Korean|Galaxy4|Wallpapers|IRC|Terminal|
+|Email||DSP||OpenWnn|HoloSpiral||||
+|Gallery||Files||Pinyin|MagicSmoke||||
+|Music||Trebuchet||XT9|NoiseField||||
+|SoundRecorder||VoicePlus|||PhaseBeam||||
+|VideoEditor||Wallpapers|||SunBeam||||
+|VoiceDialer||WhisperPush|||Visualizations||||
 
 How to Install
 ------------
-1. Download a 4.3 or 4.4 ROM. 
-  * I recommend PAC-man for 4.3 and SlimKat for 4.4.
+1. Download a 4.3 or 4.4 ROM.
 2. Download our GApps.
-3. Reboot into your custom recovery. 
+3. Reboot into your custom recovery.
   * I recommend TWRP if possible.
 4. OPTIONAL (but recommended): Wipe system, cache, and dalvik cache before installing ROM.
   * This will not erase your Files.
@@ -55,5 +54,5 @@ How to Install
 
 Backup and Restore
 ------------
-Our GApps has the ability to backup your selections and restore them for later use. 
+Our GApps has the ability to backup your selections and restore them for later use.
 If the changelog says to "Make a new Backup" then make sure you do it!
