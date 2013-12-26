@@ -314,26 +314,26 @@ ui_print("	AOSP");
 	if file_getprop("/tmp/aroma/remover.prop", "item.1.3")=="1" then
 		ui_print("		Email");
 		delete(
-    		"/system/app/Email.apk",
-    		"/system/priv-app/Email.apk",
-    		"/system/app/EmailGoogle.apk",
-    		"/system/priv-app/EmailGoogle.apk",
-    		"/system/app/Exchange2.apk",
-    		"/system/priv-app/Exchange2.apk",
-    		"/system/app/Exchange2Google.apk",
-    		"/system/priv-app/Exchange2Google.apk"
+			"/system/app/Email.apk",
+			"/system/priv-app/Email.apk",
+			"/system/app/EmailGoogle.apk",
+			"/system/priv-app/EmailGoogle.apk",
+			"/system/app/Exchange2.apk",
+			"/system/priv-app/Exchange2.apk",
+			"/system/app/Exchange2Google.apk",
+			"/system/priv-app/Exchange2Google.apk"
 		);
 	endif;
 
 	if file_getprop("/tmp/aroma/remover.prop", "item.1.4")=="1" then
 		ui_print("		Gallery");
 		delete(
-    		"/system/app/Gallery.apk",
-    		"/system/priv-app/Gallery.apk",
-    		"/system/app/Gallery2.apk",
-    		"/system/priv-app/Gallery2.apk",
-    		"/system/app/GalleryGoogle.apk",
-    		"/system/priv-app/GalleryGoogle.apk"
+			"/system/app/Gallery.apk",
+			"/system/priv-app/Gallery.apk",
+			"/system/app/Gallery2.apk",
+			"/system/priv-app/Gallery2.apk",
+			"/system/app/GalleryGoogle.apk",
+			"/system/priv-app/GalleryGoogle.apk"
 		);
 	endif;
 
@@ -428,10 +428,10 @@ ui_print("	Keyboards");
 	if file_getprop("/tmp/aroma/remover.prop", "item.5.1") =="1" then
 		ui_print("		iWnn");
 		delete(
-		    "/system/app/iWnnIME.apk",
-		    "/system/priv-app/iWnnIME.apk",
-		    "/system/app/iWnnIME_Kbd_White.apk",
-		    "/system/priv-app/iWnnIME_Kbd_White.apk"
+			"/system/app/iWnnIME.apk",
+			"/system/priv-app/iWnnIME.apk",
+			"/system/app/iWnnIME_Kbd_White.apk",
+			"/system/priv-app/iWnnIME_Kbd_White.apk"
 	    );
 	endif;
 
@@ -448,10 +448,10 @@ ui_print("	Keyboards");
 	if file_getprop("/tmp/aroma/remover.prop", "item.5.4") =="1" then
 		ui_print("		Pinyin");
 		delete(
-		    "/system/app/PinyinIME.apk",
-		    "/system/priv-app/PinyinIME.apk",
-		    "/system/app/GooglePinyinIME.apk",
-		    "/system/priv-app/GooglePinyinIME.apk"
+			"/system/app/PinyinIME.apk",
+			"/system/priv-app/PinyinIME.apk",
+			"/system/app/GooglePinyinIME.apk",
+			"/system/priv-app/GooglePinyinIME.apk"
 	    );
 	endif;
 
