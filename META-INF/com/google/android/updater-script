@@ -123,14 +123,14 @@ endif;
 # Install Core Apps
 set_progress(0.23);
 ui_print("Installing Core Apps");
-package_extract_dir("gapps/Core/Shared", "/system");
+package_extract_dir("Core/Shared", "/system");
 if file_getprop("/tmp/aroma/version.prop", "selected") == "1" then
-	package_extract_dir("gapps/Core/4.3.x", "/system");
-	package_extract_dir("gapps/Core/priv-app", "/system/app");
+	package_extract_dir("Core/4.3.x", "/system");
+	package_extract_dir("Core/priv-app", "/system/app");
 endif;
 if file_getprop("/tmp/aroma/version.prop", "selected") == "2" then
-	package_extract_dir("gapps/Core/4.4.x", "/system");
-	package_extract_dir("gapps/Core/priv-app", "/system/priv-app");
+	package_extract_dir("Core/4.4.x", "/system");
+	package_extract_dir("Core/priv-app", "/system/priv-app");
 endif;
 
 # Face Lock
