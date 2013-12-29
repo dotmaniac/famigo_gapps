@@ -1,5 +1,5 @@
 # Start Install
-if prop("home.prop","selected")=="6" then
+if prop("home.prop","selected")=="5" then
 viewbox(
 	"Ready to Install",
 	"Press Next to begin the install.\n\n"+
@@ -7,81 +7,18 @@ viewbox(
 	"@install"
 );
 
-if prop("gapps.prop", "item.1.2") == "1" then
-	if
-		confirm(
-			"SMS",
-			"Do you want Hangouts to replace the AOSP SMS App?"
-		)=="yes"
-	then
-		run_program("/sbin/busybox", "rm", "-f", "/system/app/Mms.apk");
-		run_program("/sbin/busybox", "rm", "-f", "/system/priv-app/Mms.apk");
-	else
-		alert("Not Deleted","");
-	endif;
-endif;
-
-if prop("gapps.prop", "item.4.1") == "1" then
-	if
-		confirm(
-			"Browser",
-			"Do you want Chrome to replace the AOSP Browser?"
-		)=="yes"
-	then
-		run_program("/sbin/busybox", "rm", "-f", "/system/app/Browser.apk");
-		run_program("/sbin/busybox", "rm", "-f", "/system/app/ChromeBookmarksSyncAdapter.apk");
-		run_program("/sbin/busybox", "rm", "-f", "/system/priv-app/Browser.apk");
-		run_program("/sbin/busybox", "rm", "-f", "/system/priv-app/ChromeBookmarksSyncAdapter.apk");
-	else
-		alert("Not Deleted","");
-	endif;
-endif;
-	
-if prop("gapps.prop", "item.4.2") == "1" then
-	if
-		confirm(
-			"Launcher",
-			"Do you want Google Home to replace the AOSP Launcher?"
-		)=="yes"
-	then
-		run_program("/sbin/busybox", "rm", "-f", "/system/app/Launcher3.apk");
-		run_program("/sbin/busybox", "rm", "-f", "/system/app/Launcher2.apk");
-		run_program("/sbin/busybox", "rm", "-f", "/system/priv-app/Launcher3.apk");
-		run_program("/sbin/busybox", "rm", "-f", "/system/priv-app/Launcher2.apk");
-	else
-		alert("Not Deleted","");
-	endif;
-endif;
-	
-if prop("gapps.prop", "item.5.1") == "1" then
-	if
-		confirm(
-			"Calendar",
-			"Do you want the Google Calendar to replace the AOSP Calendar?"
-		)=="yes"
-	then
-		run_program("/sbin/busybox", "rm", "-f", "/system/app/Calendar.apk");
-		run_program("/sbin/busybox", "rm", "-f", "/system/priv-app/Calendar.apk");
-	else
-		alert("Not Deleted","");
-	endif;
-endif;
-
-if prop("gapps.prop", "item.5.4") == "1" then
-	if
-		confirm(
-			"Keyboard",
-			"Do you want the Google Keyboard to replace the AOSP Keyboard?"
-		)=="yes"
-	then
-		run_program("/sbin/busybox", "rm", "-f", "/system/app/LatinIME.apk");
-		run_program("/sbin/busybox", "rm", "-f", "/system/priv-app/LatinIME.apk");
-		run_program("/sbin/busybox", "rm", "-f", "/system/lib/libjni_latinime.so");
-		run_program("/sbin/busybox", "rm", "-f", "/system/lib/libjni_latinimegoogle.so");
-		run_program("/sbin/busybox", "rm", "-f", "/system/lib/libjni_unbundled_latinimegoogle.so");
-	else
-		alert("Not Deleted","");
-	endif;
+if
+	confirm(
+		"Launcher",
+		"Do you want Google Home to replace the AOSP Launcher?"
+	)=="yes"
+then
+	run_program("/sbin/busybox", "rm", "-f", "/system/app/Launcher3.apk");
+	run_program("/sbin/busybox", "rm", "-f", "/system/app/Launcher2.apk");
+	run_program("/sbin/busybox", "rm", "-f", "/system/priv-app/Launcher3.apk");
+	run_program("/sbin/busybox", "rm", "-f", "/system/priv-app/Launcher2.apk");
+else
+	alert("Not Deleted","");
 endif;
 
 install(
