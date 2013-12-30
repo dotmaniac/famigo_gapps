@@ -135,10 +135,10 @@ endif;
 
 # Face Lock
 if file_getprop("/tmp/aroma/version.prop", "selected") == "1" then
-	package_extract_dir("face/4.4.x", "/tmp/face");
+	package_extract_dir("face/4.3.x", "/tmp/face");
 endif;
 if file_getprop("/tmp/aroma/version.prop", "selected") == "2" then
-	package_extract_dir("face/4.3.x", "/tmp/face");
+	package_extract_dir("face/4.4.x", "/tmp/face");
 endif;
 	package_extract_file("install-face.sh", "/tmp/install-face.sh");
 	set_perm(0, 0, 0777, "/tmp/install-face.sh");
