@@ -1,7 +1,7 @@
-# App Remover
+# Remover
 if prop("home.prop","selected") == "5" then
 checkbox(
-	"App Remover",
+	"Remover",
 	"Select your apps below:",
 	"@remove",
 	"remover.prop",
