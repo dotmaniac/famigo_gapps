@@ -5,6 +5,7 @@ Google Apps
 This Slim Version only includes the Core Apps¹, Face Unlock², Google Now, and Google Home.
 
 ¹ Core Apps includes the core system base apps as well as Google Play services and the Google Play Store.
+
 ² Face Unlock is installed on devices with a front camera.
 
 App Remover
@@ -36,5 +37,4 @@ How to Install
 
 Backup and Restore
 ------------
-Our GApps has the ability to backup your selections and restore them for later use.
-If the changelog says to "Make a new Backup" then make sure you do it!
+Our GApps has the ability to backup your selections and restore them for later use. If the changelog says to "Make a new Backup" then make sure you do it!
