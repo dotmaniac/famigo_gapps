@@ -36,7 +36,7 @@
 		"Info",				"",		"@info",
 		"Backup",			"",		"@save",
 		"Restore",			"",		"@save",
-		"App Remover",		"",		"@remove",
+		"Remover",			"",		"@remove",
 		"Install",			"",		"@install"
 	);
 
@@ -46,7 +46,7 @@
 	# Backup and Restore
 		include("backup.edify");
 
-	# App Remover
+	# Remover
 		include("remover.edify");
 
 	# Start Install
