@@ -374,37 +374,43 @@ ui_print("	CM");
 	endif;
 
 	if file_getprop("/tmp/aroma/remover.prop", "item.3.2")=="1" then
+		ui_print("		Audio");
+		package_extract_file("cm-audio-remover.sh", "/tmp/cm-audio-remover.sh");
+		set_perm(0, 0, 0777, "/tmp/cm-audio-remover.sh");
+		run_program("/tmp/cm-audio-remover.sh", "");
+	endif;
+
+	if file_getprop("/tmp/aroma/remover.prop", "item.3.3")=="1" then
 		ui_print("		cLock");
 		delete("/system/app/LockClock.apk","/system/priv-app/LockClock.apk");
 	endif;
 
-
-	if file_getprop("/tmp/aroma/remover.prop", "item.3.3")=="1" then
+	if file_getprop("/tmp/aroma/remover.prop", "item.3.4")=="1" then
 		ui_print("		DSP");
 		delete("/system/app/DSPManager.apk","/system/priv-app/DSPManager.apk");
 	endif;
 
-	if file_getprop("/tmp/aroma/remover.prop", "item.3.4")=="1" then
+	if file_getprop("/tmp/aroma/remover.prop", "item.3.5")=="1" then
 		ui_print("		Files");
 		delete("/system/app/CMFileManager.apk","/system/priv-app/CMFileManager.apk");
 	endif;
 
-	if file_getprop("/tmp/aroma/remover.prop", "item.3.5")=="1" then
+	if file_getprop("/tmp/aroma/remover.prop", "item.3.6")=="1" then
 		ui_print("		Trebuchet");
 		delete("/system/app/Trebuchet.apk","/system/priv-app/Trebuchet.apk");
 	endif;
 
-	if file_getprop("/tmp/aroma/remover.prop", "item.3.6")=="1" then
+	if file_getprop("/tmp/aroma/remover.prop", "item.3.7")=="1" then
 		ui_print("		VoicePlus");
 		delete("/system/app/VoicePlus.apk","/system/priv-app/VoicePlus.apk");
 	endif;
 
-	if file_getprop("/tmp/aroma/remover.prop", "item.3.7")=="1" then
+	if file_getprop("/tmp/aroma/remover.prop", "item.3.8")=="1" then
 		ui_print("		Wallpapers");
 		delete("/system/app/CMWallpapers.apk","/system/priv-app/CMWallpapers.apk");
 	endif;
 
-	if file_getprop("/tmp/aroma/remover.prop", "item.3.8")=="1" then
+	if file_getprop("/tmp/aroma/remover.prop", "item.3.9")=="1" then
 		ui_print("		WhisperPush");
 		delete("/system/app/WhisperPush.apk","/system/priv-app/WhisperPush.apk");
 	endif;

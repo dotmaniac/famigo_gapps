@@ -10,8 +10,7 @@ A slimmed down GApps. While you can slim down your ROM by not installing all the
 
 Google Apps
 ------------
-Our GApps includes most of the Google Apps that come standard on Google Nexus devices.
-In this package you will find the Core Apps¹, Face Unlock², and the following Selectable applications:
+Our GApps includes most of the Google Apps that come standard on Google Nexus devices. In this package you will find the Core Apps¹, Face Unlock², and the following Selectable applications:
 
 |Plus|Drive|Play|Search|Other|
 |----|-----|----|------|-----|
@@ -22,7 +21,8 @@ In this package you will find the Core Apps¹, Face Unlock², and the following 
 |||Newsstand||Wallet|
 |||||YouTube|
 
-¹ Core Apps includes the core system base apps as well as Google Play services, Google Play Store, TalkBack, Google TTS, and Cloud Print (on 4.4 Only).
+¹ Core Apps includes the core system base apps as well as Google Play services, Google Play Store, and Cloud Print (on 4.4 Only).
+
 ² Face Unlock is installed on devices with a front camera.
 
 App Remover
@@ -54,5 +54,4 @@ How to Install
 
 Backup and Restore
 ------------
-Our GApps has the ability to backup your selections and restore them for later use.
-If the changelog says to "Make a new Backup" then make sure you do it!
+Our GApps has the ability to backup your selections and restore them for later use. If the changelog says to "Make a new Backup" then make sure you do it!

@@ -18,6 +18,7 @@ checkbox(
 		"HALO)))",	    	"Add Shortcuts to HALO",    	"1",
 	"CM",		    	"",	                        	"2",
 		"Apollo",	    	"Music Player",		        	"1",
+		"Audio",			"Duplicate Audio Files",		"1",
 		"cLock",	    	"Clock Widget",		        	"1",
 		"DSP",			    "Music Effects",	        	"0",
 		"File",		    	"Root File Browser",	    	"0",
