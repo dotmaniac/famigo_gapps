@@ -37,7 +37,7 @@
 		"Backup",			"",		"@save",
 		"Restore",			"",		"@save",
 		"App Selection",	"",		"@apps",
-		"App Remover",		"",		"@remove",
+		"Remover",			"",		"@remove",
 		"Install",			"",		"@install"
 	);
 
@@ -50,7 +50,7 @@
 	# App Selection
 		include("gapps.edify");
 
-	# App Remover
+	# Remover
 		include("remover.edify");
 
 	# Start Install
