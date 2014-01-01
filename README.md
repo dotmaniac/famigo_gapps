@@ -8,7 +8,7 @@ Google Apps
 ------------
 This Slim Version only includes the Core Apps¹, Face Unlock², Google Now, and Google Home.
 
-¹ Core Apps includes the core system base apps as well as Google Play services, Google Play Store, TalkBack, Google TTS, and Cloud Print (on 4.4 Only).
+¹ Core Apps includes the core system base apps as well as Google Play services and the Google Play Store.
 ² Face Unlock is installed on devices with a front camera.
 
 App Remover
