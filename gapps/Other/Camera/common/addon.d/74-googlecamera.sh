@@ -4,6 +4,8 @@
 list_files() {
 cat <<EOF
 app/GoogleCamera.apk
+etc/permissions/com.google.android.camera2.xml
+framework/com.google.android.camera2.jar
 lib/libgcam.so
 lib/libgcam_swig_jni.so
 lib/libjni_eglfence.so
