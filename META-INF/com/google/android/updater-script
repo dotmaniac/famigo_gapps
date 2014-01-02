@@ -223,9 +223,26 @@ ui_print("	CM");
 
 	if file_getprop("/tmp/aroma/remover.prop", "item.3.2")=="1" then
 		ui_print("		Audio");
-		package_extract_file("cm-audio-remover.sh", "/tmp/cm-audio-remover.sh");
-		set_perm(0, 0, 0777, "/tmp/cm-audio-remover.sh");
-		run_program("/tmp/cm-audio-remover.sh", "");
+		# Alarms
+		delete(
+			/system/media/audio/alarms/Oxygen.ogg,
+			/system/media/audio/alarms/Carbon.ogg,
+			/system/media/audio/alarms/Krypton.ogg,
+			/system/media/audio/alarms/Platinum.ogg,
+			/system/media/audio/alarms/Argon.ogg,
+			/system/media/audio/alarms/Helium.ogg,
+			/system/media/audio/alarms/Neon.ogg
+		);
+		# Notifications
+		delete(
+			/system/media/audio/notifications/arcturus.ogg,
+			/system/media/audio/notifications/F1_MissedCall.ogg,
+			/system/media/audio/notifications/Argon.ogg,
+			/system/media/audio/notifications/Lalande.ogg,
+			/system/media/audio/notifications/Merope.ogg,
+			/system/media/audio/notifications/F1_New_MMS.ogg,
+			/system/media/audio/notifications/vega.ogg
+		);
 	endif;
 
 	if file_getprop("/tmp/aroma/remover.prop", "item.3.3")=="1" then
