@@ -249,26 +249,66 @@ endif;
 
 if file_getprop("/tmp/aroma/gapps.prop", "item.5.2") == "1" then
 	ui_print("		Camera");
-	#Deleting AOSP Gallery and Camera
-		delete(
-			"/system/app/Gallery.apk",
-			"/system/app/Gallery2.apk",
-			"/system/app/Camera2.apk",
-			"/system/app/GalleryGoogle.odex",
-			"/system/app/GoogleCamera.odex",
-			"/system/framework/com.google.android.camera2.odex",
-			"/system/priv-app/Gallery.apk",
-			"/system/priv-app/Gallery2.apk",
-			"/system/priv-app/Camera2.apk"
+	# Checking to make certain user has a supported Nexus device - If not, we abort
+	ifelse(
+	    file_getprop("/system/build.prop","ro.product.board") == "hammerhead"||file_getprop("/system/build.prop","ro.product.board") == "MAKO"||file_getprop("/system/build.prop","ro.product.board") == "mako"||file_getprop("/system/build.prop","ro.product.board") == "flo"||file_getprop("/system/build.prop","ro.product.board") == "deb"||file_getprop("/system/build.prop","ro.product.board") == "grouper"||file_getprop("/system/build.prop","ro.product.board") == "manta"||file_getprop("/system/build.prop","ro.product.board") == "tuna",
+	    (
+			ui_print("			Google Nexus device detected");
+			#Deleting AOSP Gallery and Camera
+			delete(
+				"/system/app/Gallery.apk",
+				"/system/app/Gallery2.apk",
+				"/system/app/Camera2.apk",
+				"/system/app/GalleryGoogle.odex",
+				"/system/app/GoogleCamera.odex",
+				"/system/priv-app/Gallery.apk",
+				"/system/priv-app/Gallery2.apk",
+				"/system/priv-app/Camera2.apk"
+			);
+	    ),
+	    (
+			ui_print("			Incompatible device detected");
+			ui_print("			Photosphere is only compatible");
+			ui_print("			with Google Nexus devices ONLY");
+		)
+	);
+
+	ifelse(
+		file_getprop("/system/build.prop","ro.product.board") == "hammerhead",
+		(
+			# Remove .odex file as it's no longer necessary
+			delete("/system/framework/com.google.android.camera2.odex");
+			package_extract_dir("gapps/Other/Camera/common", "/system");
+			package_extract_dir("gapps/Other/Camera/hammerhead", "/system");
+			package_extract_dir("gapps/Plus/Plus", "/system");
+		),
+		(
+		ifelse(
+			file_getprop("/system/build.prop","ro.product.board") == "tuna",
+				(
+					package_extract_dir("gapps/Other/Camera/common", "/system");
+					package_extract_dir("gapps/Other/Camera/tuna", "/system");
+					package_extract_dir("gapps/Plus/Plus", "/system");
+				),
+				(
+					ifelse(
+						file_getprop("/system/build.prop","ro.product.board") == "manta",
+							(
+								package_extract_dir("gapps/Other/Camera/common", "/system");
+								package_extract_dir("gapps/Other/Camera/manta", "/system");
+								package_extract_dir("gapps/Plus/Plus", "/system");
+							),
+							(
+								ui_print("			Unknown Photosphere Installation ERROR");
+							)
+						);
+					)
+				);
+			)
 		);
-	# Installing Camera
-		package_extract_dir("gapps/Other/Camera/common", "/system");
-		package_extract_dir("gapps/Other/Camera/other", "/tmp/photosphere");
-		set_perm(0, 0, 0777, "/tmp/photosphere/install-camera.sh");
-		run_program("/tmp/photosphere/install-camera.sh", "");
-		set_perm(0, 0, 0755, "/system/addon.d/74-googlecamera.sh");
-	#Installing Google+
-		package_extract_dir("gapps/Plus/Plus", "/system");
+	set_perm(0, 0, 0755, "/system/addon.d/74-googlecamera.sh");
+	set_perm_recursive(0, 0, 0755, 0644, "/system/app");
+
 endif;
 
 if file_getprop("/tmp/aroma/gapps.prop", "item.5.3") == "1" then
