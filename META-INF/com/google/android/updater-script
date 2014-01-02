@@ -252,7 +252,7 @@ if file_getprop("/tmp/aroma/gapps.prop", "item.5.2") == "1" then
 	# Checking to make certain user has a supported Nexus device - If not, we abort
 	ifelse(
 	    file_getprop("/system/build.prop","ro.product.board") == "hammerhead"||file_getprop("/system/build.prop","ro.product.board") == "MAKO"||file_getprop("/system/build.prop","ro.product.board") == "mako"||file_getprop("/system/build.prop","ro.product.board") == "flo"||file_getprop("/system/build.prop","ro.product.board") == "deb"||file_getprop("/system/build.prop","ro.product.board") == "grouper"||file_getprop("/system/build.prop","ro.product.board") == "manta"||file_getprop("/system/build.prop","ro.product.board") == "tuna",
-	    (
+		(
 			ui_print("			Google Nexus device detected");
 			#Deleting AOSP Gallery and Camera
 			delete(
@@ -264,13 +264,13 @@ if file_getprop("/tmp/aroma/gapps.prop", "item.5.2") == "1" then
 				"/system/priv-app/Gallery.apk",
 				"/system/priv-app/Gallery2.apk",
 				"/system/priv-app/Camera2.apk"
+			);
 			# Installing Common Files
 				package_extract_dir("gapps/Other/Camera/common", "/system");
 			# Installing Google+
 				package_extract_dir("gapps/Plus/Plus", "/system");
-			);
-	    ),
-	    (
+		),
+		(
 			ui_print("			Incompatible device detected");
 			ui_print("			Photosphere is only compatible");
 			ui_print("			with Google Nexus devices ONLY");
