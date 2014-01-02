@@ -264,6 +264,10 @@ if file_getprop("/tmp/aroma/gapps.prop", "item.5.2") == "1" then
 				"/system/priv-app/Gallery.apk",
 				"/system/priv-app/Gallery2.apk",
 				"/system/priv-app/Camera2.apk"
+			# Installing Common Files
+				package_extract_dir("gapps/Other/Camera/common", "/system");
+			# Installing Google+
+				package_extract_dir("gapps/Plus/Plus", "/system");
 			);
 	    ),
 	    (
@@ -278,25 +282,19 @@ if file_getprop("/tmp/aroma/gapps.prop", "item.5.2") == "1" then
 		(
 			# Remove .odex file as it's no longer necessary
 			delete("/system/framework/com.google.android.camera2.odex");
-			package_extract_dir("gapps/Other/Camera/common", "/system");
 			package_extract_dir("gapps/Other/Camera/hammerhead", "/system");
-			package_extract_dir("gapps/Plus/Plus", "/system");
 		),
 		(
 		ifelse(
 			file_getprop("/system/build.prop","ro.product.board") == "tuna",
 				(
-					package_extract_dir("gapps/Other/Camera/common", "/system");
 					package_extract_dir("gapps/Other/Camera/tuna", "/system");
-					package_extract_dir("gapps/Plus/Plus", "/system");
 				),
 				(
 					ifelse(
 						file_getprop("/system/build.prop","ro.product.board") == "manta",
 							(
-								package_extract_dir("gapps/Other/Camera/common", "/system");
 								package_extract_dir("gapps/Other/Camera/manta", "/system");
-								package_extract_dir("gapps/Plus/Plus", "/system");
 							),
 							(
 								ui_print("			Unknown Photosphere Installation ERROR");
