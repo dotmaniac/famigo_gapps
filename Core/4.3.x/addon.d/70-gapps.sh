@@ -1,48 +1,23 @@
 #!/sbin/sh
-# 
+#
 # /system/addon.d/70-gapps.sh
 #
 . /tmp/backuptool.functions
 
 list_files() {
 cat <<EOF
-app/Books.apk
-app/Calendar.apk
-app/Chrome.apk
-app/CalendarProvider.apk
-app/Drive.apk
-app/Gmail2.apk
 app/PrebuiltGmsCore.apk
 app/GoogleBackupTransport.apk
 app/GoogleContactsSyncAdapter.apk
-app/GoogleEarth.apk
-app/GoogleHome.apk
 app/GoogleFeedback.apk
 app/GoogleLoginService.apk
 app/GooglePartnerSetup.apk
 app/GoogleServicesFramework.apk
-app/GoogleTTS.apk
-app/Hangouts.apk
-app/Keep.apk
-app/LatinImeGoogle.apk
-app/Magazines.apk
-app/Maps.apk
 app/MediaUploader.apk
-app/Music2.apk
 app/NetworkLocation.apk
 app/OneTimeInitializer.apk
 app/Phonesky.apk
-app/PlayGames.apk
-app/PlusOne.apk
-app/QuickOffice.apk
 app/SetupWizard.apk
-app/Street.apk
-app/talkback.apk
-app/Videos.apk
-app/Velvet.apk
-app/Wallet.apk
-app/Youtube.apk
-etc/g.prop
 etc/permissions/com.google.android.maps.xml
 etc/permissions/com.google.android.media.effects.xml
 etc/permissions/com.google.widevine.software.drm.xml
@@ -51,45 +26,8 @@ etc/preferred-apps/google.xml
 framework/com.google.android.maps.jar
 framework/com.google.android.media.effects.jar
 framework/com.google.widevine.software.drm.jar
-lib/libAppDataSearch.so
-lib/libchromeview.so
-lib/libearthandroid.so
-lib/libearthmobile.so
-lib/libfacetracker.so
-lib/libfilterframework_jni.so
-lib/libfilterpack_facedetect.so
-lib/libfrsdk.so
 lib/libgames_rtmp_jni.so
-lib/libgoggles_clientvision.so
-lib/libgoogle_recognizer_jni_l.so
-lib/libjni_latinime.so
-lib/libjni_unbundled_latinimegoogle.so
-lib/libjni_t13n_shared_engine.so
-lib/libmoviemaker-jni.so
-lib/libnetjni.so
-lib/libocrclient.so
-lib/libpatts_engine_jni_api.so
-lib/libplus_jni_v8.so
-lib/librs.antblur.so
-lib/librs.antblur_constant.so
-lib/librs.antblur_drama.so
-lib/librs.drama.so
-lib/librs.film_base.so
-lib/librs.fixedframe.so
-lib/librs.grey.so
-lib/librs.image_wrapper.so
-lib/librs.retrolux.so
-lib/librsjni.so
-lib/libRSSupport.so
-lib/libspeexwrapper.so
-lib/libstlport_shared.so
 lib/libvcdecoder_jni.so
-lib/libvideochat_jni.so
-lib/libvorbisencoder.so
-lib/libwebp_android.so
-lib/libwebrtc_audio_coding.so
-lib/libwebrtc_audio_preprocessing.so
-lib/libWVphoneAPI.so
 usr/srec/en-US/c_fst
 usr/srec/en-US/classifier
 usr/srec/en-US/clg
@@ -143,7 +81,6 @@ case "$1" in
     # Stub
   ;;
   post-restore)
-    rm -f system/app/LatinIME.apk
-    rm -f /system/lib/libjni_unbundled_latinimegoogle.so
+	# Stub
 ;;
 esac
