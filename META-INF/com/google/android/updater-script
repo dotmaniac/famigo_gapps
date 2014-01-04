@@ -264,8 +264,6 @@ if file_getprop("/tmp/aroma/gapps.prop", "item.5.2") == "1" then
 				package_extract_dir("gapps/Other/Camera/common", "/system");
 				set_perm(0, 0, 0755, "/system/addon.d/74-googlecamera.sh");
 				set_perm_recursive(0, 0, 0755, 0644, "/system/app");
-			# Installing Google+
-				package_extract_dir("gapps/Plus/Plus", "/system");
 		),
 		(
 			ui_print("			Incompatible device detected");

@@ -36,7 +36,7 @@ if prop("gapps.prop", "item.4.1") == "1" then
 		alert("Not Deleted","");
 	endif;
 endif;
-	
+
 if prop("gapps.prop", "item.4.2") == "1" then
 	if
 		confirm(
@@ -52,7 +52,7 @@ if prop("gapps.prop", "item.4.2") == "1" then
 		alert("Not Deleted","");
 	endif;
 endif;
-	
+
 if prop("gapps.prop", "item.5.1") == "1" then
 	if
 		confirm(
@@ -62,6 +62,19 @@ if prop("gapps.prop", "item.5.1") == "1" then
 	then
 		run_program("/sbin/busybox", "rm", "-f", "/system/app/Calendar.apk");
 		run_program("/sbin/busybox", "rm", "-f", "/system/priv-app/Calendar.apk");
+	else
+		alert("Not Deleted","");
+	endif;
+endif;
+
+if prop("gapps.prop", "item.5.2") == "1" then
+	if
+		confirm(
+			"Camera",
+			"Do you want the Google Camera to also install Google+?"
+		)=="yes"
+	then
+		run_program("/sbin/busybox", "cp", "-a", "gapps/Plus/Plus", "/system");
 	else
 		alert("Not Deleted","");
 	endif;
