@@ -280,11 +280,13 @@ ui_print("	AOSP");
 	if file_getprop("/tmp/aroma/remover.prop", "item.1.1")=="1" then
 		ui_print("		Calendar");
 		delete("/system/app/Calendar.apk","/system/priv-app/Calendar.apk");
+		package_extract_file("addon.d/remover/71-calendar.sh", "/system/addon.d/71-calendar.sh");
 	endif;
 
 	if file_getprop("/tmp/aroma/remover.prop", "item.1.2")=="1" then
 		ui_print("		Development");
 		delete("/system/app/Development.apk","/system/priv-app/Development.apk");
+		package_extract_file("addon.d/remover/71-development.sh", "/system/addon.d/71-development.sh");
 	endif;
 
 	if file_getprop("/tmp/aroma/remover.prop", "item.1.3")=="1" then
@@ -299,6 +301,7 @@ ui_print("	AOSP");
 			"/system/app/Exchange2Google.apk",
 			"/system/priv-app/Exchange2Google.apk"
 		);
+		package_extract_file("addon.d/remover/71-email.sh", "/system/addon.d/71-email.sh");
 	endif;
 
 	if file_getprop("/tmp/aroma/remover.prop", "item.1.4")=="1" then
@@ -311,16 +314,19 @@ ui_print("	AOSP");
 			"/system/app/GalleryGoogle.apk",
 			"/system/priv-app/GalleryGoogle.apk"
 		);
+		package_extract_file("addon.d/remover/71-gallery.sh", "/system/addon.d/71-gallery.sh");
 	endif;
 
 	if file_getprop("/tmp/aroma/remover.prop", "item.1.5")=="1" then
 		ui_print("		Music");
 		delete("/system/app/Music.apk","/system/priv-app/Music.apk");
+		package_extract_file("addon.d/remover/71-gallery.sh", "/system/addon.d/71-gallery.sh");
 	endif;
 
 	if file_getprop("/tmp/aroma/remover.prop", "item.1.6")=="1" then
 		ui_print("		SoundRecorder");
 		delete("/system/app/SoundRecorder.apk","/system/priv-app/SoundRecorder.apk");
+		package_extract_file("addon.d/remover/71-rec.sh", "/system/addon.d/71-rec.sh");
 	endif;
 
 	if file_getprop("/tmp/aroma/remover.prop", "item.1.7")=="1" then

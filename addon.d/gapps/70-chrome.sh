@@ -1,7 +1,5 @@
 #!/sbin/sh
-#
-# /system/addon.d/70-gapps.sh
-#
+
 . /tmp/backuptool.functions
 
 list_files() {
