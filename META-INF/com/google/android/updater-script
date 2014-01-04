@@ -1,5 +1,4 @@
 # Checking to make certain user has the correct Android Version installed
-if file_getprop("/tmp/aroma/version.prop", "selected") == "1" then
 set_progress(0.05);
 ifelse(
 	is_substring("4.3", file_getprop("/system/build.prop","ro.build.version.release")),
@@ -16,10 +15,7 @@ ifelse(
 		abort("Aborting...");
 	)
 );
-endif;
 
-if file_getprop("/tmp/aroma/version.prop", "selected") == "2" then
-set_progress(0.05);
 ifelse(
 	is_substring("4.4", file_getprop("/system/build.prop","ro.build.version.release")),
 	(
@@ -35,7 +31,6 @@ ifelse(
 		abort("Aborting...");
 	)
 );
-endif;
 
 # Doing Some Extra Work
 set_progress(0.17);
@@ -94,50 +89,49 @@ set_progress(0.17);
 		"/system/lib/libfrsdk.so"
 	);
 
-if file_getprop("/tmp/aroma/version.prop", "selected") == "2" then
-# Remove apps from 'app' that need to be installed in 'priv-app'
-	delete(
-		"/system/app/CalendarProvider.apk",
-		"/system/app/GoogleBackupTransport.apk",
-		"/system/app/GoogleFeedback.apk",
-		"/system/app/GoogleLoginService.apk",
-		"/system/app/GoogleOneTimeInitializer.apk",
-		"/system/app/GooglePartnerSetup.apk",
-		"/system/app/GoogleServicesFramework.apk",
-		"/system/app/OneTimeInitializer.apk",
-		"/system/app/Phonesky.apk",
-		"/system/app/PrebuiltGmsCore.apk",
-		"/system/app/SetupWizard.apk",
-		"/system/app/talkback.apk",
-		"/system/app/Velvet.apk",
-		"/system/app/Wallet.apk"
-	);
+if is_substring("4.4", file_getprop("/system/build.prop","ro.build.version.release")) then
+	# Remove apps from 'app' that need to be installed in 'priv-app'
+		delete(
+			"/system/app/CalendarProvider.apk",
+			"/system/app/GoogleBackupTransport.apk",
+			"/system/app/GoogleFeedback.apk",
+			"/system/app/GoogleLoginService.apk",
+			"/system/app/GoogleOneTimeInitializer.apk",
+			"/system/app/GooglePartnerSetup.apk",
+			"/system/app/GoogleServicesFramework.apk",
+			"/system/app/OneTimeInitializer.apk",
+			"/system/app/Phonesky.apk",
+			"/system/app/PrebuiltGmsCore.apk",
+			"/system/app/SetupWizard.apk",
+			"/system/app/talkback.apk",
+			"/system/app/Velvet.apk",
+			"/system/app/Wallet.apk"
+		);
 
-# Removing MediaUploader (since Google removed it beginning with 4.4.1)
-	delete(
-		"/system/app/MediaUploader.apk",
-		"/system/priv-app/MediaUploader.apk"
-	);
+	# Removing MediaUploader (since Google removed it beginning with 4.4.1)
+		delete(
+			"/system/app/MediaUploader.apk",
+			"/system/priv-app/MediaUploader.apk"
 endif;
 
 # Install Core Apps
 set_progress(0.23);
 ui_print("Installing Core Apps");
 package_extract_dir("Core/Shared", "/system");
-if file_getprop("/tmp/aroma/version.prop", "selected") == "1" then
+if is_substring("4.3", file_getprop("/system/build.prop","ro.build.version.release")) then
 	package_extract_dir("Core/4.3.x", "/system");
 	package_extract_dir("Core/priv-app", "/system/app");
 endif;
-if file_getprop("/tmp/aroma/version.prop", "selected") == "2" then
+if is_substring("4.4", file_getprop("/system/build.prop","ro.build.version.release")) then
 	package_extract_dir("Core/4.4.x", "/system");
 	package_extract_dir("Core/priv-app", "/system/priv-app");
 endif;
 
 # Face Lock
-if file_getprop("/tmp/aroma/version.prop", "selected") == "1" then
+if is_substring("4.3", file_getprop("/system/build.prop","ro.build.version.release")) then
 	package_extract_dir("face/4.3.x", "/tmp/face");
 endif;
-if file_getprop("/tmp/aroma/version.prop", "selected") == "2" then
+if is_substring("4.4", file_getprop("/system/build.prop","ro.build.version.release")) then
 	package_extract_dir("face/4.4.x", "/tmp/face");
 endif;
 	package_extract_file("install-face.sh", "/tmp/install-face.sh");
@@ -215,10 +209,10 @@ if file_getprop("/tmp/aroma/gapps.prop", "item.4.2") == "1" then
 	package_extract_dir("gapps/Search/GEL", "/system");
 	# Installing Google Now
 	package_extract_dir("gapps/Search/Now/lib", "/system/lib");
-	if file_getprop("/tmp/aroma/version.prop", "selected") == "1" then
+	if is_substring("4.3", file_getprop("/system/build.prop","ro.build.version.release")) then
 		package_extract_dir("gapps/Search/Now/app", "/system/app");
 	endif;
-	if file_getprop("/tmp/aroma/version.prop", "selected") == "2" then
+	if is_substring("4.4", file_getprop("/system/build.prop","ro.build.version.release")) then
 		package_extract_dir("gapps/Search/Now/app", "/system/priv-app");
 	endif;
 endif;
@@ -231,10 +225,10 @@ endif;
 if file_getprop("/tmp/aroma/gapps.prop", "item.4.4") == "1" then
 	ui_print("		Now");
 	package_extract_dir("gapps/Search/Now/lib", "/system/lib");
-	if file_getprop("/tmp/aroma/version.prop", "selected") == "1" then
+	if is_substring("4.3", file_getprop("/system/build.prop","ro.build.version.release")) then
 		package_extract_dir("gapps/Search/Now/app", "/system/app");
 	endif;
-	if file_getprop("/tmp/aroma/version.prop", "selected") == "2" then
+	if is_substring("4.4", file_getprop("/system/build.prop","ro.build.version.release")) then
 		package_extract_dir("gapps/Search/Now/app", "/system/priv-app");
 	endif;
 endif;
@@ -298,10 +292,10 @@ endif;
 
 if file_getprop("/tmp/aroma/gapps.prop", "item.5.5") == "1" then
 	ui_print("		Wallet");
-	if file_getprop("/tmp/aroma/version.prop", "selected") == "1" then
+	if is_substring("4.3", file_getprop("/system/build.prop","ro.build.version.release")) then
 		package_extract_dir("gapps/Other/Wallet/app", "/system/app");
 	endif;
-	if file_getprop("/tmp/aroma/version.prop", "selected") == "2" then
+	if is_substring("4.4", file_getprop("/system/build.prop","ro.build.version.release")) then
 		package_extract_dir("gapps/Other/Wallet/app", "/system/priv-app");
 	endif;
 endif;
@@ -583,7 +577,7 @@ ui_print("	Other");
 ui_print("Setting Permissions");
 set_perm(0, 0, 0755, "/system/addon.d/70-gapps.sh");
 set_perm_recursive(0, 0, 0755, 0644, "/system/app");
-if file_getprop("/tmp/aroma/version.prop", "selected") == "2" then
+if is_substring("4.4", file_getprop("/system/build.prop","ro.build.version.release")) then
 	set_perm_recursive(0, 0, 0755, 0644, "/system/priv-app");
 endif;
 

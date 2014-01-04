@@ -17,16 +17,6 @@
 	ini_set("rom_author",	"Team Famigo");
 	ini_set("rom_device",	"Any ROM & Any Device");
 
-# Version Selector
-	menubox(
-		"Version",
-		"What are you running?",
-		"@menu",
-		"version.prop",
-		"4.3.x",	"Jelly Bean",	"@jellybean",
-		"4.4.x",	"KitKat",		"@kitkat"
-	);
-
 # Menu
 	menubox(
 		"<~welcome.title>",
