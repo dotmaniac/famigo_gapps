@@ -24,7 +24,7 @@ checkbox(
 		"Now",			"",							"1",
 	"Other",		"",							"2",
 		"Calendar",		"",							"0",
-		"Camera",		"Installs Google+",			"0",
+		"Camera",		"",							"0",
 		"Gmail",		"",							"0",
 		"Keyboard",		"",							"1",
 		"Wallet",		"",							"0",
