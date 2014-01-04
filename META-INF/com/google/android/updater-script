@@ -332,11 +332,13 @@ ui_print("	AOSP");
 	if file_getprop("/tmp/aroma/remover.prop", "item.1.7")=="1" then
 		ui_print("		VideoEditor");
 		delete("/system/app/VideoEditor.apk","/system/priv-app/VideoEditor.apk");
+		package_extract_file("addon.d/remover/71-editor.sh", "/system/addon.d/71-editor.sh");
 	endif;
 
 	if file_getprop("/tmp/aroma/remover.prop", "item.1.8")=="1" then
 		ui_print("		VoiceDialer");
 		delete("/system/app/VoiceDialer.apk","/system/priv-app/VoiceDialer.apk");
+		package_extract_file("addon.d/remover/71-dialer.sh", "/system/addon.d/71-dialer.sh");
 	endif;
 
 # PA
@@ -345,6 +347,7 @@ ui_print("	PA");
 	if file_getprop("/tmp/aroma/remover.prop", "item.2.1")=="1" then
 		ui_print("		HALO)))");
 		delete("/system/app/HALO.apk","/system/priv-app/HALO.apk");
+		package_extract_file("addon.d/remover/71-halo.sh", "/system/addon.d/71-halo.sh");
 	endif;
 
 # CM
@@ -420,11 +423,13 @@ ui_print("	Daydreams");
 	if file_getprop("/tmp/aroma/remover.prop", "item.4.1") =="1" then
 		ui_print("		Basic");
 		delete("/system/app/BasicDreams.apk","/system/priv-app/BasicDreams.apk");
+		package_extract_file("addon.d/remover/71-basicdreams.sh", "/system/addon.d/71-basicdreams.sh");
 	endif;
 
 	if file_getprop("/tmp/aroma/remover.prop", "item.4.2") =="1" then
 		ui_print("		Photo");
 		delete("/system/app/PhotoTable.apk","/system/priv-app/PhotoTable.apk");
+		package_extract_file("addon.d/remover/71-phototable.sh", "/system/addon.d/71-phototable.sh");
 	endif;
 
 # Keyboards
@@ -514,11 +519,13 @@ ui_print("	PAC");
 	if file_getprop("/tmp/aroma/remover.prop", "item.7.1")=="1" then
 		ui_print("		Game");
 		delete("/system/app/GooglePacman.apk","/system/priv-app/GooglePacman.apk");
+		package_extract_file("addon.d/remover/71-pacgame.sh", "/system/addon.d/71-pacgame.sh");
 	endif;
 
 	if file_getprop("/tmp/aroma/remover.prop", "item.7.2")=="1" then
 		ui_print("		Wallpapers");
 		delete("/system/app/PacPapers.apk","/system/priv-app/PacPapers.apk");
+		package_extract_file("addon.d/remover/71-pacpapers.sh", "/system/addon.d/71-pacpapers.sh");
 	endif;
 
 # Slim
@@ -527,11 +534,13 @@ ui_print("	Slim");
 	if file_getprop("/tmp/aroma/remover.prop", "item.8.1")=="1" then
 		ui_print("		Files");
 		delete("/system/app/SlimFileManager.apk","/system/priv-app/SlimMFileManager.apk");
+		package_extract_file("addon.d/remover/71-slimfm.sh", "/system/addon.d/71-slimfm.sh");
 	endif;
 
 	if file_getprop("/tmp/aroma/remover.prop", "item.8.2")=="1" then
 		ui_print("		IRC");
 		delete("/system/app/SlimIRC.apk","/system/priv-app/SlimIRC.apk");
+		package_extract_file("addon.d/remover/71-slimirc.sh", "/system/addon.d/71-slimirc.sh");
 	endif;
 
 # Other
@@ -539,11 +548,13 @@ ui_print("	Other");
 	if file_getprop("/tmp/aroma/remover.prop", "item.9.1") =="1" then
 		ui_print("		SpareParts");
 		delete("/system/app/SpareParts.apk","/system/priv-app/SpareParts.apk");
+		package_extract_file("addon.d/remover/71-spare.sh", "/system/addon.d/71-spare.sh");
 	endif;
 
 	if file_getprop("/tmp/aroma/remover.prop", "item.9.2")=="1" then
 		ui_print("		Terminal");
 		delete("/system/app/Term.apk","/system/priv-app/Term.apk");
+		package_extract_file("addon.d/remover/71-term.sh", "/system/addon.d/71-term.sh");
 	endif;
 
 # Perms
