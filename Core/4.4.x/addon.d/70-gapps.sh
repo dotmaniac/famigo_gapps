@@ -19,6 +19,7 @@ framework/com.google.widevine.software.drm.jar
 lib/libAppDataSearch.so
 lib/libgames_rtmp_jni.so
 lib/libgoogle_recognizer_jni_l.so
+lib/libvcdecoder_jni.so
 priv-app/GoogleBackupTransport.apk
 priv-app/GoogleFeedback.apk
 priv-app/GoogleLoginService.apk

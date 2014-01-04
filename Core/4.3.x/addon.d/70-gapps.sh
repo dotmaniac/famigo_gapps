@@ -19,6 +19,7 @@ app/NetworkLocation.apk
 app/OneTimeInitializer.apk
 app/SetupWizard.apk
 app/Velvet.apk
+app/Phonesky.apk
 etc/permissions/com.google.android.maps.xml
 etc/permissions/com.google.android.media.effects.xml
 etc/permissions/com.google.widevine.software.drm.xml
@@ -30,6 +31,7 @@ framework/com.google.widevine.software.drm.jar
 lib/libAppDataSearch.so
 lib/libgames_rtmp_jni.so
 lib/libgoogle_recognizer_jni_l.so
+lib/libvcdecoder_jni.so
 usr/srec/en-US/c_fst
 usr/srec/en-US/classifier
 usr/srec/en-US/clg
@@ -83,5 +85,6 @@ case "$1" in
     # Stub
   ;;
   post-restore)
+	# Stub
 ;;
 esac
