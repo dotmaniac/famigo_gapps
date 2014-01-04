@@ -6,10 +6,10 @@
 
 list_files() {
 cat <<EOF
+app/Phonesky.apk
 app/PrebuiltGmsCore.apk
 app/GoogleBackupTransport.apk
 app/GoogleContactsSyncAdapter.apk
-app/GoogleHome.apk
 app/GoogleFeedback.apk
 app/GoogleLoginService.apk
 app/GooglePartnerSetup.apk
@@ -30,6 +30,7 @@ framework/com.google.widevine.software.drm.jar
 lib/libAppDataSearch.so
 lib/libgames_rtmp_jni.so
 lib/libgoogle_recognizer_jni_l.so
+lib/libvcdecoder_jni.so
 usr/srec/en-US/c_fst
 usr/srec/en-US/classifier
 usr/srec/en-US/clg
@@ -83,5 +84,6 @@ case "$1" in
     # Stub
   ;;
   post-restore)
+	# Stub
 ;;
 esac

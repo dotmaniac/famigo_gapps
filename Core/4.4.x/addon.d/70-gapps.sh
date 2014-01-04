@@ -7,7 +7,6 @@
 list_files() {
 cat <<EOF
 app/GoogleContactsSyncAdapter.apk
-app/GoogleHome.apk
 etc/permissions/com.google.android.maps.xml
 etc/permissions/com.google.android.media.effects.xml
 etc/permissions/com.google.widevine.software.drm.xml
@@ -19,6 +18,7 @@ framework/com.google.widevine.software.drm.jar
 lib/libAppDataSearch.so
 lib/libgames_rtmp_jni.so
 lib/libgoogle_recognizer_jni_l.so
+lib/libvcdecoder_jni.so
 priv-app/GoogleBackupTransport.apk
 priv-app/GoogleFeedback.apk
 priv-app/GoogleLoginService.apk
