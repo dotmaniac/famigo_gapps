@@ -323,7 +323,7 @@ if file_getprop("/tmp/aroma/gapps.prop", "item.5.5") == "1" then
 	if file_getprop("/tmp/aroma/version.prop", "selected") == "1" then
 		package_extract_dir("gapps/Other/Wallet/app", "/system/app");
 	endif;
-	if file_getprop("/tmp/aroma/version.prop", "selected") == "1" then
+	if file_getprop("/tmp/aroma/version.prop", "selected") == "2" then
 		package_extract_dir("gapps/Other/Wallet/app", "/system/priv-app");
 	endif;
 endif;
