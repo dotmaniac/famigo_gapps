@@ -256,13 +256,8 @@ if file_getprop("/tmp/aroma/gapps.prop", "item.5.2") == "1" then
 			ui_print("			Google Nexus device detected");
 			#Deleting AOSP Gallery and Camera
 			delete(
-				"/system/app/Gallery.apk",
-				"/system/app/Gallery2.apk",
 				"/system/app/Camera2.apk",
-				"/system/app/GalleryGoogle.odex",
 				"/system/app/GoogleCamera.odex",
-				"/system/priv-app/Gallery.apk",
-				"/system/priv-app/Gallery2.apk",
 				"/system/priv-app/Camera2.apk"
 			);
 			# Installing Common Files
@@ -283,11 +278,11 @@ if file_getprop("/tmp/aroma/gapps.prop", "item.5.2") == "1" then
 		delete("/system/framework/com.google.android.camera2.odex");
 		package_extract_dir("gapps/Other/Camera/hammerhead", "/system");
 	endif;
-	
+
 	if file_getprop("/system/build.prop","ro.product.board") == "tuna" then
 		package_extract_dir("gapps/Other/Camera/tuna", "/system");
 	endif;
-	
+
 	if file_getprop("/system/build.prop","ro.product.board") == "manta" then
 		package_extract_dir("gapps/Other/Camera/manta", "/system");
 	endif;
