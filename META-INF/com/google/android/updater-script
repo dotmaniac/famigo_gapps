@@ -356,6 +356,7 @@ ui_print("	CM");
 	if file_getprop("/tmp/aroma/remover.prop", "item.3.1")=="1" then
 		ui_print("		Apollo");
 		delete("/system/app/Apollo.apk","/system/priv-app/Apollo.apk");
+		package_extract_file("addon.d/remover/71-apollo.sh", "/system/addon.d/71-apollo.sh");
 	endif;
 
 	if file_getprop("/tmp/aroma/remover.prop", "item.3.2")=="1" then
@@ -385,11 +386,13 @@ ui_print("	CM");
 	if file_getprop("/tmp/aroma/remover.prop", "item.3.3")=="1" then
 		ui_print("		cLock");
 		delete("/system/app/LockClock.apk","/system/priv-app/LockClock.apk");
+		package_extract_file("addon.d/remover/71-clock.sh", "/system/addon.d/71-clock.sh");
 	endif;
 
 	if file_getprop("/tmp/aroma/remover.prop", "item.3.4")=="1" then
 		ui_print("		DSP");
 		delete("/system/app/DSPManager.apk","/system/priv-app/DSPManager.apk");
+		package_extract_file("addon.d/remover/71-dsp.sh", "/system/addon.d/71-dsp.sh");
 	endif;
 
 	if file_getprop("/tmp/aroma/remover.prop", "item.3.5")=="1" then
@@ -442,8 +445,8 @@ ui_print("	Keyboards");
 			"/system/priv-app/iWnnIME.apk",
 			"/system/app/iWnnIME_Kbd_White.apk",
 			"/system/priv-app/iWnnIME_Kbd_White.apk"
-	    );
-	    package_extract_file("addon.d/remover/71-iwnn.sh", "/system/addon.d/71-iwnn.sh");
+		);
+		package_extract_file("addon.d/remover/71-iwnn.sh", "/system/addon.d/71-iwnn.sh");
 	endif;
 
 	if file_getprop("/tmp/aroma/remover.prop", "item.5.2") =="1" then
@@ -465,8 +468,8 @@ ui_print("	Keyboards");
 			"/system/priv-app/PinyinIME.apk",
 			"/system/app/GooglePinyinIME.apk",
 			"/system/priv-app/GooglePinyinIME.apk"
-	    );
-	    package_extract_file("addon.d/remover/71-pinyin.sh", "/system/addon.d/71-pinyin.sh");
+		);
+		package_extract_file("addon.d/remover/71-pinyin.sh", "/system/addon.d/71-pinyin.sh");
 	endif;
 
 	if file_getprop("/tmp/aroma/remover.prop", "item.5.5") =="1" then
