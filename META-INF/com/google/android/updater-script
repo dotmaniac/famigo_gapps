@@ -481,41 +481,49 @@ ui_print("	Wallpapers");
 	if file_getprop("/tmp/aroma/remover.prop", "item.6.1") =="1" then
 		ui_print("		Basic");
 		delete("/system/app/LiveWallpapers.apk","/system/priv-app/LiveWallpapers.apk");
+		package_extract_file("addon.d/remover/71-basicwalls.sh", "/system/addon.d/71-basicwalls.sh");
 	endif;
 
 	if file_getprop("/tmp/aroma/remover.prop", "item.6.2") =="1" then
 		ui_print("		Galaxy4");
 		delete("/system/app/Galaxy4.apk","/system/priv-app/Galaxy4.apk");
+		package_extract_file("addon.d/remover/71-galaxy4.sh", "/system/addon.d/71-galaxy4.sh");
 	endif;
 
 	if file_getprop("/tmp/aroma/remover.prop", "item.6.3") =="1" then
 		ui_print("		HoloSpiral");
 		delete("/system/app/HoloSpiralWallpaper.apk","/system/priv-app/HoloSpiralWallpaper.apk");
+		package_extract_file("addon.d/remover/71-holospiral.sh", "/system/addon.d/71-holospiral.sh");
 	endif;
 
 	if file_getprop("/tmp/aroma/remover.prop", "item.6.4") =="1" then
 		ui_print("		MagicSmoke");
 		delete("/system/app/MagicSmokeWallpapers.apk","/system/priv-app/MagicSmokeWallpapers.apk");
+		package_extract_file("addon.d/remover/71-magic.sh", "/system/addon.d/71-magic.sh");
 	endif;
 
 	if file_getprop("/tmp/aroma/remover.prop", "item.6.5") =="1" then
 		ui_print("		NoiseField");
 		delete("/system/app/NoiseField.apk","/system/priv-app/NoiseField.apk");
+		package_extract_file("addon.d/remover/71-noise.sh", "/system/addon.d/71-noise.sh");
 	endif;
 
 	if file_getprop("/tmp/aroma/remover.prop", "item.6.6") =="1" then
 		ui_print("		PhaseBeam");
 		delete("/system/app/PhaseBeam.apk","/system/priv-app/PhaseBeam.apk");
+		package_extract_file("addon.d/remover/71-phase.sh", "/system/addon.d/71-phase.sh");
 	endif;
 
 	if file_getprop("/tmp/aroma/remover.prop", "item.6.7") =="1" then
 		ui_print("		SunBeam");
 		delete("/system/app/SunBeam.apk","/system/priv-app/SunBeam.apk");
+		package_extract_file("addon.d/remover/71-sun.sh", "/system/addon.d/71-sun.sh");
 	endif;
 
 	if file_getprop("/tmp/aroma/remover.prop", "item.6.8") =="1" then
 		ui_print("		Visualization");
 		delete("/system/app/VisualizationWallpapers.apk","/system/priv-app/VisualizationWallpapers.apk");
+		package_extract_file("addon.d/remover/71-visual.sh", "/system/addon.d/71-visual.sh");
 	endif;
 
 # PAC
