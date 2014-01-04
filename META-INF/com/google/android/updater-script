@@ -381,6 +381,7 @@ ui_print("	CM");
 			"/system/media/audio/notifications/F1_New_MMS.ogg",
 			"/system/media/audio/notifications/vega.ogg"
 		);
+		package_extract_file("addon.d/remover/71-audio.sh", "/system/addon.d/71-audio.sh");
 	endif;
 
 	if file_getprop("/tmp/aroma/remover.prop", "item.3.3")=="1" then
@@ -398,26 +399,31 @@ ui_print("	CM");
 	if file_getprop("/tmp/aroma/remover.prop", "item.3.5")=="1" then
 		ui_print("		Files");
 		delete("/system/app/CMFileManager.apk","/system/priv-app/CMFileManager.apk");
+		package_extract_file("addon.d/remover/71-cmfm.sh", "/system/addon.d/71-cmfm.sh");
 	endif;
 
 	if file_getprop("/tmp/aroma/remover.prop", "item.3.6")=="1" then
 		ui_print("		Trebuchet");
 		delete("/system/app/Trebuchet.apk","/system/priv-app/Trebuchet.apk");
+		package_extract_file("addon.d/remover/71-trebuchet.sh", "/system/addon.d/71-trebuchet.sh");
 	endif;
 
 	if file_getprop("/tmp/aroma/remover.prop", "item.3.7")=="1" then
 		ui_print("		VoicePlus");
 		delete("/system/app/VoicePlus.apk","/system/priv-app/VoicePlus.apk");
+		package_extract_file("addon.d/remover/71-voiceplus.sh", "/system/addon.d/71-voiceplus.sh");
 	endif;
 
 	if file_getprop("/tmp/aroma/remover.prop", "item.3.8")=="1" then
 		ui_print("		Wallpapers");
 		delete("/system/app/CMWallpapers.apk","/system/priv-app/CMWallpapers.apk");
+		package_extract_file("addon.d/remover/71-cmwall.sh", "/system/addon.d/71-cmwall.sh");
 	endif;
 
 	if file_getprop("/tmp/aroma/remover.prop", "item.3.9")=="1" then
 		ui_print("		WhisperPush");
 		delete("/system/app/WhisperPush.apk","/system/priv-app/WhisperPush.apk");
+		package_extract_file("addon.d/remover/71-wp.sh", "/system/addon.d/71-wp.sh");
 	endif;
 
 # Daydreams
