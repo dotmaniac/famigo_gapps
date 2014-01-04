@@ -16,14 +16,14 @@ Google Apps
 ------------
 Our GApps includes most of the Google Apps that come standard on Google Nexus devices. In this package you will find the Core Apps¹, Face Unlock², and the following Selectable applications:
 
-|Plus	|Drive	|	Play	|Search|	Other|
-|-------|-------|-----------|-------|--------|
-|Google+|Drive	|Books		|Chrome	|Calendar|
-|Hangouts|Keep	|Games		|Home	|Camera|
-|		|		|Movies		|Maps	|Gmail|
-|		|		|Music		|Now	|Keyboard|
-|		|		|Newsstand	|		|Wallet|
-|		|		|			|		|YouTube|
+|  Plus  |Drive|  Play   |Search|  Other |
+|--------|-----|---------|------|--------|
+|Google+ |Drive|Books    |Chrome|Calendar|
+|Hangouts|Keep |Games    |Home  |Camera  |
+|        |     |Movies   |Maps  |Gmail   |
+|        |     |Music    |Now   |Keyboard|
+|        |     |Newsstand|      |Wallet  |
+|        |     |         |      |YouTube |
 
 ¹ Core Apps includes the core system base apps as well as Google Play services, Google Play Store, and Cloud Print (on 4.4 Only).
 
@@ -33,16 +33,16 @@ App Remover
 ------------
 With our GApps, you can also remove some pre-installed apps that you may not use!
 
-|		AOSP	|	PA	| 	CM 		|Daydreams  |Keyboards	|Wallpapers		|	PAC		|Slim  |Other|
-|---------------|--------|-----------|-----------|-----------|---------------|------------|------|-----------|
-|Calendar		|HALO)))|Apollo		|Basic		|iWnn		|Basic			|Game		|Files	|SpareParts|
-|Development	|		|cLock		|Photo		|Korean		|Galaxy4		|Wallpapers	|IRC	|Terminal|
-|Email			|		|DSP		|			|OpenWnn	|HoloSpiral		|			|		|		|
-|Gallery		|		|Files		|			|Pinyin		|MagicSmoke		|			|		|		|
-|Music			|		|Trebuchet	|			|XT9		|NoiseField		|			|		|		|
-|SoundRecorder	|		|VoicePlus	|			|			|PhaseBeam		|			|		|		|
-|VideoEditor	|		|Wallpapers	|			|			|SunBeam		|			|		|		|
-|VoiceDialer	|		|WhisperPush|			|			|Visualizations	|			|		|		|
+|     AOSP    |   PA  |    CM    |Daydreams|Keyboards|  Wallpapers  |    PAC   |Slim |   Other  |
+|-------------|-------|----------|---------|---------|--------------|----------|-----|----------|
+|Calendar     |HALO)))|Apollo    |Basic    |iWnn     |Basic         |Game      |Files|SpareParts|
+|Development  |       |Audio     |Photo    |Korean   |Galaxy4       |Wallpapers|IRC  |Terminal  |
+|Email        |       |cLock     |         |OpenWnn  |HoloSpiral    |          |     |          |
+|Gallery      |       |DSP       |         |Pinyin   |MagicSmoke    |          |     |          |
+|Music        |       |Files     |         |XT9      |NoiseField    |          |     |          |
+|SoundRecorder|       |Trebuchet |         |         |PhaseBeam     |          |     |          |
+|VideoEditor  |       |VoicePlus |         |         |SunBeam       |          |     |          |
+|VoiceDialer  |       |Wallpapers|         |         |Visualizations|          |     |          |
 
 How to Install
 ------------
