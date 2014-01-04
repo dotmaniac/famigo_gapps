@@ -443,16 +443,19 @@ ui_print("	Keyboards");
 			"/system/app/iWnnIME_Kbd_White.apk",
 			"/system/priv-app/iWnnIME_Kbd_White.apk"
 	    );
+	    package_extract_file("addon.d/remover/71-iwnn.sh", "/system/addon.d/71-iwnn.sh");
 	endif;
 
 	if file_getprop("/tmp/aroma/remover.prop", "item.5.2") =="1" then
 		ui_print("		Korean");
 		delete("/system/app/KoreanIME.apk","/system/priv-app/KoreanIME.apk");
+		package_extract_file("addon.d/remover/71-korean.sh", "/system/addon.d/71-korean.sh");
 	endif;
 
 	if file_getprop("/tmp/aroma/remover.prop", "item.5.3") =="1" then
 		ui_print("		OpenWnn");
 		delete("/system/app/OpenWnn.apk","/system/priv-app/OpenWnn.apk");
+		package_extract_file("addon.d/remover/71-openwnn.sh", "/system/addon.d/71-openwnn.sh");
 	endif;
 
 	if file_getprop("/tmp/aroma/remover.prop", "item.5.4") =="1" then
@@ -463,11 +466,13 @@ ui_print("	Keyboards");
 			"/system/app/GooglePinyinIME.apk",
 			"/system/priv-app/GooglePinyinIME.apk"
 	    );
+	    package_extract_file("addon.d/remover/71-pinyin.sh", "/system/addon.d/71-pinyin.sh");
 	endif;
 
 	if file_getprop("/tmp/aroma/remover.prop", "item.5.5") =="1" then
 		ui_print("		XT9");
 		delete("/system/app/XT9IME.apk","/system/priv-app/XT9IME.apk");
+		package_extract_file("addon.d/remover/71-xt9.sh", "/system/addon.d/71-xt9.sh");
 	endif;
 
 # Wallpapers
