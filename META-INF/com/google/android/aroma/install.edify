@@ -16,10 +16,10 @@ if prop("gapps.prop", "item.1.2") == "1" then
 	then
 		run_program("/sbin/busybox", "rm", "-f", "/system/app/Mms.apk");
 		run_program("/sbin/busybox", "rm", "-f", "/system/priv-app/Mms.apk");
-		ziptotmp("addon.d/gapps/70-hangouts.sh", "70-hangouts.sh");
-		run_program("/sbin/busybox", "cp", "-a", "/tmp/aroma-data/70-hangouts.sh", "/system/addon.d");
+		writetmpfile("aosp.prop","item.1.2=1\n");
 	else
 		alert("Not Deleted","");
+		writetmpfile("aosp.prop","item.1.2=0\n");
 	endif;
 endif;
 
@@ -34,10 +34,10 @@ if prop("gapps.prop", "item.4.1") == "1" then
 		run_program("/sbin/busybox", "rm", "-f", "/system/app/ChromeBookmarksSyncAdapter.apk");
 		run_program("/sbin/busybox", "rm", "-f", "/system/priv-app/Browser.apk");
 		run_program("/sbin/busybox", "rm", "-f", "/system/priv-app/ChromeBookmarksSyncAdapter.apk");
-		ziptotmp("addon.d/gapps/70-chrome.sh", "70-chrome.sh");
-		run_program("/sbin/busybox", "cp", "-a", "/tmp/aroma-data/70-chrome.sh", "/system/addon.d");
+		writetmpfile("aosp.prop","item.4.1=1\n");		
 	else
 		alert("Not Deleted","");
+		writetmpfile("aosp.prop","item.4.1=0\n");
 	endif;
 endif;
 	
@@ -52,10 +52,10 @@ if prop("gapps.prop", "item.4.2") == "1" then
 		run_program("/sbin/busybox", "rm", "-f", "/system/app/Launcher2.apk");
 		run_program("/sbin/busybox", "rm", "-f", "/system/priv-app/Launcher3.apk");
 		run_program("/sbin/busybox", "rm", "-f", "/system/priv-app/Launcher2.apk");
-		ziptotmp("addon.d/gapps/70-home.sh", "70-home.sh");
-		run_program("/sbin/busybox", "cp", "-a", "/tmp/aroma-data/70-home.sh", "/system/addon.d");
+		writetmpfile("aosp.prop","item.4.2=1\n");
 	else
 		alert("Not Deleted","");
+		writetmpfile("aosp.prop","item.4.2=0\n");
 	endif;
 endif;
 	
@@ -68,10 +68,10 @@ if prop("gapps.prop", "item.5.1") == "1" then
 	then
 		run_program("/sbin/busybox", "rm", "-f", "/system/app/Calendar.apk");
 		run_program("/sbin/busybox", "rm", "-f", "/system/priv-app/Calendar.apk");
-		ziptotmp("addon.d/gapps/70-calendar.sh", "70-calendar.sh");
-		run_program("/sbin/busybox", "cp", "-a", "/tmp/aroma-data/70-calendar.sh", "/system/addon.d");
+		writetmpfile("aosp.prop","item.5.1=1\n");
 	else
 		alert("Not Deleted","");
+		writetmpfile("aosp.prop","item.5.1=0\n");
 	endif;
 endif;
 
@@ -85,10 +85,10 @@ if prop("gapps.prop", "item.5.4") == "1" then
 		run_program("/sbin/busybox", "rm", "-f", "/system/app/LatinIME.apk");
 		run_program("/sbin/busybox", "rm", "-f", "/system/priv-app/LatinIME.apk");
 		run_program("/sbin/busybox", "rm", "-f", "/system/lib/libjni_latinime.so");
-		ziptotmp("addon.d/gapps/70-keyboard.sh", "70-keyboard.sh");
-		run_program("/sbin/busybox", "cp", "-a", "/tmp/aroma-data/70-keyboard.sh", "/system/addon.d");
+		writetmpfile("aosp.prop","item.5.4=1\n");
 	else
 		alert("Not Deleted","");
+		writetmpfile("aosp.prop","item.5.4=0\n");
 	endif;
 endif;
 
