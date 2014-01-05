@@ -118,7 +118,7 @@ endif;
 if file_getprop("/tmp/aroma/gapps.prop", "item.1.2") == "1" then
 	ui_print("		Hangouts");
 	package_extract_dir("gapps/Plus/Hangouts", "/system");
-	if file_getprop("/tmp/aroma/aosp/prop", "item.1.2")=="1" then
+	if file_getprop("/tmp/aroma/aosp.prop", "item.1.2")=="1" then
 		package_extract_file("addon.d/gapps/70-hangouts.sh", "/system/addon.d/70-hangouts.sh");
 	endif;
 endif;
@@ -172,7 +172,7 @@ ui_print("	Search");
 if file_getprop("/tmp/aroma/gapps.prop", "item.4.1") == "1" then
 	ui_print("		Chrome");
 	package_extract_dir("gapps/Search/Chrome", "/system");
-	if file_getprop("/tmp/aroma/aosp/prop", "item.4.1")=="1" then
+	if file_getprop("/tmp/aroma/aosp.prop", "item.4.1")=="1" then
 		package_extract_file("addon.d/gapps/70-chrome.sh", "/system/addon.d/70-chrome.sh");
 	endif;
 endif;
@@ -180,7 +180,7 @@ endif;
 if file_getprop("/tmp/aroma/gapps.prop", "item.4.2") == "1" then
 	ui_print("		Home");
 	package_extract_dir("gapps/Search/GEL", "/system");
-	if file_getprop("/tmp/aroma/aosp/prop", "item.4.2")=="1" then
+	if file_getprop("/tmp/aroma/aosp.prop", "item.4.2")=="1" then
 		package_extract_file("addon.d/gapps/70-home.sh", "/system/addon.d/70-home.sh");
 	endif;
 	# Installing Google Now
@@ -217,7 +217,7 @@ ui_print("	Other");
 if file_getprop("/tmp/aroma/gapps.prop", "item.5.1") == "1" then
 	ui_print("		Calendar");
 	package_extract_dir("gapps/Other/Calendar", "/system");
-	if file_getprop("/tmp/aroma/aosp/prop", "item.5.1")=="1" then
+	if file_getprop("/tmp/aroma/aosp.prop", "item.5.1")=="1" then
 		package_extract_file("addon.d/gapps/70-calendar.sh", "/system/addon.d/70-calendar.sh");
 	endif;
 endif;
@@ -269,7 +269,7 @@ endif;
 if file_getprop("/tmp/aroma/gapps.prop", "item.5.4") == "1" then
 	ui_print("		Keyboard");
 	package_extract_dir("gapps/Other/Keyboard", "/system");
-	if file_getprop("/tmp/aroma/aosp/prop", "item.5.4")=="1" then
+	if file_getprop("/tmp/aroma/aosp.prop", "item.5.4")=="1" then
 		package_extract_file("addon.d/gapps/70-keyboard.sh", "/system/addon.d/70-keyboard.sh");
 	endif;
 endif;
