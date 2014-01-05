@@ -414,7 +414,7 @@ ui_print("	Other");
 
 # Perms
 ui_print("Setting Permissions");
-set_perm(0, 0, 0755, "/system/addon.d/70-gapps.sh");
+set_perm_recursive(0, 0, 0755, 0644, "/system/addon.d");
 set_perm_recursive(0, 0, 0755, 0644, "/system/app");
 if is_substring("4.4", file_getprop("/system/build.prop","ro.build.version.release")) then
 	set_perm_recursive(0, 0, 0755, 0644, "/system/priv-app");
