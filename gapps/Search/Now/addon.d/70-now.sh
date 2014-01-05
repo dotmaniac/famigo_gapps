@@ -9,6 +9,7 @@ cat <<EOF
 app/Velvet.apk
 lib/libAppDataSearch.so
 lib/libgoogle_recognizer_jni_l.so
+priv-app/Velvet.apk
 EOF
 }
 
