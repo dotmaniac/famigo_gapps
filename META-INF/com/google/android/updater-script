@@ -95,7 +95,6 @@ if is_substring("4.4", file_getprop("/system/build.prop","ro.build.version.relea
 endif;
 
 # Face Lock
-
 if is_substring("4.3", file_getprop("/system/build.prop","ro.build.version.release")) then
 	package_extract_dir("face/4.3.x", "/tmp/face");
 endif;
@@ -415,11 +414,7 @@ ui_print("	Other");
 
 # Perms
 ui_print("Setting Permissions");
-<<<<<<< HEAD
 set_perm_recursive(0, 0, 0755, 0644, "/system/addon.d");
-=======
-set_perm(0, 0, 0755, "/system/addon.d/70-gapps.sh");
->>>>>>> parent of 3fe959e... Fix for AOSP Remover Addon.d Installer
 set_perm_recursive(0, 0, 0755, 0644, "/system/app");
 if is_substring("4.4", file_getprop("/system/build.prop","ro.build.version.release")) then
 	set_perm_recursive(0, 0, 0755, 0644, "/system/priv-app");
