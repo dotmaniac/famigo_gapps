@@ -12,7 +12,6 @@ app/GoogleFeedback.apk
 app/GoogleLoginService.apk
 app/GooglePartnerSetup.apk
 app/GoogleServicesFramework.apk
-app/GoogleHome.apk
 app/MediaUploader.apk
 app/NetworkLocation.apk
 app/OneTimeInitializer.apk
