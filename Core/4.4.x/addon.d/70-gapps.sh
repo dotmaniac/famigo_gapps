@@ -5,6 +5,7 @@
 list_files() {
 cat <<EOF
 app/GoogleContactsSyncAdapter.apk
+app/GoogleHome.apk
 etc/permissions/com.google.android.maps.xml
 etc/permissions/com.google.android.media.effects.xml
 etc/permissions/com.google.widevine.software.drm.xml

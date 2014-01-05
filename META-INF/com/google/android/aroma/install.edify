@@ -17,10 +17,10 @@ then
 	run_program("/sbin/busybox", "rm", "-f", "/system/app/Launcher2.apk");
 	run_program("/sbin/busybox", "rm", "-f", "/system/priv-app/Launcher3.apk");
 	run_program("/sbin/busybox", "rm", "-f", "/system/priv-app/Launcher2.apk");
-	ziptotmp("addon.d/70-home.sh", "70-home.sh");
-	run_program("/sbin/busybox", "cp", "-a", "/tmp/aroma-data/70-home.sh", "/system/addon.d");
+	writetmpfile("aosp.prop","item.4.2=1\n");
 else
 	alert("Not Deleted","");
+	writetmpfile("aosp.prop","item.4.2=0\n");
 endif;
 
 install(
