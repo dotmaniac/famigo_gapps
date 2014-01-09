@@ -17,33 +17,20 @@
 	ini_set("rom_author",	"Team Famigo");
 	ini_set("rom_device",	"Any ROM & Any Device");
 
-# Set the variable 'board' to 'ro.product.board' from ROM's build.prop
-	setvar( "board", file_getprop("/system/build.prop","ro.product.board"));
-
-# Set the variable 'release' to 'ro.build.version.release' from ROM's build.prop
-	setvar( "release", file_getprop("/system/build.prop","ro.build.version.release"));
-
 # Menu
 	menubox(
 		"<~welcome.title>",
 		"What would you like to do?",
 		"@menu",
 		"home.prop",
-		"Info",				"",		"@info",
 		"Backup",			"",		"@save",
 		"Restore",			"",		"@save",
 		"Remover",			"",		"@remove",
 		"Install",			"",		"@install"
 	);
-
-	# Info
-		include("info.edify");
-
-	# Backup and Restore
-		include("backup.edify");
-
-	# Remover
-		include("remover.edify");
-
-	# Start Install
-		include("install.edify");
+# Backup and Restore
+	include("backup.edify");
+# Remover
+	include("remover.edify");
+# Start Install
+	include("install.edify");

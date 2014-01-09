@@ -1,5 +1,5 @@
 # Start Install
-if prop("home.prop","selected")=="5" then
+if prop("home.prop","selected")=="4" then
 viewbox(
 	"Ready to Install",
 	"Press Next to begin the install.\n\n"+
