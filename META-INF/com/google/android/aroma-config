@@ -23,7 +23,6 @@
 		"What would you like to do?",
 		"@menu",
 		"home.prop",
-		"Info",				"",		"@info",
 		"Backup",			"",		"@save",
 		"Restore",			"",		"@save",
 		"App Selection",	"",		"@apps",
@@ -31,17 +30,11 @@
 		"Install",			"",		"@install"
 	);
 
-	# Info
-		include("info.edify");
-
-	# Backup and Restore
-		include("backup.edify");
-
-	# App Selection
-		include("gapps.edify");
-
-	# Remover
-		include("remover.edify");
-
-	# Start Install
-		include("install.edify");
+# Backup and Restore
+	include("backup.edify");
+# App Selection
+	include("gapps.edify");
+# Remover
+	include("remover.edify");
+# Start Install
+	include("install.edify");

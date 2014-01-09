@@ -1,5 +1,5 @@
 # Backup and Restore
-if prop("home.prop","selected") == "2" then
+if prop("home.prop","selected") == "1" then
 	if
 		confirm(
 			"Backup",
@@ -17,7 +17,7 @@ if prop("home.prop","selected") == "2" then
 	endif;
 endif;
 
-if prop("home.prop","selected") == "3" then
+if prop("home.prop","selected") == "2" then
 	if
 		confirm(
 			"Restore",
