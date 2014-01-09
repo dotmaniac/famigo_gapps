@@ -94,17 +94,6 @@ if is_substring("4.4", file_getprop("/system/build.prop","ro.build.version.relea
 	package_extract_dir("Core/priv-app", "/system/priv-app");
 endif;
 
-# Face Lock
-if is_substring("4.3", file_getprop("/system/build.prop","ro.build.version.release")) then
-	package_extract_dir("face/4.3.x", "/tmp/face");
-endif;
-if is_substring("4.4", file_getprop("/system/build.prop","ro.build.version.release")) then
-	package_extract_dir("face/4.4.x", "/tmp/face");
-endif;
-	package_extract_file("install-face.sh", "/tmp/install-face.sh");
-	set_perm(0, 0, 0777, "/tmp/install-face.sh");
-	run_program("/tmp/install-face.sh", "");
-
 # Remove System Apps
 ui_print("Removing System Apps");
 # AOSP Apps
