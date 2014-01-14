@@ -21,12 +21,12 @@
 	menubox(
 		"<~welcome.title>",
 		"What would you like to do?",
-		"@menu",
+		"",
 		"home.prop",
-		"Backup",			"",		"@save",
-		"Restore",			"",		"@save",
-		"Remover",			"",		"@remove",
-		"Install",			"",		"@install"
+		"Backup",			"",		"",
+		"Restore",			"",		"",
+		"Remover",			"",		"",
+		"Install",			"",		""
 	);
 # Backup and Restore
 	include("backup.edify");
