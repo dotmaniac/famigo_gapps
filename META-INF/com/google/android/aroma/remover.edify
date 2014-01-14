@@ -3,7 +3,7 @@ if prop("home.prop","selected") == "4" then
 checkbox(
 	"Remover",
 	"Select your apps below:",
-	"@remove",
+	"",
 	"remover.prop",
 	"AOSP",				"",								"2",
 		"Calendar",			"",								"1",

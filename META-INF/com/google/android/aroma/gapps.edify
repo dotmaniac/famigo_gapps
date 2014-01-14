@@ -3,7 +3,7 @@ if prop("home.prop","selected") == "3" then
 checkbox(
 	"App Selection",
 	"Select your apps below:",
-	"@apps",
+	"",
 	"gapps.prop",
 	"Plus",			"",							"2",
 		"Google+",		"",							"0",

@@ -21,13 +21,13 @@
 	menubox(
 		"<~welcome.title>",
 		"What would you like to do?",
-		"@menu",
+		"",
 		"home.prop",
-		"Backup",			"",		"@save",
-		"Restore",			"",		"@save",
-		"App Selection",	"",		"@apps",
-		"Remover",			"",		"@remove",
-		"Install",			"",		"@install"
+		"Backup",			"",		"",
+		"Restore",			"",		"",
+		"App Selection",	"",		"",
+		"Remover",			"",		"",
+		"Install",			"",		""
 	);
 
 # Backup and Restore

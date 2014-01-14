@@ -4,7 +4,7 @@ viewbox(
 	"Ready to Install",
 	"Press Next to begin the install.\n\n"+
 	"If you want to review or change any of your installation settings, press Back.",
-	"@install"
+	""
 );
 
 if prop("gapps.prop", "item.1.2") == "1" then
@@ -95,7 +95,7 @@ endif;
 install(
 	"Installing",
 	"<b>"+ini_get("rom_name")+"</b> is being installed.",
-	"@install",
+	"",
 	"The installation wizard has successfully installed <b>"+ini_get("rom_name")+
 	"</b>."
 );
