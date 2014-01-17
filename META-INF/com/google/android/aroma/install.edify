@@ -3,7 +3,7 @@ if prop("home.prop","selected")=="5" then
 viewbox(
 	"Ready to Install",
 	"Press Next to begin the install.\n\n"+
-	"If you want to review or change any of your installation settings, press Back.",
+	"If you want to review your installation settings, press Back.",
 	""
 );
 
@@ -75,7 +75,7 @@ if prop("gapps.prop", "item.5.1") == "1" then
 	endif;
 endif;
 
-if prop("gapps.prop", "item.5.4") == "1" then
+if prop("gapps.prop", "item.5.3") == "1" then
 	if
 		confirm(
 			"Keyboard",
@@ -92,31 +92,30 @@ if prop("gapps.prop", "item.5.4") == "1" then
 	endif;
 endif;
 
+if
+	confirm(
+		"Force Photosphere",
+		"Do you want to force Photosphere on non-Nexus devices by creating a .forcephotosphere file?"
+	)=="yes"
+then
+	write("/sdcard/Famigo/.forcephotosphere", "hammerhead");
+else
     if
 		confirm(
-			"Force Photosphere",
-			"Do you want to force Photosphere on non-Nexus devices by creating a .forcephotosphere file?"
+			"No Photosphere Instead?",
+			"Do you want to to not install Photosphere instead by creating a .forcenophotosphere file?"
 		)=="yes"
-	then
-		write("/sdcard/Famigo/.forcephotosphere", "hammerhead");
-	else
-        if
-    		confirm(
-    			"No Photosphere Instead?",
-    			"Do you want to to not install Photosphere instead by creating a .forcenophotosphere file?"
-    		)=="yes"
-	    then
-		    write("/sdcard/Famigo/.forcenophotosphere", "");
-	    else
-		    alert("Will Install Normally!","");
-	    endif;
-	endif;
+    then
+	    write("/sdcard/Famigo/.forcenophotosphere", "");
+    else
+	    alert("Will Install Normally!","");
+    endif;
+endif;
 
 install(
 	"Installing",
 	"<b>"+ini_get("rom_name")+"</b> is being installed.",
 	"",
-	"The installation wizard has successfully installed <b>"+ini_get("rom_name")+
-	"</b>."
+	"<b>"+ini_get("rom_name")+"</b> has been successfully installed."
 );
 endif;

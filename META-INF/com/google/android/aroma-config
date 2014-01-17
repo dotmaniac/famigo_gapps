@@ -12,8 +12,8 @@
 	# Load English
 		loadlang("langs/en.lang");
 
-# Initializing Info
-	ini_set("rom_name",		"Famigo AROMA GApps");
+# Info
+	ini_set("rom_name",		"AROMA GApps");
 	ini_set("rom_author",	"Team Famigo");
 	ini_set("rom_device",	"Any ROM & Any Device");
 
@@ -25,14 +25,14 @@
 		"home.prop",
 		"Backup",			"",		"",
 		"Restore",			"",		"",
-		"App Selection",	"",		"",
+		"Selection",	"",		"",
 		"Remover",			"",		"",
 		"Install",			"",		""
 	);
 
 # Backup and Restore
 	include("backup.edify");
-# App Selection
+# Selection
 	include("gapps.edify");
 # Remover
 	include("remover.edify");
