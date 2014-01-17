@@ -1,3 +1,8 @@
+# Run the preparation script to gather necessary info to begin installation
+package_extract_file("prepare-install.sh", "/tmp/prepare-install.sh");
+set_perm(0, 0, 0777, "/tmp/prepare-install.sh");
+run_program("/tmp/prepare-install.sh", "");
+
 # Doing Some Extra Work
 set_progress(0.17);
 # Removing pieces that may be left over from other GApps or ROM's
@@ -94,16 +99,38 @@ if is_substring("4.4", file_getprop("/system/build.prop","ro.build.version.relea
 	package_extract_dir("Core/priv-app", "/system/priv-app");
 endif;
 
-# Face Lock
-if is_substring("4.3", file_getprop("/system/build.prop","ro.build.version.release")) then
-	package_extract_dir("face/4.3.x", "/tmp/face");
-endif;
-if is_substring("4.4", file_getprop("/system/build.prop","ro.build.version.release")) then
-	package_extract_dir("face/4.4.x", "/tmp/face");
-endif;
-	package_extract_file("install-face.sh", "/tmp/install-face.sh");
-	set_perm(0, 0, 0777, "/tmp/install-face.sh");
-	run_program("/tmp/install-face.sh", "");
+# Face Lock and Photosphere
+    # Extract photosphere installation files if supported or requested
+    ifelse(
+        file_getprop("/tmp/info.prop","install.photosphere") == "true",
+        (
+            # extract photosphere installation files
+            package_extract_dir("optional/photosphere", "/tmp/photosphere");
+        )
+    );
+    
+    # Extract faceunlock installation files if supported
+    ifelse(
+        file_getprop("/tmp/info.prop","install.faceunlock") == "true",
+        (
+            if is_substring("4.3", file_getprop("/system/build.prop","ro.build.version.release")) then
+    	        package_extract_dir("optional/face/4.3.x", "/tmp/face");
+            endif;
+            if is_substring("4.4", file_getprop("/system/build.prop","ro.build.version.release")) then
+    	        package_extract_dir("optional/face/4.4.x", "/tmp/face");
+            endif;
+        )
+    );
+    
+    # If faceunlock or photosphere installation is needed then run install-optional script
+    ifelse(
+        file_getprop("/tmp/info.prop","install.faceunlock") == "true"||file_getprop("/tmp/info.prop","install.photosphere") == "true",
+        (
+            package_extract_file("install-optional.sh", "/tmp/install-optional.sh");
+            set_perm(0, 0, 0777, "/tmp/install-optional.sh");
+            run_program("/tmp/install-optional.sh", file_getprop("/tmp/info.prop","install.faceunlock"));
+        )
+    );
 
 # Install Google Apps
 ui_print("Installing Google Apps");
@@ -211,55 +238,16 @@ if file_getprop("/tmp/aroma/gapps.prop", "item.5.1") == "1" then
 endif;
 
 if file_getprop("/tmp/aroma/gapps.prop", "item.5.2") == "1" then
-	ui_print("		Camera");
-	# Checking to make certain user has a supported Nexus device - If not, we abort
-	ifelse(
-	    file_getprop("/system/build.prop","ro.product.board") == "hammerhead"||file_getprop("/system/build.prop","ro.product.board") == "MAKO"||file_getprop("/system/build.prop","ro.product.board") == "mako"||file_getprop("/system/build.prop","ro.product.board") == "flo"||file_getprop("/system/build.prop","ro.product.board") == "deb"||file_getprop("/system/build.prop","ro.product.board") == "grouper"||file_getprop("/system/build.prop","ro.product.board") == "manta"||file_getprop("/system/build.prop","ro.product.board") == "tuna",
-		(
-			ui_print("			Google Nexus device detected");
-			#Deleting AOSP Gallery and Camera
-			delete(
-				"/system/app/Camera2.apk",
-				"/system/app/GoogleCamera.odex",
-				"/system/priv-app/Camera2.apk"
-			);
-			# Installing Common Files
-				package_extract_dir("gapps/Other/Camera/common", "/system");
-				set_perm(0, 0, 0755, "/system/addon.d/74-googlecamera.sh");
-				set_perm_recursive(0, 0, 0755, 0644, "/system/app");
-		),
-		(
-			ui_print("			Incompatible device detected");
-			ui_print("			Photosphere is only compatible");
-			ui_print("			with Google Nexus devices ONLY");
-		)
-	);
-
-	if file_getprop("/system/build.prop","ro.product.board") == "hammerhead" then
-		delete("/system/framework/com.google.android.camera2.odex");
-		package_extract_dir("gapps/Other/Camera/hammerhead", "/system");
-	endif;
-
-	if file_getprop("/system/build.prop","ro.product.board") == "tuna" then
-		package_extract_dir("gapps/Other/Camera/tuna", "/system");
-	endif;
-
-	if file_getprop("/system/build.prop","ro.product.board") == "manta" then
-		package_extract_dir("gapps/Other/Camera/manta", "/system");
-	endif;
-endif;
-
-if file_getprop("/tmp/aroma/gapps.prop", "item.5.3") == "1" then
 	ui_print("		Gmail");
 	package_extract_dir("gapps/Other/Gmail", "/system");
 endif;
 
-if file_getprop("/tmp/aroma/gapps.prop", "item.5.4") == "1" then
+if file_getprop("/tmp/aroma/gapps.prop", "item.5.3") == "1" then
 	ui_print("		Keyboard");
 	package_extract_dir("gapps/Other/Keyboard", "/system");
 endif;
 
-if file_getprop("/tmp/aroma/gapps.prop", "item.5.5") == "1" then
+if file_getprop("/tmp/aroma/gapps.prop", "item.5.4") == "1" then
 	ui_print("		Wallet");
 	package_extract_dir("gapps/Other/Wallet/addon.d", "/system/addon.d");
 	if is_substring("4.3", file_getprop("/system/build.prop","ro.build.version.release")) then
@@ -270,7 +258,7 @@ if file_getprop("/tmp/aroma/gapps.prop", "item.5.5") == "1" then
 	endif;
 endif;
 
-if file_getprop("/tmp/aroma/gapps.prop", "item.5.6") == "1" then
+if file_getprop("/tmp/aroma/gapps.prop", "item.5.5") == "1" then
 	ui_print("		YouTube");
 	package_extract_dir("gapps/Other/YouTube", "/system");
 endif;

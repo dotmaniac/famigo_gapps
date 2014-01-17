@@ -92,6 +92,26 @@ if prop("gapps.prop", "item.5.4") == "1" then
 	endif;
 endif;
 
+    if
+		confirm(
+			"Force Photosphere",
+			"Do you want to force Photosphere on non-Nexus devices by creating a .forcephotosphere file?"
+		)=="yes"
+	then
+		write("/sdcard/Famigo/.forcephotosphere", "hammerhead");
+	else
+        if
+    		confirm(
+    			"No Photosphere Instead?",
+    			"Do you want to to not install Photosphere instead by creating a .forcenophotosphere file?"
+    		)=="yes"
+	    then
+		    write("/sdcard/Famigo/.forcenophotosphere", "");
+	    else
+		    alert("Will Install Normally!","");
+	    endif;
+	endif;
+
 install(
 	"Installing",
 	"<b>"+ini_get("rom_name")+"</b> is being installed.",
