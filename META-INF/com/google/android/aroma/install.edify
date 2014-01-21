@@ -7,6 +7,7 @@ viewbox(
 	""
 );
 
+# AOSP Replacer Scripts
 if prop("gapps.prop", "item.1.2") == "1" then
 	if
 		confirm(
@@ -92,6 +93,7 @@ if prop("gapps.prop", "item.5.3") == "1" then
 	endif;
 endif;
 
+# Photosphere Scripts
 if
 	confirm(
 		"Force Photosphere",
@@ -99,6 +101,7 @@ if
 	)=="yes"
 then
 	write("/sdcard/Famigo/.forcephotosphere", "hammerhead");
+	run_program("/sbin/busybox", "rm", "-f", "/sdcard/Famigo/.forcenophotosphere");
 else
     if
 		confirm(
@@ -109,9 +112,12 @@ else
 	    write("/sdcard/Famigo/.forcenophotosphere", "");
     else
 	    alert("Will Install Normally!","");
+	    run_program("/sbin/busybox", "rm", "-f", "/sdcard/Famigo/.forcenophotosphere");
+	    run_program("/sbin/busybox", "rm", "-f", "/sdcard/Famigo/.forcephotosphere");
     endif;
 endif;
 
+# Install
 install(
 	"Installing",
 	"<b>"+ini_get("rom_name")+"</b> is being installed.",
