@@ -1,40 +1,85 @@
-# Mount System
-	run_program("/sbin/busybox", "mount", "/system");
+# MOUNTING
+exec("/sbin/busybox","mount","/system");
+exec("/sbin/busybox","mount","/data");
+if exec("/sbin/busybox","df","/system")=="0" then
+	setvar("inf_system",          "Mounted");
+endif;
+if exec("/sbin/busybox","df","/system")=="1" then
+    setvar("inf_system",          "Mounting - Failed");
+	writetmpfile(
+	    "error.prop",
+	    "system=1\n"
+	);
+endif;
+if exec("/sbin/busybox","df","/data")=="0" then
+    setvar("inf_data",          "Mounted");
+endif;
+if exec("/sbin/busybox","df","/data")=="1" then
+	setvar("inf_data",          "Mounting - Failed");
+	writetmpfile(
+	    "error.prop",
+        "data=1\n"
+    );
+endif;
+if exec("/sbin/busybox","df","/sdcard")=="0" then
+    setvar("inf_sdcard",          "Mounted");
+endif;
+if exec("/sbin/busybox","df","/sdcard")=="1" then
+    setvar("inf_sdcard",          "Mounting - Failed");
+	writetmpfile(
+	    "error.prop",
+		"sdcard=1\n"
+    );
+endif;
 
-# Theme and Size
-	# Set Roboto Condensed as Font
-		fontresload( "0", "ttf/RobotoCondensed-Regular.ttf", "15" );
-		fontresload( "1", "ttf/RobotoCondensed-Regular.ttf", "17" );
-	# Use ICS Theme
+if prop("error.prop","system")=="1" || prop("error.prop","data")=="1" || prop("error.prop","sdcard")=="1" then
+textdialog(
+    "!!! ERROR !!!",
+    "Sorry but there is some kind of issue with mounting of partitions\n\n"+
+    "If you see this message, please contact us @ XDA.\n"+
+	"Let us know which recovery version you have and if possible please do:\n"+
+	"adb pull /tmp/recovery.log and give us this log togheter with your report.\n",
+    "Exit to Recovery");
+	exec("/tmp/busybox","umount","/system");
+    exec("/tmp/busybox","umount","/data");
+	exit("");
+endif;
+
+# STYLING
+	# Set Font
+		fontresload( "0", "ttf/RobotoCondensed-Regular.ttf", "12" );
+		fontresload( "1", "ttf/RobotoCondensed-Regular.ttf", "18" );
+	# Use Theme
 		theme("ics");
+	# Set Transition
+	    ini_set("transition","slide");
+	# Vibration
+	    ini_set("vibrate","2");
 	# Set DPI
 		ini_set("dp","5");
 	# Load English
 		loadlang("langs/en.lang");
 
-# Info
+# INFO
 	ini_set("rom_name",		"AROMA GApps");
 	ini_set("rom_author",	"Team Famigo");
 	ini_set("rom_device",	"Any ROM & Any Device");
 
-# Menu
-	menubox(
-		"<~welcome.title>",
-		"What would you like to do?",
-		"",
-		"home.prop",
+# MENU
+	menubox("<~welcome.title>", "What would you like to do?", "", "home.prop",
 		"Backup",			"",		"",
 		"Restore",			"",		"",
-		"Selection",	"",		"",
+		"Selection",    	"",		"",
 		"Remover",			"",		"",
 		"Install",			"",		""
 	);
 
-# Backup and Restore
-	include("backup.edify");
-# Selection
-	include("gapps.edify");
-# Remover
-	include("remover.edify");
-# Start Install
-	include("install.edify");
+# EDIFY INCLUDES
+    # Backup/Restore
+    	include("backup.edify");
+    # Selection
+    	include("gapps.edify");
+    # Remover
+    	include("remover.edify");
+    # Start Install
+    	include("install.edify");
