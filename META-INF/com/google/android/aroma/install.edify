@@ -1,19 +1,11 @@
 # Start Install
 if prop("home.prop","selected")=="5" then
-viewbox(
-	"Ready to Install",
-	"Press Next to begin the install.\n\n"+
-	"If you want to review your installation settings, press Back.",
-	""
-);
+viewbox("Ready to Install", "Press Next to begin the install.\n\n"+"If you want to review your installation settings, press Back.", "");
 
 # AOSP Replacer Scripts
 if prop("gapps.prop", "item.1.2") == "1" then
 	if
-		confirm(
-			"SMS",
-			"Do you want Hangouts to replace the AOSP SMS App?"
-		)=="yes"
+		confirm("SMS", "Do you want Hangouts to replace the AOSP SMS App?")=="yes"
 	then
 		run_program("/sbin/busybox", "rm", "-f", "/system/app/Mms.apk");
 		run_program("/sbin/busybox", "rm", "-f", "/system/priv-app/Mms.apk");
@@ -26,10 +18,7 @@ endif;
 
 if prop("gapps.prop", "item.4.1") == "1" then
 	if
-		confirm(
-			"Browser",
-			"Do you want Chrome to replace the AOSP Browser?"
-		)=="yes"
+		confirm("Browser", "Do you want Chrome to replace the AOSP Browser?")=="yes"
 	then
 		run_program("/sbin/busybox", "rm", "-f", "/system/app/Browser.apk");
 		run_program("/sbin/busybox", "rm", "-f", "/system/app/ChromeBookmarksSyncAdapter.apk");
@@ -44,10 +33,7 @@ endif;
 	
 if prop("gapps.prop", "item.4.2") == "1" then
 	if
-		confirm(
-			"Launcher",
-			"Do you want Google Home to replace the AOSP Launcher?"
-		)=="yes"
+		confirm("Launcher", "Do you want Google Home to replace the AOSP Launcher?")=="yes"
 	then
 		run_program("/sbin/busybox", "rm", "-f", "/system/app/Launcher3.apk");
 		run_program("/sbin/busybox", "rm", "-f", "/system/app/Launcher2.apk");
@@ -62,10 +48,7 @@ endif;
 	
 if prop("gapps.prop", "item.5.1") == "1" then
 	if
-		confirm(
-			"Calendar",
-			"Do you want the Google Calendar to replace the AOSP Calendar?"
-		)=="yes"
+		confirm("Calendar", "Do you want the Google Calendar to replace the AOSP Calendar?")=="yes"
 	then
 		run_program("/sbin/busybox", "rm", "-f", "/system/app/Calendar.apk");
 		run_program("/sbin/busybox", "rm", "-f", "/system/priv-app/Calendar.apk");
@@ -78,10 +61,7 @@ endif;
 
 if prop("gapps.prop", "item.5.3") == "1" then
 	if
-		confirm(
-			"Keyboard",
-			"Do you want the Google Keyboard to replace the AOSP Keyboard?"
-		)=="yes"
+		confirm("Keyboard", "Do you want the Google Keyboard to replace the AOSP Keyboard?")=="yes"
 	then
 		run_program("/sbin/busybox", "rm", "-f", "/system/app/LatinIME.apk");
 		run_program("/sbin/busybox", "rm", "-f", "/system/priv-app/LatinIME.apk");
@@ -95,19 +75,13 @@ endif;
 
 # Photosphere Scripts
 if
-	confirm(
-		"Force Photosphere",
-		"Do you want to force Photosphere on non-Nexus devices by creating a .forcephotosphere file?"
-	)=="yes"
+	confirm("Force Photosphere", "Do you want to force Photosphere on non-Nexus devices by creating a .forcephotosphere file?")=="yes"
 then
 	write("/sdcard/Famigo/.forcephotosphere", "hammerhead");
 	run_program("/sbin/busybox", "rm", "-f", "/sdcard/Famigo/.forcenophotosphere");
 else
     if
-		confirm(
-			"No Photosphere Instead?",
-			"Do you want to to not install Photosphere instead by creating a .forcenophotosphere file?"
-		)=="yes"
+		confirm("No Photosphere Instead?", "Do you want to to not install Photosphere instead by creating a .forcenophotosphere file?")=="yes"
     then
 	    write("/sdcard/Famigo/.forcenophotosphere", "");
     else
@@ -118,10 +92,5 @@ else
 endif;
 
 # Install
-install(
-	"Installing",
-	"<b>"+ini_get("rom_name")+"</b> is being installed.",
-	"",
-	"<b>"+ini_get("rom_name")+"</b> has been successfully installed."
-);
+install("Installing", "<b>"+ini_get("rom_name")+"</b> is being installed.", "", "<b>"+ini_get("rom_name")+"</b> has been successfully installed.");
 endif;

@@ -1,9 +1,9 @@
-# Run the preparation script to gather necessary info to begin installation
+# PREP
 package_extract_file("prepare-install.sh", "/tmp/prepare-install.sh");
 set_perm(0, 0, 0777, "/tmp/prepare-install.sh");
 run_program("/tmp/prepare-install.sh", "");
 
-# Doing Some Extra Work
+# EXTRA WORK
 set_progress(0.17);
 # Removing pieces that may be left over from other GApps or ROM's
 	delete(
@@ -86,7 +86,7 @@ if is_substring("4.4", file_getprop("/system/build.prop","ro.build.version.relea
 		);
 endif;
 
-# Install Core Apps
+# CORE APPS
 set_progress(0.23);
 ui_print("Installing Core Apps");
 package_extract_dir("Core/Shared", "/system");
@@ -99,7 +99,7 @@ if is_substring("4.4", file_getprop("/system/build.prop","ro.build.version.relea
 	package_extract_dir("Core/priv-app", "/system/priv-app");
 endif;
 
-# Face Lock and Photosphere
+# OPTIONALS
     # Extract photosphere installation files if supported or requested
     ifelse(
         file_getprop("/tmp/info.prop","install.photosphere") == "true",
@@ -132,7 +132,7 @@ endif;
         )
     );
 
-# Install Google Apps
+# GAPPS
 ui_print("Installing Google Apps");
 # Google+
 set_progress(0.27);
@@ -263,314 +263,25 @@ if file_getprop("/tmp/aroma/gapps.prop", "item.5.5") == "1" then
 	package_extract_dir("gapps/Other/YouTube", "/system");
 endif;
 
-# Remove System Apps
-ui_print("Removing System Apps");
-# AOSP Apps
-set_progress(0.59);
-ui_print("	AOSP");
-	if file_getprop("/tmp/aroma/remover.prop", "item.1.1")=="1" then
-		ui_print("		Calendar");
-		delete("/system/app/Calendar.apk","/system/priv-app/Calendar.apk");
-		package_extract_file("addon.d/remover/71-calendar.sh", "/system/addon.d/71-calendar.sh");
-	endif;
+# REMOVER
+    # Stock
+    if file_getprop("/tmp/aroma/remover.prop","selected") == "1" then
+            package_extract_file("remover/stock.sh", "/tmp/stock.sh");
+            package_extract_file("remover/junk-stock.txt", "/sdcard/Famigo/junk-stock.txt");
+            set_perm(0, 0, 0777, "/tmp/stock.sh");
+            run_program("/tmp/stock.sh");
+    		ui_print(" Running Stock Remover");
+    endif;
+    
+    # Custom
+    if file_getprop("/tmp/aroma/remover.prop","selected") == "2" then
+            ifelse((less_than_int(run_program("/sbin/busybox", "test", "-e", "/sdcard/Famigo/junk.txt"), 1);),(ui_print("  -Removing selected apps...");),(ui_print("  -FAILED!!! Check Famigo folder for junk.txt");));
+            package_extract_file("remover/custom.sh", "/tmp/custom.sh");
+            set_perm(0, 0, 0777, "/tmp/custom.sh");
+            run_program("/tmp/custom.sh");
+    endif;
 
-	if file_getprop("/tmp/aroma/remover.prop", "item.1.2")=="1" then
-		ui_print("		Development");
-		delete("/system/app/Development.apk","/system/priv-app/Development.apk");
-		package_extract_file("addon.d/remover/71-development.sh", "/system/addon.d/71-development.sh");
-	endif;
-
-	if file_getprop("/tmp/aroma/remover.prop", "item.1.3")=="1" then
-		ui_print("		Email");
-		delete(
-			"/system/app/Email.apk",
-			"/system/priv-app/Email.apk",
-			"/system/app/EmailGoogle.apk",
-			"/system/priv-app/EmailGoogle.apk",
-			"/system/app/Exchange2.apk",
-			"/system/priv-app/Exchange2.apk",
-			"/system/app/Exchange2Google.apk",
-			"/system/priv-app/Exchange2Google.apk"
-		);
-		package_extract_file("addon.d/remover/71-email.sh", "/system/addon.d/71-email.sh");
-	endif;
-
-	if file_getprop("/tmp/aroma/remover.prop", "item.1.4")=="1" then
-		ui_print("		Gallery");
-		delete(
-			"/system/app/Gallery.apk",
-			"/system/priv-app/Gallery.apk",
-			"/system/app/Gallery2.apk",
-			"/system/priv-app/Gallery2.apk",
-			"/system/app/GalleryGoogle.apk",
-			"/system/priv-app/GalleryGoogle.apk"
-		);
-		package_extract_file("addon.d/remover/71-gallery.sh", "/system/addon.d/71-gallery.sh");
-	endif;
-
-	if file_getprop("/tmp/aroma/remover.prop", "item.1.5")=="1" then
-		ui_print("		Music");
-		delete("/system/app/Music.apk","/system/priv-app/Music.apk");
-		package_extract_file("addon.d/remover/71-gallery.sh", "/system/addon.d/71-gallery.sh");
-	endif;
-
-	if file_getprop("/tmp/aroma/remover.prop", "item.1.6")=="1" then
-		ui_print("		SoundRecorder");
-		delete("/system/app/SoundRecorder.apk","/system/priv-app/SoundRecorder.apk");
-		package_extract_file("addon.d/remover/71-rec.sh", "/system/addon.d/71-rec.sh");
-	endif;
-
-	if file_getprop("/tmp/aroma/remover.prop", "item.1.7")=="1" then
-		ui_print("		VideoEditor");
-		delete("/system/app/VideoEditor.apk","/system/priv-app/VideoEditor.apk");
-		package_extract_file("addon.d/remover/71-editor.sh", "/system/addon.d/71-editor.sh");
-	endif;
-
-	if file_getprop("/tmp/aroma/remover.prop", "item.1.8")=="1" then
-		ui_print("		VoiceDialer");
-		delete("/system/app/VoiceDialer.apk","/system/priv-app/VoiceDialer.apk");
-		package_extract_file("addon.d/remover/71-dialer.sh", "/system/addon.d/71-dialer.sh");
-	endif;
-
-# PA
-set_progress(0.63);
-ui_print("	PA");
-	if file_getprop("/tmp/aroma/remover.prop", "item.2.1")=="1" then
-		ui_print("		HALO)))");
-		delete("/system/app/HALO.apk","/system/priv-app/HALO.apk");
-		package_extract_file("addon.d/remover/71-halo.sh", "/system/addon.d/71-halo.sh");
-	endif;
-
-# CM
-set_progress(0.69);
-ui_print("	CM");
-	if file_getprop("/tmp/aroma/remover.prop", "item.3.1")=="1" then
-		ui_print("		Apollo");
-		delete("/system/app/Apollo.apk","/system/priv-app/Apollo.apk");
-		package_extract_file("addon.d/remover/71-apollo.sh", "/system/addon.d/71-apollo.sh");
-	endif;
-
-	if file_getprop("/tmp/aroma/remover.prop", "item.3.2")=="1" then
-		ui_print("		Audio");
-		# Alarms
-		delete(
-			"/system/media/audio/alarms/Oxygen.ogg",
-			"/system/media/audio/alarms/Carbon.ogg",
-			"/system/media/audio/alarms/Krypton.ogg",
-			"/system/media/audio/alarms/Platinum.ogg",
-			"/system/media/audio/alarms/Argon.ogg",
-			"/system/media/audio/alarms/Helium.ogg",
-			"/system/media/audio/alarms/Neon.ogg"
-		);
-		# Notifications
-		delete(
-			"/system/media/audio/notifications/arcturus.ogg",
-			"/system/media/audio/notifications/F1_MissedCall.ogg",
-			"/system/media/audio/notifications/Argon.ogg",
-			"/system/media/audio/notifications/Lalande.ogg",
-			"/system/media/audio/notifications/Merope.ogg",
-			"/system/media/audio/notifications/F1_New_MMS.ogg",
-			"/system/media/audio/notifications/vega.ogg"
-		);
-		package_extract_file("addon.d/remover/71-audio.sh", "/system/addon.d/71-audio.sh");
-	endif;
-
-	if file_getprop("/tmp/aroma/remover.prop", "item.3.3")=="1" then
-		ui_print("		cLock");
-		delete("/system/app/LockClock.apk","/system/priv-app/LockClock.apk");
-		package_extract_file("addon.d/remover/71-clock.sh", "/system/addon.d/71-clock.sh");
-	endif;
-
-	if file_getprop("/tmp/aroma/remover.prop", "item.3.4")=="1" then
-		ui_print("		DSP");
-		delete("/system/app/DSPManager.apk","/system/priv-app/DSPManager.apk");
-		package_extract_file("addon.d/remover/71-dsp.sh", "/system/addon.d/71-dsp.sh");
-	endif;
-
-	if file_getprop("/tmp/aroma/remover.prop", "item.3.5")=="1" then
-		ui_print("		Files");
-		delete("/system/app/CMFileManager.apk","/system/priv-app/CMFileManager.apk");
-		package_extract_file("addon.d/remover/71-cmfm.sh", "/system/addon.d/71-cmfm.sh");
-	endif;
-
-	if file_getprop("/tmp/aroma/remover.prop", "item.3.6")=="1" then
-		ui_print("		Trebuchet");
-		delete("/system/app/Trebuchet.apk","/system/priv-app/Trebuchet.apk");
-		package_extract_file("addon.d/remover/71-trebuchet.sh", "/system/addon.d/71-trebuchet.sh");
-	endif;
-
-	if file_getprop("/tmp/aroma/remover.prop", "item.3.7")=="1" then
-		ui_print("		VoicePlus");
-		delete("/system/app/VoicePlus.apk","/system/priv-app/VoicePlus.apk");
-		package_extract_file("addon.d/remover/71-voiceplus.sh", "/system/addon.d/71-voiceplus.sh");
-	endif;
-
-	if file_getprop("/tmp/aroma/remover.prop", "item.3.8")=="1" then
-		ui_print("		Wallpapers");
-		delete("/system/app/CMWallpapers.apk","/system/priv-app/CMWallpapers.apk");
-		package_extract_file("addon.d/remover/71-cmwall.sh", "/system/addon.d/71-cmwall.sh");
-	endif;
-
-	if file_getprop("/tmp/aroma/remover.prop", "item.3.9")=="1" then
-		ui_print("		WhisperPush");
-		delete("/system/app/WhisperPush.apk","/system/priv-app/WhisperPush.apk");
-		package_extract_file("addon.d/remover/71-wp.sh", "/system/addon.d/71-wp.sh");
-	endif;
-
-# Daydreams
-set_progress(0.77);
-ui_print("	Daydreams");
-	if file_getprop("/tmp/aroma/remover.prop", "item.4.1") =="1" then
-		ui_print("		Basic");
-		delete("/system/app/BasicDreams.apk","/system/priv-app/BasicDreams.apk");
-		package_extract_file("addon.d/remover/71-basicdreams.sh", "/system/addon.d/71-basicdreams.sh");
-	endif;
-
-	if file_getprop("/tmp/aroma/remover.prop", "item.4.2") =="1" then
-		ui_print("		Photo");
-		delete("/system/app/PhotoTable.apk","/system/priv-app/PhotoTable.apk");
-		package_extract_file("addon.d/remover/71-phototable.sh", "/system/addon.d/71-phototable.sh");
-	endif;
-
-# Keyboards
-set_progress(0.83);
-ui_print("	Keyboards");
-	if file_getprop("/tmp/aroma/remover.prop", "item.5.1") =="1" then
-		ui_print("		iWnn");
-		delete(
-			"/system/app/iWnnIME.apk",
-			"/system/priv-app/iWnnIME.apk",
-			"/system/app/iWnnIME_Kbd_White.apk",
-			"/system/priv-app/iWnnIME_Kbd_White.apk"
-		);
-		package_extract_file("addon.d/remover/71-iwnn.sh", "/system/addon.d/71-iwnn.sh");
-	endif;
-
-	if file_getprop("/tmp/aroma/remover.prop", "item.5.2") =="1" then
-		ui_print("		Korean");
-		delete("/system/app/KoreanIME.apk","/system/priv-app/KoreanIME.apk");
-		package_extract_file("addon.d/remover/71-korean.sh", "/system/addon.d/71-korean.sh");
-	endif;
-
-	if file_getprop("/tmp/aroma/remover.prop", "item.5.3") =="1" then
-		ui_print("		OpenWnn");
-		delete("/system/app/OpenWnn.apk","/system/priv-app/OpenWnn.apk");
-		package_extract_file("addon.d/remover/71-openwnn.sh", "/system/addon.d/71-openwnn.sh");
-	endif;
-
-	if file_getprop("/tmp/aroma/remover.prop", "item.5.4") =="1" then
-		ui_print("		Pinyin");
-		delete(
-			"/system/app/PinyinIME.apk",
-			"/system/priv-app/PinyinIME.apk",
-			"/system/app/GooglePinyinIME.apk",
-			"/system/priv-app/GooglePinyinIME.apk"
-		);
-		package_extract_file("addon.d/remover/71-pinyin.sh", "/system/addon.d/71-pinyin.sh");
-	endif;
-
-	if file_getprop("/tmp/aroma/remover.prop", "item.5.5") =="1" then
-		ui_print("		XT9");
-		delete("/system/app/XT9IME.apk","/system/priv-app/XT9IME.apk");
-		package_extract_file("addon.d/remover/71-xt9.sh", "/system/addon.d/71-xt9.sh");
-	endif;
-
-# Wallpapers
-set_progress(0.87);
-ui_print("	Wallpapers");
-	if file_getprop("/tmp/aroma/remover.prop", "item.6.1") =="1" then
-		ui_print("		Basic");
-		delete("/system/app/LiveWallpapers.apk","/system/priv-app/LiveWallpapers.apk");
-		package_extract_file("addon.d/remover/71-basicwalls.sh", "/system/addon.d/71-basicwalls.sh");
-	endif;
-
-	if file_getprop("/tmp/aroma/remover.prop", "item.6.2") =="1" then
-		ui_print("		Galaxy4");
-		delete("/system/app/Galaxy4.apk","/system/priv-app/Galaxy4.apk");
-		package_extract_file("addon.d/remover/71-galaxy4.sh", "/system/addon.d/71-galaxy4.sh");
-	endif;
-
-	if file_getprop("/tmp/aroma/remover.prop", "item.6.3") =="1" then
-		ui_print("		HoloSpiral");
-		delete("/system/app/HoloSpiralWallpaper.apk","/system/priv-app/HoloSpiralWallpaper.apk");
-		package_extract_file("addon.d/remover/71-holospiral.sh", "/system/addon.d/71-holospiral.sh");
-	endif;
-
-	if file_getprop("/tmp/aroma/remover.prop", "item.6.4") =="1" then
-		ui_print("		MagicSmoke");
-		delete("/system/app/MagicSmokeWallpapers.apk","/system/priv-app/MagicSmokeWallpapers.apk");
-		package_extract_file("addon.d/remover/71-magic.sh", "/system/addon.d/71-magic.sh");
-	endif;
-
-	if file_getprop("/tmp/aroma/remover.prop", "item.6.5") =="1" then
-		ui_print("		NoiseField");
-		delete("/system/app/NoiseField.apk","/system/priv-app/NoiseField.apk");
-		package_extract_file("addon.d/remover/71-noise.sh", "/system/addon.d/71-noise.sh");
-	endif;
-
-	if file_getprop("/tmp/aroma/remover.prop", "item.6.6") =="1" then
-		ui_print("		PhaseBeam");
-		delete("/system/app/PhaseBeam.apk","/system/priv-app/PhaseBeam.apk");
-		package_extract_file("addon.d/remover/71-phase.sh", "/system/addon.d/71-phase.sh");
-	endif;
-
-	if file_getprop("/tmp/aroma/remover.prop", "item.6.7") =="1" then
-		ui_print("		SunBeam");
-		delete("/system/app/SunBeam.apk","/system/priv-app/SunBeam.apk");
-		package_extract_file("addon.d/remover/71-sun.sh", "/system/addon.d/71-sun.sh");
-	endif;
-
-	if file_getprop("/tmp/aroma/remover.prop", "item.6.8") =="1" then
-		ui_print("		Visualization");
-		delete("/system/app/VisualizationWallpapers.apk","/system/priv-app/VisualizationWallpapers.apk");
-		package_extract_file("addon.d/remover/71-visual.sh", "/system/addon.d/71-visual.sh");
-	endif;
-
-# PAC
-set_progress(0.89);
-ui_print("	PAC");
-	if file_getprop("/tmp/aroma/remover.prop", "item.7.1")=="1" then
-		ui_print("		Game");
-		delete("/system/app/GooglePacman.apk","/system/priv-app/GooglePacman.apk");
-		package_extract_file("addon.d/remover/71-pacgame.sh", "/system/addon.d/71-pacgame.sh");
-	endif;
-
-	if file_getprop("/tmp/aroma/remover.prop", "item.7.2")=="1" then
-		ui_print("		Wallpapers");
-		delete("/system/app/PacPapers.apk","/system/priv-app/PacPapers.apk");
-		package_extract_file("addon.d/remover/71-pacpapers.sh", "/system/addon.d/71-pacpapers.sh");
-	endif;
-
-# Slim
-set_progress(0.99);
-ui_print("	Slim");
-	if file_getprop("/tmp/aroma/remover.prop", "item.8.1")=="1" then
-		ui_print("		Files");
-		delete("/system/app/SlimFileManager.apk","/system/priv-app/SlimMFileManager.apk");
-		package_extract_file("addon.d/remover/71-slimfm.sh", "/system/addon.d/71-slimfm.sh");
-	endif;
-
-	if file_getprop("/tmp/aroma/remover.prop", "item.8.2")=="1" then
-		ui_print("		IRC");
-		delete("/system/app/SlimIRC.apk","/system/priv-app/SlimIRC.apk");
-		package_extract_file("addon.d/remover/71-slimirc.sh", "/system/addon.d/71-slimirc.sh");
-	endif;
-
-# Other
-ui_print("	Other");
-	if file_getprop("/tmp/aroma/remover.prop", "item.9.1") =="1" then
-		ui_print("		SpareParts");
-		delete("/system/app/SpareParts.apk","/system/priv-app/SpareParts.apk");
-		package_extract_file("addon.d/remover/71-spare.sh", "/system/addon.d/71-spare.sh");
-	endif;
-
-	if file_getprop("/tmp/aroma/remover.prop", "item.9.2")=="1" then
-		ui_print("		Terminal");
-		delete("/system/app/Term.apk","/system/priv-app/Term.apk");
-		package_extract_file("addon.d/remover/71-term.sh", "/system/addon.d/71-term.sh");
-	endif;
-
-# Perms
+# PERMS
 ui_print("Setting Permissions");
 set_perm_recursive(0, 0, 0755, 0644, "/system/addon.d");
 set_perm_recursive(0, 0, 0755, 0644, "/system/app");
@@ -578,10 +289,10 @@ if is_substring("4.4", file_getprop("/system/build.prop","ro.build.version.relea
 	set_perm_recursive(0, 0, 0755, 0644, "/system/priv-app");
 endif;
 
-# Unmount
+# UNMOUNT
 ui_print("Unmounting system...");
 run_program("/sbin/busybox", "umount", "/system");
 
-# Finish
+# FINISH
 ui_print("Finished Install");
 set_progress(1);

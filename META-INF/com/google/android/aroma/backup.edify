@@ -8,7 +8,6 @@ if prop("home.prop","selected") == "1" then
 	then
 		run_program("/sbin/busybox", "mkdir", "/sdcard/Famigo");
 		run_program("/sbin/busybox", "cp", "/tmp/aroma/gapps.prop", "/sdcard/Famigo");
-		run_program("/sbin/busybox", "cp", "/tmp/aroma/remover.prop", "/sdcard/Famigo");
 		alert("Backup saved!","Press OK to go back...");
 		back("1");
 	else
@@ -25,7 +24,6 @@ if prop("home.prop","selected") == "2" then
 		)=="yes"
 	then
 		run_program("/sbin/busybox", "cp", "/sdcard/Famigo/gapps.prop", "/tmp/aroma/");
-		run_program("/sbin/busybox", "cp", "/sdcard/Famigo/remover.prop", "/tmp/aroma/");
 		alert("Backup restored!","Press OK to go back...");
 		back("1");
 	else

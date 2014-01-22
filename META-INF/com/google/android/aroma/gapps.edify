@@ -1,10 +1,6 @@
 # Selection
 if prop("home.prop","selected") == "3" then
-checkbox(
-	"Selection",
-	"Select your apps below:",
-	"",
-	"gapps.prop",
+checkbox("Selection", "Select your apps below:", "", "gapps.prop",
 	"Plus",			"",							"2",
 		"Google+",		"",							"0",
 		"Hangouts",		"",							"0",

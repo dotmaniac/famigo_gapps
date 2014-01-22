@@ -1,0 +1,79 @@
+# AOSP
+#Browser
+#Calculator
+Calendar
+#ChromeBookmarksS*       #Chrome Browser Bookmarks Sync
+#DeskClock
+Development             #Development Tools
+Email*
+Exchange*               #Exchange for Email
+Gallery2
+Gallery
+GenieWidget             #News and Weather
+#LatinIME
+Music
+QuickSearchBox
+SoundRecorder
+SpareParts
+Term                    #Android Terminal Emulator
+#Torch                  #Flashlight
+VideoEditor
+VoiceDialer
+
+# AOSPA
+HALO                     #Add Shortcuts to HALO
+Lightbulb                #Torch
+
+# CM
+Apollo                   #Music Player
+CMFileManager
+DSPManager               #Music Effects
+LockClock                #Clock Widget
+Trebuchet                #Launcher for CyanogenMod-based 4.3.x ROMs
+VoicePlus                #Google Voice SMS
+CMWallpapers
+WhisperPush              #Secure SMS
+
+# DAYDREAMS
+BasicDreams
+PhotoTable
+
+# KEYBOARDS
+iWnnIME*
+KoreanIME
+OpenWnn
+PinyinIME
+GooglePinyinIME
+XT9IME
+
+# WALLPAPERS
+#LiveWallpapersPicker     #Picker
+LiveWallpapers
+Galaxy4
+HoloSpiral*
+MagicSmoke*
+NoiseField
+PhaseBeam
+SunBeam
+Visualization*
+
+# PAC
+GooglePacman             #Google.com Pac-Man Game
+#PacConsole              #PAC ROM Console
+PacPapers                #PAC ROM Wallpapers
+#PacStats                #PAC ROM Stats
+
+# SLIM
+SlimFileManager
+SlimIRC
+
+# GAPPS
+#Gmail                   #Gmail
+#GmsCore                 #Google Services (Recommended to NOT remove)
+GoogleEars               #Google Now Sound Search
+GoogleFeedback           #Google Play Feedback
+#GooglePlus               #Google+
+#Phonesky                #Google Play Store
+#SetupWizard             #Setup Wizard (Only remove AFTER first boot and setup)
+#TalkBack                #Android Accesibility Service
+#Velvet                  #Google Now
