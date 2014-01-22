@@ -1,8 +1,8 @@
 # REMOVER
 if prop("home.prop","selected")=="4" then
 menubox("Remover", "Select an option below.", "", "remover.prop",	
-	"Default", "Apps removed by installer. Good for beginners.", ""
-	"Custom", "Customize apps being removed in Famigo/junk.txt", "",
+	"Default", "Apps removed by installer. Good for beginners.", "",
+	"Custom", "Customize apps being removed in Famigo/junk.txt", ""
 );
 endif;
 
