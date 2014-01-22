@@ -66,14 +66,3 @@ PacPapers                #PAC ROM Wallpapers
 # SLIM
 SlimFileManager
 SlimIRC
-
-# GAPPS
-#Gmail                   #Gmail
-#GmsCore                 #Google Services (Recommended to NOT remove)
-GoogleEars               #Google Now Sound Search
-GoogleFeedback           #Google Play Feedback
-#GooglePlus               #Google+
-#Phonesky                #Google Play Store
-#SetupWizard             #Setup Wizard (Only remove AFTER first boot and setup)
-#TalkBack                #Android Accesibility Service
-#Velvet                  #Google Now

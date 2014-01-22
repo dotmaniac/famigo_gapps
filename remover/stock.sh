@@ -14,11 +14,5 @@ rm /system/app/$f.apk
 rm /system/priv-app/$f.apk
 done 
 
-# DELETES ALL FILES - HOPEFULLY USER USED FULL PATHS
-# AND DID NOT DELETE ANYTHING BAD :D
-for f in $(cat /sdcard/Famigo/tmp.txt) ; do 
-rm $f
-done
-
 # MOVING TEMP FILE TO LOGS FOLDER
 mv /sdcard/Famigo/tmp.txt /sdcard/Famigo/stock-tmp.log.txt

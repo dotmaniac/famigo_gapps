@@ -89,14 +89,14 @@ endif;
 # CORE APPS
 set_progress(0.23);
 ui_print("Installing Core Apps");
-package_extract_dir("Core/Shared", "/system");
+package_extract_dir("core/Shared", "/system");
 if is_substring("4.3", file_getprop("/system/build.prop","ro.build.version.release")) then
-	package_extract_dir("Core/4.3.x", "/system");
-	package_extract_dir("Core/priv-app", "/system/app");
+	package_extract_dir("core/4.3.x", "/system");
+	package_extract_dir("core/priv-app", "/system/app");
 endif;
 if is_substring("4.4", file_getprop("/system/build.prop","ro.build.version.release")) then
-	package_extract_dir("Core/4.4.x", "/system");
-	package_extract_dir("Core/priv-app", "/system/priv-app");
+	package_extract_dir("core/4.4.x", "/system");
+	package_extract_dir("core/priv-app", "/system/priv-app");
 endif;
 
 # OPTIONALS
@@ -264,22 +264,28 @@ if file_getprop("/tmp/aroma/gapps.prop", "item.5.5") == "1" then
 endif;
 
 # REMOVER
-    # Stock
-    if file_getprop("/tmp/aroma/remover.prop","selected") == "1" then
-            package_extract_file("remover/stock.sh", "/tmp/stock.sh");
-            package_extract_file("remover/junk-stock.txt", "/sdcard/Famigo/junk-stock.txt");
-            set_perm(0, 0, 0777, "/tmp/stock.sh");
-            run_program("/tmp/stock.sh");
-    		ui_print(" Running Stock Remover");
-    endif;
-    
-    # Custom
-    if file_getprop("/tmp/aroma/remover.prop","selected") == "2" then
-            ifelse((less_than_int(run_program("/sbin/busybox", "test", "-e", "/sdcard/Famigo/junk.txt"), 1);),(ui_print("  -Removing selected apps...");),(ui_print("  -FAILED!!! Check Famigo folder for junk.txt");));
-            package_extract_file("remover/custom.sh", "/tmp/custom.sh");
-            set_perm(0, 0, 0777, "/tmp/custom.sh");
-            run_program("/tmp/custom.sh");
-    endif;
+ifelse(
+	  run_program("/sbin/busybox", "test", "-e", "/tmp/aroma/remover.prop");
+		(
+            # Stock
+            if file_getprop("/tmp/aroma/remover.prop","selected") == "1" then
+                    package_extract_file("remover/stock.sh", "/tmp/stock.sh");
+                    package_extract_file("remover/junk-stock.txt", "/sdcard/Famigo/junk-stock.txt");
+                    set_perm(0, 0, 0777, "/tmp/stock.sh");
+                    run_program("/tmp/stock.sh");
+            		ui_print(" Running Stock Remover");
+            endif;
+		),
+		( 
+            # Custom
+            if file_getprop("/tmp/aroma/remover.prop","selected") == "2" then
+                    ifelse((less_than_int(run_program("/sbin/busybox", "test", "-e", "/sdcard/Famigo/junk.txt"), 1);),(ui_print("  -Removing selected apps...");),(ui_print("  -FAILED!!! Check Famigo folder for junk.txt");));
+                    package_extract_file("remover/custom.sh", "/tmp/custom.sh");
+                    set_perm(0, 0, 0777, "/tmp/custom.sh");
+                    run_program("/tmp/custom.sh");
+            endif;
+		)
+);
 
 # PERMS
 ui_print("Setting Permissions");
