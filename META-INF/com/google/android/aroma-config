@@ -19,8 +19,8 @@ exec("/sbin/busybox", "mkdir", "/sdcard/Famigo/logs");
 # INFO
 	ini_set("rom_name",		"AROMA GApps");
 	ini_set("rom_author",	"Team Famigo");
-	ini_set("rom_device",	"Any ROM & Any Device");
-textbox("Famigo AROMA GApps", "Welcome!", "", zipread("README.md"));
+	ini_set("rom_device",	"Any ROM/Any Device");
+textbox("Famigo AROMA GApps", "", "", zipread("README.md"));
 
 # RESTORE
 ini_set("text_yes", "RESTORE");

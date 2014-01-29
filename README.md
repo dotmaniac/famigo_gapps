@@ -2,7 +2,7 @@ Famigo AROMA GApps
 ============
 What is it?
 -------------
-A full featured GApps package that you can select what apps you want to install using AROMA. You can also remove some system apps that come preinstalled with your ROM.
+A full featured GApps package that you can select what apps you want to install using AROMA. You can also remove some system apps that come pre-installed with your ROM.
 
 What isn't it?
 -------------
@@ -22,8 +22,11 @@ Our GApps includes most of the Google Apps that come standard on Google Nexus de
 |        |     |         |      |YouTube |
 
 ¹ Core Apps includes the core system base apps as well as Google Play services, Google Play Store, and Cloud Print (on 4.4 Only).
+² Devices with a front camera will automatically have Face Unlock installed.
 
-² Face Unlock is installed on devices with a front camera.
+BACKUP/RESTORE
+-------------
+Our GApps allows to back up your selections and restore them for later use.
 
 INSTALL
 ============
@@ -37,17 +40,11 @@ INSTALL
 6. Flash our GApps that you downloaded earlier.
 7. Finally, follow the on-screen instructions to install your GApps!
 
-BACKUP/RESTORE
-============
-Our GApps has the ability to backup your selections and restore them for later use.
-
 REMOVER
 ============
 QUICK HOW-TO
 ------------
-Everything after a pound sign/hashtag/"#" is removed from the script
-That is, all the tutorials, app descriptions, and apps you want to keep
-Thus, only leaving the script with the files you want to remove
+We will cut everything after a pound sign/hashtag/"#" from the script. That is, all the tutorials, app descriptions, and apps you want to keep; thus, only leaving the script with the files you want to remove
 Edit the list below as you see fit, examples:
       AdobeReader.apk  > Removed (because there is no "#")
       #AdobeReader.apk > NOT Removed (because of "#")
@@ -55,21 +52,17 @@ Edit the list below as you see fit, examples:
 
 CUSTOMIZING
 ------------
-By saving this file to /sdcard/Famigo/junk.txt you can add files.
-Files can be added from anywhere and even using wildcards.
+By making a file named junk.txt in the /sdcard/Famigo/remover folder you can add files from anywhere and use wildcards to cut similar items.
+
 Files and folders deleted ARE case-sensitive, examples:
     /path/to/file/file.txt > Deletes file.txt
     /path/to/folder/       > Deletes folder ... REMEMBER the trailing "/"
     /system/app/Apollo.apk > Deletes the system app Apollo ... REMEMBER to Scan Everywhere during install when including FULL PATH
-    /data/app/Facebook.apk > Deletes the user app Facebook (if that's what it is named) ... REMEMBER to Scan Everywhere during install when including FULL PATH
-    Apollo.apk             > Deletes the app Apollo ... REMEMBER to Scan System/App and/or Data/App depending on location
-    Apollo                 > Deletes apps named Apollo ... REMEMBER to Scan System/App and/or Data/App depending on location
-    Apo*                   > Deletes all files starting with "Apo" ... Be CAREFUL with wildcards. Safe examples can be seen in script
+    /data/app/Facebook.apk > Deletes the user app Facebook (if that's what it's called) ... REMEMBER to Scan Everywhere during install when including FULL PATH
+    Apollo.apk             > Deletes the app Apollo ... REMEMBER to Scan System/App and/or Data/App depending on place
+    Apollo                 > Deletes apps named Apollo ... REMEMBER to Scan System/App and/or Data/App depending on place
+    Apo*                   > Deletes all files starting with "Apo" ... Be CAREFUL with wildcards.
 
 WHAT TO SCAN
 ------------
-During installation (ie removal), you will be asked which folders to scan
-By default, Nightly Updater will only Scan System/App which is where system apps and PARTICULARLY junk apps are located. However, you may want to erase user apps that are located in Data/App or other system files located elsewhere.
-    Unless you are specifically trying to remove user installed apps - do not check Scan Data/App ...
-    Unless you are trying to delete a specific file or folder (ringtones, wallpapers, etc) - do not check Scan Everywhere
-    
+During the install, it will ask you which folders to scan. By default, we will only Scan /system/(priv-)app which is where system apps and PARTICULARLY junk apps are. However, you may want to erase user apps that are in /data/app or other system files located elsewhere. Unless you are specifically trying to remove user installed apps - do not check Scan /data/app and unless you are trying to cut a specific file or folder (ringtones, wallpapers, etc) - do not check Scan Everywhere
