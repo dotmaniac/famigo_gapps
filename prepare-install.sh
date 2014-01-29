@@ -47,4 +47,4 @@ fi
 echo -e "\n# end Famigo AROMA GApps properties" >> /tmp/info.prop
 
 # Copy info.prop to Famigo folder on SD Card
-cp -af /tmp/info.prop /sdcard/Famigo/info.prop
+cp -af /tmp/info.prop /sdcard/Famigo/logs/info.prop

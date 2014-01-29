@@ -18,8 +18,8 @@ fi
 rm -rf /tmp/face
 
 # Photosphere Install
-if [ ! -f /sdcard/Famigo/.forcenophotosphere ]; then
-    if (grep -qi "hammerhead" /proc/cpuinfo /sdcard/Famigo/.forcephotosphere )||(grep -qi "deb" /proc/cpuinfo /sdcard/Famigo/.forcephotosphere )||(grep -qi "flo" /proc/cpuinfo /sdcard/Famigo/.forcephotosphere )||(grep -qi "manta" /proc/cpuinfo /sdcard/Famigo/.forcephotosphere )||(grep -qi "tuna" /proc/cpuinfo /sdcard/Famigo/.forcephotosphere )||(grep -qi "mako" /proc/cpuinfo /sdcard/Famigo/.forcephotosphere ); then
+if [ ! -f /sdcard/Famigo/photosphere/.forcenophotosphere ]; then
+    if (grep -qi "hammerhead" /proc/cpuinfo /sdcard/Famigo/photosphere/.forcephotosphere )||(grep -qi "deb" /proc/cpuinfo /sdcard/Famigo/photosphere/.forcephotosphere )||(grep -qi "flo" /proc/cpuinfo /sdcard/Famigo/photosphere/.forcephotosphere )||(grep -qi "manta" /proc/cpuinfo /sdcard/Famigo/photosphere/.forcephotosphere )||(grep -qi "tuna" /proc/cpuinfo /sdcard/Famigo/photosphere/.forcephotosphere )||(grep -qi "mako" /proc/cpuinfo /sdcard/Famigo/photosphere/.forcephotosphere ); then
       echo "Installing Photosphere Camera"
       rm -f /system/app/Camera2.apk
       rm -f /system/priv-app/Camera2.apk
@@ -32,19 +32,6 @@ if [ ! -f /sdcard/Famigo/.forcenophotosphere ]; then
       rm -f /system/framework/com.google.android.camera2.odex
       cp -af /tmp/photosphere/common/* /system/
       chmod 755 /system/addon.d/74-googlecamera.sh
-    fi
-
-    
-    if (grep -qi "hammerhead" /proc/cpuinfo /sdcard/Famigo/.forcephotosphere ); then
-        cp -af /tmp/photosphere/other/hammerhead/* /system/
-    fi
-
-    if (grep -qi "tuna" /proc/cpuinfo /sdcard/Famigo/.forcephotosphere ); then
-        cp -af /tmp/photosphere/other/tuna/* /system/
-    fi
-
-    if (grep -qi "manta" /proc/cpuinfo /sdcard/Famigo/.forcephotosphere ); then
-        cp -af /tmp/photosphere/other/manta/* /system/
     fi
 fi
 rm -rf /tmp/photosphere

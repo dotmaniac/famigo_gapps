@@ -1,14 +1,13 @@
 # AOSP
 #Browser
 #Calculator
-Calendar
+Calendar*
 #ChromeBookmarksS*       #Chrome Browser Bookmarks Sync
 #DeskClock
 Development             #Development Tools
 Email*
 Exchange*               #Exchange for Email
-Gallery2
-Gallery
+Gallery*
 GenieWidget             #News and Weather
 #LatinIME
 Music
@@ -16,7 +15,7 @@ QuickSearchBox
 SoundRecorder
 SpareParts
 Term                    #Android Terminal Emulator
-#Torch                  #Flashlight
+Torch                  #Flashlight
 VideoEditor
 VoiceDialer
 
@@ -42,8 +41,7 @@ PhotoTable
 iWnnIME*
 KoreanIME
 OpenWnn
-PinyinIME
-GooglePinyinIME
+*PinyinIME
 XT9IME
 
 # WALLPAPERS

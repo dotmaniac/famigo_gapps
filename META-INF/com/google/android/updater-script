@@ -270,16 +270,16 @@ ifelse(
             # Stock
             if file_getprop("/tmp/aroma/remover.prop","selected") == "1" then
                     package_extract_file("remover/stock.sh", "/tmp/stock.sh");
-                    package_extract_file("remover/junk-stock.txt", "/sdcard/Famigo/junk-stock.txt");
+                    package_extract_file("remover/junk-stock.txt", "/sdcard/Famigo/remover/junk-stock.txt");
                     set_perm(0, 0, 0777, "/tmp/stock.sh");
                     run_program("/tmp/stock.sh");
-            		ui_print(" Running Stock Remover");
+            		ui_print("Running Stock Remover");
             endif;
 		),
 		( 
             # Custom
             if file_getprop("/tmp/aroma/remover.prop","selected") == "2" then
-                    ifelse((less_than_int(run_program("/sbin/busybox", "test", "-e", "/sdcard/Famigo/junk.txt"), 1);),(ui_print("  -Removing selected apps...");),(ui_print("  -FAILED!!! Check Famigo folder for junk.txt");));
+                    ifelse((less_than_int(run_program("/sbin/busybox", "test", "-e", "/sdcard/Famigo/remover/junk.txt"), 1);),(ui_print("  -Removing selected apps...");),(ui_print("  -FAILED!!! Check Famigo/remover folder for junk.txt");));
                     package_extract_file("remover/custom.sh", "/tmp/custom.sh");
                     set_perm(0, 0, 0777, "/tmp/custom.sh");
                     run_program("/tmp/custom.sh");

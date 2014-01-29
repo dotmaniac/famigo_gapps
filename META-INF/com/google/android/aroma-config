@@ -1,13 +1,16 @@
 # MOUNTING
 exec("/sbin/busybox","mount","/system");
 exec("/sbin/busybox","mount","/data");
+exec("/sbin/busybox", "mkdir", "/sdcard/Famigo");
+exec("/sbin/busybox", "mkdir", "/sdcard/Famigo/backups");
+exec("/sbin/busybox", "mkdir", "/sdcard/Famigo/photosphere");
+exec("/sbin/busybox", "mkdir", "/sdcard/Famigo/remover");
+exec("/sbin/busybox", "mkdir", "/sdcard/Famigo/logs");
 
 # STYLING
 	# Set Font
-		fontresload( "0", "ttf/Roboto-Regular.ttf", "12" );
-		fontresload( "1", "ttf/Roboto-Regular.ttf", "18" );
-	# Set Transition
-	    ini_set("transition","slide");
+		fontresload( "0", "ttf/Roboto.ttf", "12" );
+		fontresload( "1", "ttf/Roboto.ttf", "18" );
 	# Set DPI
 		ini_set("dp","5");
 	# Load English
@@ -17,47 +20,22 @@ exec("/sbin/busybox","mount","/data");
 	ini_set("rom_name",		"AROMA GApps");
 	ini_set("rom_author",	"Team Famigo");
 	ini_set("rom_device",	"Any ROM & Any Device");
+textbox("Famigo AROMA GApps", "Welcome!", "", zipread("README.md"));
 
-# MENU
-	menubox("<~welcome.title>", "What would you like to do?", "", "home.prop",
-		"Backup",			"",		"",
-		"Restore",			"",		"",
-		"Selection",    	"",		"",
-		"Remover",			"",		"",
-		"Install",			"",		""
-	);
-
-# BACKUP/RESTORE
-if prop("home.prop","selected")=="1" then
+# RESTORE
+ini_set("text_yes", "RESTORE");
+ini_set("text_no",  "DON'T RESTORE");
 	if
-		confirm("Backup", "Are you sure you want to backup your selections?")=="yes"
+		confirm("RESTORE", "Do you want to Restore your Selections?")=="yes"
 	then
-		run_program("/sbin/busybox", "mkdir", "/sdcard/Famigo");
-		run_program("/sbin/busybox", "cp", "/tmp/aroma/gapps.prop", "/sdcard/Famigo");
-		alert("Backup saved!","Please go back...");
-		back("1");
+		exec("/sbin/busybox", "cp", "/sdcard/Famigo/backups/gapps.prop", "/tmp/aroma/");
+		alert("RESTORED!","");
 	else
-		alert("","Please go back...");
-		back("1");
+		alert("NOT RESTORED!","");
 	endif;
-endif;
 
-if prop("home.prop","selected")=="2" then
-	if
-		confirm("Restore", "Are you sure you want to restore your selections?")=="yes"
-	then
-		run_program("/sbin/busybox", "cp", "/sdcard/Famigo/gapps.prop", "/tmp/aroma/");
-		alert("Backup restored!","Please go back...");
-		back("1");
-	else
-		alert("","Please go back...");
-		back("1");
-	endif;
-endif;
-
-# SELECTION
-if prop("home.prop","selected")=="3" then
-checkbox("Selection", "Select your apps below:", "", "gapps.prop",
+# GAPPS
+checkbox("GAPPS", "Select your apps below:", "", "gapps.prop",
 	"Plus",			"",							"2",
 		"Google+",		"",							"0",
 		"Hangouts",		"",							"0",
@@ -82,49 +60,62 @@ checkbox("Selection", "Select your apps below:", "", "gapps.prop",
 		"Wallet",		"",							"0",
 		"YouTube",		"",							"0"
 );
-back("1");
-endif;
+
+# BACKUP
+ini_set("text_yes", "BACKUP");
+ini_set("text_no",  "DON'T BACKUP");
+	if
+		confirm("RESTORE", "Do you want to Restore your Selections?")=="yes"
+	then
+		exec("/sbin/busybox", "cp", "/tmp/aroma/gapps.prop", "/sdcard/Famigo/backups");
+		alert("SAVED!","");
+	else
+		alert("NOT SAVED!","");
+	endif;
 
 # REMOVER
-if prop("home.prop","selected")=="4" then
-menubox("Remover", "Select an option below.", "", "remover.prop",	
-	"Default", "Apps removed by installer. Good for beginners.", "",
-	"Custom", "Customize apps being removed in Famigo/junk.txt", ""
+menubox("REMOVER", "Select an option below.", "", "remover.prop",	
+	"STOCK", "Remove my recomendations!", "",
+	"CUSTOM", "Use your custom junk.txt to remove files.", "",
+	"NONE", "Don't remove anything.", ""
 );
-back("2");
-endif;
 
     # CUSTOM
     if prop("remover.prop","selected")=="2" then
-    checkbox("Custom Script", "Select where to scan for junk apps.", "", "remover-custom.prop",	  
+    checkbox("Custom Script", "Select where to scan for junk apps:", "", "remover-custom.prop",	  
         "Scan System/App", "Where system apps are located.",  1,
         "Scan Data/App",   "Where user apps are located.",    0,
-        "Everywhere",      "BE CAREFUL... Scans everywhere!", 0
+        "Scan Everywhere",  "BE CAREFUL... Scans everywhere!", 0
     );
-    back("3");
+    endif;
+    
+    # NONE
+    if prop("remover.prop","selected")=="3" then
+    alert("NOTHING REMOVED!","");
     endif;
     
 # INSTALL
-if prop("home.prop","selected")=="5" then
 viewbox("Ready to Install", "Press Next to begin the install.\n\n"+"If you want to review your installation settings, press Back.", "");
 
     # AOSP Replacer Scripts
+    ini_set("text_yes", "Yes");
+    ini_set("text_no",  "No");
     if prop("gapps.prop", "item.1.2") == "1" then
     	if
-    		confirm("SMS", "Do you want Hangouts to replace the AOSP SMS App?")=="yes"
+    		confirm("SMS", "Replace Stock SMS with Hangouts?")=="yes"
     	then
     		run_program("/sbin/busybox", "rm", "-f", "/system/app/Mms.apk");
     		run_program("/sbin/busybox", "rm", "-f", "/system/priv-app/Mms.apk");
     		ziptotmp("addon.d/gapps/80-hangouts.sh", "80-hangouts.sh");
     		run_program("/sbin/busybox", "cp", "-a", "/tmp/aroma/80-hangouts.sh", "/system/addon.d");
     	else
-    		alert("Not Deleted","");
+            alert("NOTHING REMOVED!","");
     	endif;
     endif;
     
     if prop("gapps.prop", "item.4.1") == "1" then
     	if
-    		confirm("Browser", "Do you want Chrome to replace the AOSP Browser?")=="yes"
+    		confirm("BROWSER", "Replace Stock Browser with Chrome?")=="yes"
     	then
     		run_program("/sbin/busybox", "rm", "-f", "/system/app/Browser.apk");
     		run_program("/sbin/busybox", "rm", "-f", "/system/app/ChromeBookmarksSyncAdapter.apk");
@@ -133,13 +124,13 @@ viewbox("Ready to Install", "Press Next to begin the install.\n\n"+"If you want 
     		ziptotmp("addon.d/gapps/80-chrome.sh", "80-chrome.sh");
     		run_program("/sbin/busybox", "cp", "-a", "/tmp/aroma/80-chrome.sh", "/system/addon.d");
     	else
-    		alert("Not Deleted","");
+            alert("NOTHING REMOVED!","");
     	endif;
     endif;
     	
     if prop("gapps.prop", "item.4.2") == "1" then
     	if
-    		confirm("Launcher", "Do you want Google Home to replace the AOSP Launcher?")=="yes"
+    		confirm("HOME", "Replace Stock Launcher with Google Home (GEL)?")=="yes"
     	then
     		run_program("/sbin/busybox", "rm", "-f", "/system/app/Launcher3.apk");
     		run_program("/sbin/busybox", "rm", "-f", "/system/app/Launcher2.apk");
@@ -148,26 +139,26 @@ viewbox("Ready to Install", "Press Next to begin the install.\n\n"+"If you want 
     		ziptotmp("addon.d/gapps/80-home.sh", "80-home.sh");
     		run_program("/sbin/busybox", "cp", "-a", "/tmp/aroma/80-home.sh", "/system/addon.d");
     	else
-    		alert("Not Deleted","");
+            alert("NOTHING REMOVED!","");
     	endif;
     endif;
     	
     if prop("gapps.prop", "item.5.1") == "1" then
     	if
-    		confirm("Calendar", "Do you want the Google Calendar to replace the AOSP Calendar?")=="yes"
+    		confirm("CALENDAR", "Replace Stock Calendar with Google Calendar?")=="yes"
     	then
     		run_program("/sbin/busybox", "rm", "-f", "/system/app/Calendar.apk");
     		run_program("/sbin/busybox", "rm", "-f", "/system/priv-app/Calendar.apk");
     		ziptotmp("addon.d/gapps/80-calendar.sh", "80-calendar.sh");
     		run_program("/sbin/busybox", "cp", "-a", "/tmp/aroma/80-calendar.sh", "/system/addon.d");
     	else
-    		alert("Not Deleted","");
+            alert("NOTHING REMOVED!","");
     	endif;
     endif;
     
     if prop("gapps.prop", "item.5.3") == "1" then
     	if
-    		confirm("Keyboard", "Do you want the Google Keyboard to replace the AOSP Keyboard?")=="yes"
+    		confirm("IME", "Replace Stock IME with Google Keyboard?")=="yes"
     	then
     		run_program("/sbin/busybox", "rm", "-f", "/system/app/LatinIME.apk");
     		run_program("/sbin/busybox", "rm", "-f", "/system/priv-app/LatinIME.apk");
@@ -175,27 +166,32 @@ viewbox("Ready to Install", "Press Next to begin the install.\n\n"+"If you want 
     		ziptotmp("addon.d/gapps/80-keyboard.sh", "80-keyboard.sh");
     		run_program("/sbin/busybox", "cp", "-a", "/tmp/aroma/80-keyboard.sh", "/system/addon.d");
     	else
-    		alert("Not Deleted","");
+            alert("NOTHING REMOVED!","");
     	endif;
     endif;
     
     # Photosphere Scripts
+    ini_set("text_yes", "INSTALL");
+    ini_set("text_no",  "DON'T INSTALL");
     if
-    	confirm("Force Photosphere", "Do you want to force Photosphere on non-Nexus devices by creating a .forcephotosphere file?")=="yes"
+    	confirm("PHOTOSPHERE", "Do you want to install Photosphere or force it not to install at all?")=="yes"
     then
-    	write("/sdcard/Famigo/.forcephotosphere", "hammerhead");
-    	run_program("/sbin/busybox", "rm", "-f", "/sdcard/Famigo/.forcenophotosphere");
-    else
+        ini_set("text_yes", "NORMAL");
+        ini_set("text_no",  "FORCE");
         if
-    		confirm("No Photosphere Instead?", "Do you want to to not install Photosphere instead by creating a .forcenophotosphere file?")=="yes"
+        	confirm("INSTALL TYPE", "Do you want to install Photosphere normally or force the install for non-Nexus devices?")=="yes"
         then
-    	    write("/sdcard/Famigo/.forcenophotosphere", "");
+            run_program("/sbin/busybox", "rm", "-f", "/sdcard/Famigo/.forcephotosphere");
+            run_program("/sbin/busybox", "rm", "-f", "/sdcard/Famigo/.forcenophotosphere");
         else
-    	    alert("Will Install Normally!","");
-    	    run_program("/sbin/busybox", "rm", "-f", "/sdcard/Famigo/.forcenophotosphere");
-    	    run_program("/sbin/busybox", "rm", "-f", "/sdcard/Famigo/.forcephotosphere");
+        	write("/sdcard/Famigo/.forcephotosphere", "hammerhead");
+        	run_program("/sbin/busybox", "rm", "-f", "/sdcard/Famigo/.forcenophotosphere");
         endif;
+    else
+        write("/sdcard/Famigo/.forcenophotosphere", "");
     endif;
 
+ini_set("text_yes", "Yes");
+ini_set("text_no",  "No");
+ini_set("text_next", "Finish!");
 install("Installing", "<b>"+ini_get("rom_name")+"</b> is being installed.", "", "<b>"+ini_get("rom_name")+"</b> has been successfully installed.");
-endif;
